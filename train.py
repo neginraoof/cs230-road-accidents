@@ -4,6 +4,7 @@ import torch
 import torchvision
 import argparse
 import cv2
+from dataset import VideoDataset
 
 
 str2bool = lambda x: (str(x).lower() == 'true')
@@ -28,32 +29,6 @@ parser.add_argument('--momentum', '-m')
 parser.add_argument('--weight_decay', '-wd')
 
 args = parser.parse_args()
-
-
-def load_video(video_file, channels=3, time_depth=5, x_size=240, y_size=256):
-    # Open the video file
-    cap = cv2.VideoCapture(video_file)
-    # nFrames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    frames = torch.FloatTensor(channels, time_depth, x_size, y_size)
-    failedClip = False
-    for f in range(time_depth):
-
-        ret, frame = cap.read()
-        if ret:
-            frame = torch.from_numpy(frame)
-            # HWC2CHW
-            frame = frame.permute(2, 0, 1)
-            frames[:, f, :, :] = frame
-
-        else:
-            print("Skipped!")
-            failedClip = True
-            break
-
-    # for c in range(3):
-    #     frames[c] -= self.mean[c]
-    frames /= 255
-    return frames, failedClip
 
 def main():
     global args #, best_prec1
@@ -119,76 +94,47 @@ def main():
     normalize = torchvision.transforms.Normalize(mean=[0.43216, 0.394666, 0.37645],
                                                  std=[0.22803, 0.22145, 0.216989])
 
-    transform_train = torchvision.transforms.Compose([
+    spatial_transform_train = torchvision.transforms.Compose([
         torchvision.transforms.ToFloatTensorInZeroOne(),
         torchvision.transforms.Resize((128, 171)),
         torchvision.transforms.RandomHorizontalFlip(),
         normalize,
         torchvision.transforms.RandomCrop((112, 112))
     ])
-    
-    ## Load Data and create clips:
-    ## dataset_test.video_clips.compute_clips(args.clip_len, 1, frame_rate=15)  
-    ## data_loader = torch.utils.data.DataLoader(
-    #     dataset, batch_size=args.batch_size,
-    #     sampler=train_sampler, num_workers=args.workers,
-    #     pin_memory=True, collate_fn=collate_fn)
 
-    # data_loader_test = torch.utils.data.DataLoader(
-    #     dataset_test, batch_size=args.batch_size,
-    #     sampler=test_sampler, num_workers=args.workers,
-    #     pin_memory=True, collate_fn=collate_fn)
+    # temporal_transform = LoopPadding(opt.sample_duration)
+    train_dataset = VideoDataset(video_dir, 
+                # spatial_transform=spatial_transform_train,
+                #  temporal_transform=temporal_transform,
+                 sample_duration=args.sample_duration)
 
-    transform_valid = torchvision.transforms.Compose([
-        torchvision.transforms.ToFloatTensorInZeroOne(),
-        torchvision.transforms.Resize((128, 171)),
-        normalize,
-        torchvision.transforms.CenterCrop((112, 112))
-    ])
+    train_sampler = RandomClipSampler(train_dataset.dataset, args.clips_per_video)
+    # test_sampler = UniformClipSampler(test_dataset.video_clips, args.clips_per_video)
 
+    train_data_loader = torch.utils.data.DataLoader(
+        train_dataset, batch_size=args.batch_size, shuffle=False,
+        sampler=train_sampler, num_workers=args.workers,
+        pin_memory=True, collate_fn=collate_fn)
+    # train_data = VideoFolder(root=config['train_data_folder'],
+    #                          csv_file_input=config['train_data_csv'],
+    #                          csv_file_labels=config['labels_csv'],
+    #                          clip_size=config['clip_size'],
+    #                          nclips=1,
+    #                          step_size=config['step_size'],
+    #                          is_val=False,
+    #                          transform=transform_train,
+    #                          )
 
-    train_data = VideoFolder(root=config['train_data_folder'],
-                             csv_file_input=config['train_data_csv'],
-                             csv_file_labels=config['labels_csv'],
-                             clip_size=config['clip_size'],
-                             nclips=1,
-                             step_size=config['step_size'],
-                             is_val=False,
-                             transform=transform_train,
-                             )
-
-    # print(" > Using {} processes for data loader.".format(
-    #     config["num_workers"]))
-    train_loader = torch.utils.data.DataLoader(
-        train_data,
-        batch_size=config['batch_size'], shuffle=True,
-        num_workers=config['num_workers'], pin_memory=True,
-        drop_last=True)
-
-
-    print("Data loader ============== Num Processes {}".format(args.workers))
-    frames, status = load_video("./video_data/drop.avi")
-    # data_loader = torch.utils.data.DataLoader(
-    #     dataset, batch_size=args.batch_size,
-    #     sampler=train_sampler, num_workers=args.workers,
-    #     pin_memory=True, collate_fn=collate_fn)
-
-    # data_loader_test = torch.utils.data.DataLoader(
-    #     dataset_test, batch_size=args.batch_size,
-    #     sampler=test_sampler, num_workers=args.workers,
-    #     pin_memory=True, collate_fn=collate_fn)
-
-    # assert len(train_data.classes) == args.num_classes
 
     # define loss function (criterion) and pptimizer
     criterion = torch.nn.CrossEntropyLoss().to(device)
 
-    # define optimizer
-    lr = args.lr * args.world_size
-    last_lr = args.last_lr
-    momentum = args.momentum
-    weight_decay = args.weight_decay
-    optimizer = torch.optim.Adam(model.parameters(), lr=lr,amsgrad =True) 
+    # # define optimizer
+    # lr = args.lr * args.world_size
+    # last_lr = args.last_lr
+    # momentum = args.momentum
+    # weight_decay = args.weight_decay
+    # optimizer = torch.optim.Adam(model.parameters(), lr=lr,amsgrad =True) 
 
 
     # if args.resume:
@@ -203,11 +149,37 @@ def main():
     #     return
 
     # set end condition by num epochs
-    num_epochs = int(args.num_epochs)
-    if num_epochs == -1:
-        num_epochs = 999999
+    # num_epochs = int(args.num_epochs)
+    # if num_epochs == -1:
+    #     num_epochs = 999999
 
 
+    for epoch in range(args.start_epoch, args.epochs):
+        print("=============== Epoch ================")
+        print(inputs)
+        train_one_epoch(model, criterion, optimizer, lr_scheduler, data_loader,
+                        device, epoch, args.print_freq, args.apex)
+        evaluate(model, criterion, data_loader_test, device=device)
+
+        ## or
+        ## train(model, criterion, optimizer, lr_scheduler, data_loader,
+                        # device, epoch, args.print_freq, args.apex)
+
+        # if args.output_dir:
+        #     checkpoint = {
+        #         'model': model_without_ddp.state_dict(),
+        #         'optimizer': optimizer.state_dict(),
+        #         'lr_scheduler': lr_scheduler.state_dict(),
+        #         'epoch': epoch,
+        #         'args': args}
+        #     utils.save_on_master(
+        #         checkpoint,
+        #         os.path.join(args.output_dir, 'model_{}.pth'.format(epoch)))
+        #     utils.save_on_master(
+        #         checkpoint,
+        #         os.path.join(args.output_dir, 'checkpoint.pth'))
+
+    # Report Time
 
 
 def train(train_data, target, model, criterion, optimizer, epoch, device):
@@ -281,4 +253,4 @@ def train_one_epoch(train_data, target, model, criterion, optimizer, device):
 
 
 if __name__ == '__main__':
-    load_video()
+    main()
