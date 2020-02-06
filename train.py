@@ -30,7 +30,7 @@ parser.add_argument('--weight_decay', '-wd')
 args = parser.parse_args()
 
 
-def load_video(video_file, channels=3, time_depth=10, x_size=200, y_size=300):
+def load_video(video_file, channels=3, time_depth=5, x_size=240, y_size=256):
     # Open the video file
     cap = cv2.VideoCapture(video_file)
     # nFrames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
@@ -167,7 +167,7 @@ def main():
 
 
     print("Data loader ============== Num Processes {}".format(args.workers))
-    frames, status = load_video(".\\video_data\\road_h63_s2_b.mp4")
+    frames, status = load_video("./video_data/drop.avi")
     # data_loader = torch.utils.data.DataLoader(
     #     dataset, batch_size=args.batch_size,
     #     sampler=train_sampler, num_workers=args.workers,
@@ -207,19 +207,23 @@ def main():
     if num_epochs == -1:
         num_epochs = 999999
 
+
+
+
+def train(train_data, target, model, criterion, optimizer, epoch, device):
     print("=========== Starting Training =============")
-    print("Training with {} epochs.".format(num_epochs))
+    print("Training with {} epochs.".format(epoch))
     start_epoch = args.start_epoch if args.resume else 0
     # train_writer = tensorboardX.SummaryWriter("logs")
-    for epoch in range(start_epoch, num_epochs):
+    model.train()
 
+    for epoch in range(start_epoch, epoch):
         # if args.distributed:
         #     train_sampler.set_epoch(epoch)
-        train(model, criterion, optimizer, lr_scheduler, data_loader,
-                        device, epoch, args.print_freq, args.apex)
+        train_one_epoch(train_data, target, model, criterion, optimizer, device=device)
         evaluate(model, criterion, data_loader_test, device=device)
-		
-		# # write in tensorboard
+
+        # # write in tensorboard
         # train_writer.add_scalar('loss', train_loss, epoch + 1)
         # train_writer.add_scalar('top1', train_top1, epoch + 1)
         # train_writer.add_scalar('top5', train_top5, epoch + 1)
@@ -239,8 +243,8 @@ def main():
         }, is_best, config)
 
 
-def train(train_loader, target, model, criterion, optimizer, epoch):
-    model.train()
+def train_one_epoch(train_data, target, model, criterion, optimizer, device):
+
 
     losses = AverageMeter()
     top1 = AverageMeter()
@@ -276,6 +280,5 @@ def train(train_loader, target, model, criterion, optimizer, epoch):
     return losses.avg, top1.avg, top5.avg
 
 
-
 if __name__ == '__main__':
-    main()
+    load_video()
