@@ -4,7 +4,7 @@ import cv2
 import os
 import copy
 
-def video_loader(video_file, frame_indices, channels=3, time_depth=5, x_size=240, y_size=256):
+def video_loader(video_file, channels=3, time_depth=5, x_size=240, y_size=256):
     # Open the video file
     cap = cv2.VideoCapture(video_file)
     # nFrames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
@@ -76,3 +76,19 @@ class VideoDataset(data.Dataset):
       # clip = torch.stack(clip, 0).permute(1, 0, 2, 3)
       target = self.data[index]['segment']
       return clip, target
+
+from torchvision.datasets.video_utils import VideoClips
+
+class MyVideoDataset(data.Dataset):
+    def __init__(self, video_paths):
+        self.video_clips = VideoClips(video_paths,
+                                      clip_length_in_frames=16,
+                                      frames_between_clips=1,
+                                      frame_rate=15)
+
+    def __getitem__(self, idx):
+        video, audio, info, video_idx = self.video_clips.get_clip(idx)
+        return video, audio
+    
+    def __len__(self):
+        return self.video_clips.num_clips()

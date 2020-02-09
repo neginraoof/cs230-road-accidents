@@ -4,7 +4,11 @@ import torch
 import torchvision
 import argparse
 import cv2
-from dataset import VideoDataset
+from datasets import VideoDataset, MyVideoDataset
+import transforms as T
+from torchvision.datasets.samplers import DistributedSampler, UniformClipSampler, RandomClipSampler
+from torch.utils.data.dataloader import default_collate
+from utils import AverageMeter
 
 
 str2bool = lambda x: (str(x).lower() == 'true')
@@ -12,9 +16,23 @@ str2bool = lambda x: (str(x).lower() == 'true')
 parser = argparse.ArgumentParser(
     description='PyTorch Jester Training using JPEG')
 parser.add_argument('--model_name', '-n', help='name of the model')
+parser.add_argument('--video_dir', '-v', help='video file')
+parser.add_argument('--clips_per_video', default=5, type=int, metavar='N',
+                        help='maximum number of clips per video to consider')
+parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
+                        help='start epoch')
+parser.add_argument('--epochs', default=1, type=int, metavar='N',
+                        help='number of epoch')
 parser.add_argument('--config', '-c', help='json config file path')
 parser.add_argument('--eval_only', '-e', default=False, type=str2bool,
                     help="evaluate trained model on validation data.")
+parser.add_argument('--lr', default=0.01, type=float, help='initial learning rate')
+
+parser.add_argument('--momentum', default=0.9, type=float, metavar='M',
+                        help='momentum')
+parser.add_argument('--wd', '--weight-decay', default=1e-4, type=float,
+                        metavar='W', help='weight decay (default: 1e-4)',
+                        dest='weight_decay')
 parser.add_argument('--test_only', '-t', default=False, type=str2bool,
                     help="test the trained model on the test set.")
 parser.add_argument('--resume', '-r', default=False, type=str2bool,
@@ -23,12 +41,16 @@ parser.add_argument('--use_gpu', default=True, type=str2bool,
                     help="flag to use gpu or not.")
 parser.add_argument('--gpus', '-g', help="gpu ids for use.")
 parser.add_argument('--batch_size', '-bs', help="batch size")
-parser.add_argument('--workers', '-w', help="num workers")
-parser.add_argument('--last_lr', '-lr')
-parser.add_argument('--momentum', '-m')
-parser.add_argument('--weight_decay', '-wd')
+parser.add_argument('--workers', '-w', default=10, type=int, metavar='N', help="num workers")
 
 args = parser.parse_args()
+
+
+def collate_fn(batch):
+    # remove audio from the batch
+    batch = [(d[0], d[2]) for d in batch]
+    return default_collate(batch)
+
 
 def main():
     global args #, best_prec1
@@ -64,7 +86,8 @@ def main():
 
     # create model
 
-    model = CNNModule()
+    #model = CNNModule()
+    model = torch.nn.Conv3d(16, 33, 3, stride=2)
 
     # Use GPUs
     device = torch.device("cpu")
@@ -95,20 +118,21 @@ def main():
                                                  std=[0.22803, 0.22145, 0.216989])
 
     spatial_transform_train = torchvision.transforms.Compose([
-        torchvision.transforms.ToFloatTensorInZeroOne(),
-        torchvision.transforms.Resize((128, 171)),
-        torchvision.transforms.RandomHorizontalFlip(),
+        T.ToFloatTensorInZeroOne(),
+        T.Resize((128, 171)),
+        T.RandomHorizontalFlip(),
         normalize,
-        torchvision.transforms.RandomCrop((112, 112))
+        T.RandomCrop((112, 112))
     ])
 
     # temporal_transform = LoopPadding(opt.sample_duration)
-    train_dataset = VideoDataset(video_dir, 
+    train_dataset = MyVideoDataset(args.video_dir, 
                 # spatial_transform=spatial_transform_train,
                 #  temporal_transform=temporal_transform,
-                 sample_duration=args.sample_duration)
+                # sample_duration=1
+                )
 
-    train_sampler = RandomClipSampler(train_dataset.dataset, args.clips_per_video)
+    train_sampler = RandomClipSampler(train_dataset.video_clips, args.clips_per_video)
     # test_sampler = UniformClipSampler(test_dataset.video_clips, args.clips_per_video)
 
     train_data_loader = torch.utils.data.DataLoader(
@@ -130,11 +154,11 @@ def main():
     criterion = torch.nn.CrossEntropyLoss().to(device)
 
     # # define optimizer
-    # lr = args.lr * args.world_size
+    lr = args.lr #* args.world_size
     # last_lr = args.last_lr
-    # momentum = args.momentum
+    momentum = args.momentum
     # weight_decay = args.weight_decay
-    # optimizer = torch.optim.Adam(model.parameters(), lr=lr,amsgrad =True) 
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr,amsgrad =True) 
 
 
     # if args.resume:
@@ -156,10 +180,9 @@ def main():
 
     for epoch in range(args.start_epoch, args.epochs):
         print("=============== Epoch ================")
-        print(inputs)
-        train_one_epoch(model, criterion, optimizer, lr_scheduler, data_loader,
-                        device, epoch, args.print_freq, args.apex)
-        evaluate(model, criterion, data_loader_test, device=device)
+        #print(inputs)
+        train_one_epoch(epoch, train_data_loader, model, criterion, optimizer)
+        #evaluate(model, criterion, data_loader_test, device=device)
 
         ## or
         ## train(model, criterion, optimizer, lr_scheduler, data_loader,
@@ -215,14 +238,13 @@ def train(train_data, target, model, criterion, optimizer, epoch, device):
         }, is_best, config)
 
 
-def train_one_epoch(train_data, target, model, criterion, optimizer, device):
+def train_one_epoch(epoch, data_loader, model, criterion, optimizer):
 
+    losses = AverageMeter('losses')
+    top1 = AverageMeter('top1')
+    top5 = AverageMeter('top5')
 
-    losses = AverageMeter()
-    top1 = AverageMeter()
-    top5 = AverageMeter()
-
-    for input, target in zip(train_loader, target):
+    for i, (input, target) in enumerate(data_loader):
 
         input, target = input.to(device), target.to(device)
 
