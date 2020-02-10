@@ -3,6 +3,9 @@ from torch.utils import data
 import cv2
 import os
 import copy
+from torchvision.datasets.utils import list_dir
+from torchvision.datasets.folder import make_dataset
+#from torchvision.datasets.vision import VisionDataset
 
 def video_loader(video_file, channels=3, time_depth=5, x_size=240, y_size=256):
     # Open the video file
@@ -29,7 +32,7 @@ def video_loader(video_file, channels=3, time_depth=5, x_size=240, y_size=256):
     frames /= 255
     return frames, failedClip
 
-def make_dataset(video_path, sample_duration):
+def my_make_dataset(video_path, sample_duration):
     dataset = []
 
     n_frames = len(os.listdir(video_path))
@@ -81,14 +84,22 @@ from torchvision.datasets.video_utils import VideoClips
 
 class MyVideoDataset(data.Dataset):
     def __init__(self, video_paths):
-        self.video_clips = VideoClips(video_paths,
+        extensions = ('avi', 'mp4')
+        root = video_paths
+        self.classes = list(sorted(list_dir(root)))
+        self.class_to_idx = {self.classes[i]: i for i in range(len(self.classes))}
+        self.samples = make_dataset(root, self.class_to_idx, extensions, is_valid_file=None)
+        video_list = [x[0] for x in self.samples]
+        self.video_clips = VideoClips(video_list,
                                       clip_length_in_frames=16,
-                                      frames_between_clips=1,
-                                      frame_rate=15)
+                                      frames_between_clips=16,
+                                      #frame_rate5
+                                      )
 
     def __getitem__(self, idx):
         video, audio, info, video_idx = self.video_clips.get_clip(idx)
-        return video, audio
+        labels = self.samples[video_idx][1]
+        return video, labels
     
     def __len__(self):
         return self.video_clips.num_clips()

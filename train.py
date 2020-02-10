@@ -6,6 +6,7 @@ import argparse
 import cv2
 from datasets import VideoDataset, MyVideoDataset
 import transforms as T
+from torchvision.datasets.video_utils import VideoClips
 from torchvision.datasets.samplers import DistributedSampler, UniformClipSampler, RandomClipSampler
 from torch.utils.data.dataloader import default_collate
 from utils import AverageMeter
@@ -58,13 +59,13 @@ def main():
     # set run output folder
     model_name = args.model_name
     print("Train output dir: ./trains-{}".format(model_name))
-    save_dir = os.path.join("./train-", model_name)
+    save_dir = os.path.join("./train-" + model_name)
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
         # os.makedirs(os.path.join(save_dir, 'plots'))
 
     print("Validation output dir: ./validation-{}".format(model_name))
-    val_dir = os.path.join("./validation-", model_name)
+    val_dir = os.path.join("./validation-" + model_name)
     if not os.path.exists(val_dir):
         os.makedirs(val_dir)
         # os.makedirs(os.path.join(val_dir, 'plots'))
@@ -244,10 +245,16 @@ def train_one_epoch(epoch, data_loader, model, criterion, optimizer):
     top1 = AverageMeter('top1')
     top5 = AverageMeter('top5')
 
+    print("--------------- train -------------")
+    print(data_loader.dataset.video_clips)
+
     for i, (input, target) in enumerate(data_loader):
 
         input, target = input.to(device), target.to(device)
-
+        print("======================in =================")
+        print(input)
+        print("=================== tt ==============")
+        print(target)
         model.zero_grad()
 
         # compute output and loss
