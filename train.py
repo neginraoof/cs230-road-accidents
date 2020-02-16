@@ -47,9 +47,6 @@ def train_one_epoch(log_interval, model, device, train_loader, optimizer, epoch)
         # to compute accuracy
         y_pred = torch.max(output, 1)[1]  # y_pred != output
 
-        print("preeeeeeeeeeeeeeeeeeeeeeeed ", y_pred)
-        print("issssssssssssssssssssssssss ", y)
-
         step_score = accuracy_score(y.cpu().numpy(), y_pred.cpu().numpy())
         scores.append(step_score)  # computed on CPU
 
