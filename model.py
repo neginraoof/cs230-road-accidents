@@ -13,13 +13,13 @@ def conv3D_output_size(img_size, padding, kernel_size, stride):
 
 
 class CNN3D(nn.Module):
-    def __init__(self, t_dim=120, img_x=90, img_y=120, drop_p=0.2, fc_hidden1=256, fc_hidden2=128, num_classes=50):
+    def __init__(self, image_t_frames=120, image_height=90, image_width=120, drop_p=0.2, fc_hidden1=256, fc_hidden2=128, num_classes=50):
         super(CNN3D, self).__init__()
 
         # set video dimension
-        self.t_dim = t_dim
-        self.img_x = img_x
-        self.img_y = img_y
+        self.t_dim = image_t_frames
+        self.image_height = image_height
+        self.image_width = image_width
         # fully connected layer hidden nodes
         self.fc_hidden1, self.fc_hidden2 = fc_hidden1, fc_hidden2
         self.drop_p = drop_p
@@ -30,10 +30,10 @@ class CNN3D(nn.Module):
         self.pd1, self.pd2 = (0, 0, 0), (0, 0, 0)  # 3d padding
 
         # compute conv1 & conv2 output shape
-        self.conv1_outshape = conv3D_output_size((self.t_dim, self.img_x, self.img_y), self.pd1, self.k1, self.s1)
+        self.conv1_outshape = conv3D_output_size((self.t_dim, self.image_height, self.image_width), self.pd1, self.k1, self.s1)
         self.conv2_outshape = conv3D_output_size(self.conv1_outshape, self.pd2, self.k2, self.s2)
 
-        self.conv1 = nn.Conv3d(in_channels=1, out_channels=self.ch1, kernel_size=self.k1, stride=self.s1,
+        self.conv1 = nn.Conv3d(in_channels=3, out_channels=self.ch1, kernel_size=self.k1, stride=self.s1,
                                padding=self.pd1)
         self.bn1 = nn.BatchNorm3d(self.ch1)
         self.conv2 = nn.Conv3d(in_channels=self.ch1, out_channels=self.ch2, kernel_size=self.k2, stride=self.s2,
@@ -60,9 +60,10 @@ class CNN3D(nn.Module):
         x = self.drop(x)
         # FC 1 and 2
         x = x.view(x.size(0), -1)
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = F.dropout(x, p=self.drop_p, training=self.training)
+
+        x = torch.nn.functional.relu(self.fc1(x))
+        x = torch.nn.functional.relu(self.fc2(x))
+        x = torch.nn.functional.dropout(x, p=self.drop_p, training=self.training)
         x = self.fc3(x)
 
         return x
