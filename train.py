@@ -1,6 +1,5 @@
-import numpy as np
-import os
-import torch
+# import os
+# import torch
 # import torchvision
 # import argparse
 # import cv2
@@ -12,10 +11,8 @@ import torch
 # from utils import AverageMeter
 # from model import CNN3D
 from sklearn.metrics import accuracy_score
-import os
-import numpy as np
 import torch
-import torch.nn as nn
+import numpy
 import torch.nn.functional as F
 import torchvision.models as models
 import torch.utils.data as data
@@ -34,7 +31,7 @@ def train_one_epoch(log_interval, model, device, train_loader, optimizer, epoch)
 
     for batch_idx, (X, y) in enumerate(train_loader):
         # # distribute data to device
-        X, y = X.to(device), y.to(device).view(-1, )
+        X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.int64).view(-1, )
 
         N_count += X.size(0)
 
@@ -47,6 +44,9 @@ def train_one_epoch(log_interval, model, device, train_loader, optimizer, epoch)
         # to compute accuracy
         y_pred = torch.max(output, 1)[1]  # y_pred != output
 
+        print("prediction ", y_pred)
+        print("actual ", y)
+
         step_score = accuracy_score(y.cpu().numpy(), y_pred.cpu().numpy())
         scores.append(step_score)  # computed on CPU
 
@@ -57,6 +57,6 @@ def train_one_epoch(log_interval, model, device, train_loader, optimizer, epoch)
         if (batch_idx + 1) % log_interval == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}, Accu: {:.2f}%'.format(
                 epoch + 1, N_count, len(train_loader.dataset), 100. * (batch_idx + 1) / len(train_loader), loss.item(),
-                100 * step_score))
+                100 * numpy.mean(scores)))
 
     return losses, scores
