@@ -3,6 +3,7 @@ import os
 import numpy
 from torchvision.datasets.video_utils import VideoClips
 
+
 class MyVideoDataset(data.Dataset):
     def __init__(self, root, data_dirs, labels, n_frames=30, temporal_transform=None, spatial_transform=None):
         self.temporal_transform = temporal_transform
@@ -10,9 +11,6 @@ class MyVideoDataset(data.Dataset):
         data_dirs = [os.path.join(root, d + ".avi") for d in data_dirs]
         self.labels = labels
         self.videos = data_dirs
-        # self.vid_to_label = {data_dirs[i]: labels[i] for i in range(len(labels))}
-        # self.samples = make_dataset(data_dirs, self.class_to_idx)
-        # video_list = [x[0] for x in self.samples]
         self.video_clips = VideoClips(self.videos,
                                       clip_length_in_frames=n_frames,
                                       frames_between_clips=n_frames,
@@ -26,7 +24,7 @@ class MyVideoDataset(data.Dataset):
         if self.spatial_transform is not None:
             video = self.spatial_transform(video)
 
-        label = self.labels[video_idx ]
+        label = self.labels[video_idx]
         return video, label
 
     def __len__(self):

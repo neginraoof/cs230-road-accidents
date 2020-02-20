@@ -1,10 +1,8 @@
-import torchvision.transforms as transforms
 import torchvision
 from model import *
 from datasets import *
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
-import pickle
 import transforms as T
 from train import train_one_epoch
 from evaluate import evaluate
@@ -33,9 +31,14 @@ begin_frame, end_frame, skip_frame = 1, 17, 1
 
 # Detect devices
 use_cuda = torch.cuda.is_available()  # check if GPU exists
-device = torch.device("cuda" if use_cuda else "cpu")  # use CPU or GPU
-
-params = {'batch_size': batch_size, 'shuffle': True, 'num_workers': 4, 'pin_memory': True} if use_cuda else {}
+if use_cuda:
+    print("============== USING CUDA ==============")
+    params = {'batch_size': 1, 'shuffle': True, 'num_workers': torch.cuda.device_count(), 'pin_memory': True}
+    device = torch.device("cuda")  # use CPU or GPU
+else:
+    print("============== USING CPU ==============")
+    device = torch.device("cpu")
+    params = {'batch_size': 1, 'shuffle': True, 'pin_memory': True}
 
 df = pd.read_csv('merged_videos_labels.csv')
 video_ids = df['Video ID'].to_numpy()
@@ -59,16 +62,16 @@ spatial_transform_train = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
     T.Resize((image_height, image_width)),
     T.RandomHorizontalFlip(),
-    T.Normalize(mean=[0.43216, 0.394666, 0.37645],
-                std=[0.22803, 0.22145, 0.216989])
+    T.Normalize(mean=[0.5],
+                std=[0.5])
     # T.RandomCrop((112, 112))
 ])
 
 spatial_transform_test = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
     T.Resize((image_height, image_width)),
-    T.Normalize(mean=[0.43216, 0.394666, 0.37645],
-                std=[0.22803, 0.22145, 0.216989])
+    T.Normalize(mean=[0.5],
+                std=[0.5])
     # T.CenterCrop((112, 112))
 ])
 
@@ -85,7 +88,7 @@ model = CNN3D(image_t_frames=n_frames, image_height=image_height, image_width=im
 
 # Parallelize model to multiple GPUs
 if torch.cuda.device_count() > 1:
-    print("Using", torch.cuda.device_count(), "GPUs!")
+    print("============== USING", torch.cuda.device_count(), "GPUs ==============")
     model = nn.DataParallel(model)
 
 # training parameters
