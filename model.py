@@ -13,7 +13,7 @@ def conv3D_output_size(img_size, padding, kernel_size, stride):
 
 
 class CNN3D(nn.Module):
-    def __init__(self, image_t_frames=120, image_height=90, image_width=120, drop_p=0.2, fc_hidden1=256, fc_hidden2=128, num_classes=50):
+    def __init__(self, image_t_frames=120, image_height=90, image_width=120, drop_p=0.2, fc_hidden1=256, fc_hidden2=128):
         super(CNN3D, self).__init__()
 
         # set video dimension
@@ -23,7 +23,6 @@ class CNN3D(nn.Module):
         # fully connected layer hidden nodes
         self.fc_hidden1, self.fc_hidden2 = fc_hidden1, fc_hidden2
         self.drop_p = drop_p
-        self.num_classes = num_classes
         self.ch1, self.ch2 = 32, 48
         self.k1, self.k2 = (5, 5, 5), (3, 3, 3)  # 3d kernel size
         self.s1, self.s2 = (2, 2, 2), (2, 2, 2)  # 3d strides
@@ -45,7 +44,7 @@ class CNN3D(nn.Module):
         self.fc1 = nn.Linear(self.ch2 * self.conv2_outshape[0] * self.conv2_outshape[1] * self.conv2_outshape[2],
                              self.fc_hidden1)  # fully connected hidden layer
         self.fc2 = nn.Linear(self.fc_hidden1, self.fc_hidden2)
-        self.fc3 = nn.Linear(self.fc_hidden2, self.num_classes)  # fully connected layer, output = multi-classes
+        self.fc3 = nn.Linear(self.fc_hidden2, 1)
 
     def forward(self, x_3d):
         # Conv 1
@@ -63,7 +62,8 @@ class CNN3D(nn.Module):
 
         x = torch.nn.functional.relu(self.fc1(x))
         x = torch.nn.functional.relu(self.fc2(x))
-        x = torch.nn.functional.dropout(x, p=self.drop_p, training=self.training)
-        x = self.fc3(x)
+        #x = torch.nn.functional.dropout(x, p=self.drop_p, training=self.training)
+        print(self.fc3(x))
+        x = torch.nn.functional.relu(self.fc3(x))
 
         return x
