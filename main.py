@@ -17,7 +17,7 @@ save_model_path = "./Conv3D_ckpt/"  # save Pytorch models
 # 3D CNN parameters
 fc_hidden1, fc_hidden2 = 256, 256
 dropout = 0.0  # dropout probability
-k = 5  # number of target category
+k = 1  # number of target category
 
 # Dataloader parameters
 batch_size = 30
