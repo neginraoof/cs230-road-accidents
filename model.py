@@ -21,7 +21,7 @@ class Conv3dModel(nn.Module):
 
         self.fc_hidden1, self.fc_hidden2 = fc_hidden1, fc_hidden2
         self.drop_p = drop_p
-        self.ch1, self.ch2 = 32, 48
+        self.ch1, self.ch2 = 32, 64
         self.k1, self.k2 = (5, 5, 5), (3, 3, 3)
         self.s1, self.s2 = (2, 2, 2), (2, 2, 2)
         self.pd1, self.pd2 = (0, 0, 0), (0, 0, 0)

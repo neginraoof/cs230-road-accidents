@@ -34,7 +34,7 @@ def train_one_epoch( model, device, train_loader, optimizer, epoch):
 
     for batch_idx, (X, y) in enumerate(train_loader):
         # # distribute data to device
-        X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.float32).view(1, 1)
+        X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.float32).view(-1, 1)
 
         N_count += X.size(0)
 
@@ -44,10 +44,10 @@ def train_one_epoch( model, device, train_loader, optimizer, epoch):
         loss = F.mse_loss(y_pred, y)
         losses.append(loss.item())
 
-        print("prediction ", y_pred)
-        print("actual ", y)
+        #print("prediction ", y_pred)
+        #print("actual ", y)
 
-        step_score = 0  #r2_score(y.detach().numpy(), y_pred.detach().numpy())
+        step_score = r2_score(y.cpu().detach().numpy(), y_pred.cpu().detach().numpy())
         scores.append(step_score)  # computed on CPU
 
         loss.backward()

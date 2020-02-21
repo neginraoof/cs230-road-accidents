@@ -20,10 +20,9 @@ dropout = 0.0  # dropout probability
 k = 1  # number of target category
 
 # Dataloader parameters
-batch_size = 30
+batch_size = 15
 image_height, image_width = 256, 342  # resize video 2d frame size
-n_frames = 30
-
+n_frames = 20
 
 # Select which frame to begin & end in videos
 begin_frame, end_frame, skip_frame = 1, 17, 1
@@ -33,12 +32,12 @@ begin_frame, end_frame, skip_frame = 1, 17, 1
 use_cuda = torch.cuda.is_available()  # check if GPU exists
 if use_cuda:
     print("============== USING CUDA ==============")
-    params = {'batch_size': 1, 'shuffle': True, 'pin_memory': True}
+    params = {'batch_size': batch_size, 'shuffle': True, 'pin_memory': True}
     device = torch.device("cuda")  # use CPU or GPU
 else:
     print("============== USING CPU ==============")
     device = torch.device("cpu")
-    params = {'batch_size': 1, 'shuffle': True, 'pin_memory': True}
+    params = {'batch_size': batch_size, 'shuffle': True, 'pin_memory': True}
 
 df = pd.read_csv('merged_videos_labels.csv')
 video_ids = df['Video ID'].to_numpy()
