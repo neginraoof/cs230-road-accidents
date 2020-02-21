@@ -1,3 +1,8 @@
+##
+## This module is borrowed from pytorch/vision repository
+## https://github.com/pytorch/vision/blob/master/references/video_classification/transforms.py
+##
+
 import torch
 import random
 
