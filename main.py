@@ -1,28 +1,19 @@
 import torchvision
 from model import *
 from datasets import *
+from train import *
+from evaluate import *
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+#from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 import transforms as T
-from train import train_one_epoch
-from evaluate import evaluate
 import pandas as pd
-
-
-# set path
-data_path = "./jpegs_256/"  # define UCF-101 spatial data path
-action_name_path = "./UCF101actions.pkl"  # load preprocessed action names
-save_model_path = "./Conv3D_ckpt/"  # save Pytorch models
-
-# 3D CNN parameters
-fc_hidden1, fc_hidden2 = 256, 256
-dropout = 0.0  # dropout probability
-k = 1  # number of target category
+import numpy as np
 
 # Dataloader parameters
-batch_size = 15
+batch_size = 30
 image_height, image_width = 256, 342  # resize video 2d frame size
-n_frames = 20
+n_frames = 30  #number of frames in a video clip
+
 
 # Select which frame to begin & end in videos
 begin_frame, end_frame, skip_frame = 1, 17, 1
@@ -32,12 +23,12 @@ begin_frame, end_frame, skip_frame = 1, 17, 1
 use_cuda = torch.cuda.is_available()  # check if GPU exists
 if use_cuda:
     print("============== USING CUDA ==============")
-    params = {'batch_size': batch_size, 'shuffle': True, 'pin_memory': True}
+    params = {'batch_size': 1, 'shuffle': True, 'pin_memory': True}
     device = torch.device("cuda")  # use CPU or GPU
 else:
     print("============== USING CPU ==============")
     device = torch.device("cpu")
-    params = {'batch_size': batch_size, 'shuffle': True, 'pin_memory': True}
+    params = {'batch_size': 1, 'shuffle': True, 'pin_memory': True}
 
 df = pd.read_csv('merged_videos_labels.csv')
 video_ids = df['Video ID'].to_numpy()
@@ -62,7 +53,7 @@ spatial_transform_train = torchvision.transforms.Compose([
     T.Resize((image_height, image_width)),
     T.RandomHorizontalFlip(),
     T.Normalize(mean=[0.5],
-                std=[0.5])
+                std=[0.8])
     # T.RandomCrop((112, 112))
 ])
 
@@ -70,7 +61,7 @@ spatial_transform_test = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
     T.Resize((image_height, image_width)),
     T.Normalize(mean=[0.5],
-                std=[0.5])
+                std=[0.8])
     # T.CenterCrop((112, 112))
 ])
 
@@ -84,8 +75,7 @@ train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
 
 # create model
-model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width,
-              drop_p=dropout, fc_hidden1=fc_hidden1, fc_hidden2=fc_hidden2).to(device)
+model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width).to(device)
 
 # Parallelize model to multiple GPUs
 if torch.cuda.device_count() > 1:
