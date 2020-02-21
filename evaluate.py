@@ -1,5 +1,5 @@
 import torch
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import r2_score
 import torch.nn.functional as F
 
 
@@ -15,22 +15,23 @@ def evaluate(model, device, optimizer, test_loader):
             # distribute data to device
             X, y = X.to(device), y.to(device).view(-1, )
 
-            output = model(X)
+            y_pred = model(X)
 
-            loss = F.cross_entropy(output, y, reduction='sum')
+            loss = F.mse_loss(y_pred, y)
             test_loss += loss.item()  # sum up batch loss
-            y_pred = output.max(1, keepdim=True)[1]  # (y_pred != output) get the index of the max log-probability
+            #y_pred = output.max(1, keepdim=True)[1]  # (y_pred != output) get the index of the max log-probability
 
             # collect all y and y_pred in all batches
             all_y.extend(y)
             all_y_pred.extend(y_pred)
+            print("next...")
 
     test_loss /= len(test_loader.dataset)
 
     # to compute accuracy
     all_y = torch.stack(all_y, dim=0)
     all_y_pred = torch.stack(all_y_pred, dim=0)
-    test_score = accuracy_score(all_y.cpu().data.squeeze().numpy(), all_y_pred.cpu().data.squeeze().numpy())
+    test_score = r2_score(all_y.cpu().data.squeeze().numpy(), all_y_pred.cpu().data.squeeze().numpy())
 
     # show information
     print('\nTest set ({:d} samples): Average loss: {:.4f}, Accuracy: {:.2f}%\n'.format(len(all_y), test_loss,

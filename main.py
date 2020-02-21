@@ -33,7 +33,7 @@ begin_frame, end_frame, skip_frame = 1, 17, 1
 use_cuda = torch.cuda.is_available()  # check if GPU exists
 if use_cuda:
     print("============== USING CUDA ==============")
-    params = {'batch_size': 1, 'shuffle': True, 'num_workers': torch.cuda.device_count(), 'pin_memory': True}
+    params = {'batch_size': 1, 'shuffle': True, 'pin_memory': True}
     device = torch.device("cuda")  # use CPU or GPU
 else:
     print("============== USING CPU ==============")
@@ -75,6 +75,8 @@ spatial_transform_test = torchvision.transforms.Compose([
     # T.CenterCrop((112, 112))
 ])
 
+
+print("========= Loading Data ==========")
 train_set = MyVideoDataset('./video_data', train_list, train_label, n_frames=n_frames, spatial_transform=spatial_transform_train)
 valid_set = MyVideoDataset('./video_data', test_list, test_label, n_frames=n_frames, spatial_transform=spatial_transform_test)
 
@@ -119,3 +121,9 @@ for epoch in range(epochs):
     print("Train scores: ", np.array(epoch_train_scores))
     print("Test losses: ", np.array(epoch_test_losses))
     print("Test scores: ", np.array(epoch_test_scores))
+
+    np.save('./3DCNN_epoch_training_losses.npy', np.array(epoch_train_losses))
+    np.save('./3DCNN_epoch_training_scores.npy', np.array(epoch_train_losses))
+    np.save('./3DCNN_epoch_test_loss.npy', np.array(epoch_test_losses))
+    np.save('./3DCNN_epoch_test_score.npy', np.array(epoch_test_scores))
+
