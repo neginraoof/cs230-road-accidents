@@ -21,7 +21,10 @@ from torch.autograd import Variable
 # import matplotlib.pyplot as plt
 
 
-def train_one_epoch(log_interval, model, device, train_loader, optimizer, epoch):
+log_interval = 10
+
+
+def train_one_epoch( model, device, train_loader, optimizer, epoch):
     # set model as training mode
     model.train()
 
@@ -44,7 +47,7 @@ def train_one_epoch(log_interval, model, device, train_loader, optimizer, epoch)
         print("prediction ", y_pred)
         print("actual ", y)
 
-        step_score = r2_score(y.detach().numpy(), y_pred.detach().numpy())
+        step_score = 0  #r2_score(y.detach().numpy(), y_pred.detach().numpy())
         scores.append(step_score)  # computed on CPU
 
         loss.backward()

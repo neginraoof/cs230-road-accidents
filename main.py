@@ -83,8 +83,8 @@ train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
 
 # create model
-model = CNN3D(image_t_frames=n_frames, image_height=image_height, image_width=image_width,
-              drop_p=dropout, fc_hidden1=fc_hidden1, fc_hidden2=fc_hidden2, num_classes=k).to(device)
+model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width,
+              drop_p=dropout, fc_hidden1=fc_hidden1, fc_hidden2=fc_hidden2).to(device)
 
 # Parallelize model to multiple GPUs
 if torch.cuda.device_count() > 1:
@@ -94,9 +94,6 @@ if torch.cuda.device_count() > 1:
 # training parameters
 epochs = 15
 learning_rate = 1e-4
-log_interval = 10
-
-
 
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  # optimize all cnn parameters
 
@@ -109,7 +106,7 @@ epoch_test_scores = []
 # start training
 for epoch in range(epochs):
     # train, test model
-    train_losses, train_scores = train_one_epoch(log_interval, model, device, train_loader, optimizer, epoch)
+    train_losses, train_scores = train_one_epoch(model, device, train_loader, optimizer, epoch)
     epoch_test_loss, epoch_test_score = evaluate(model, device, optimizer, valid_loader)
 
     # save results
@@ -118,35 +115,7 @@ for epoch in range(epochs):
     epoch_test_losses.append(epoch_test_loss)
     epoch_test_scores.append(epoch_test_score)
 
-    # save all train test results
-    A = np.array(epoch_train_losses)
-    B = np.array(epoch_train_scores)
-    C = np.array(epoch_test_losses)
-    D = np.array(epoch_test_scores)
-    np.save('./3DCNN_epoch_training_losses.npy', A)
-    np.save('./3DCNN_epoch_training_scores.npy', B)
-    np.save('./3DCNN_epoch_test_loss.npy', C)
-    np.save('./3DCNN_epoch_test_score.npy', D)
-
-# # plot
-# fig = plt.figure(figsize=(10, 4))
-# plt.subplot(121)
-# plt.plot(np.arange(1, epochs + 1), A[:, -1])  # train loss (on epoch end)
-# plt.plot(np.arange(1, epochs + 1), C)         #  test loss (on epoch end)
-# plt.title("model loss")
-# plt.xlabel('epochs')
-# plt.ylabel('loss')
-# plt.legend(['train', 'test'], loc="upper left")
-# # 2nd figure
-# plt.subplot(122)
-# plt.plot(np.arange(1, epochs + 1), B[:, -1])  # train accuracy (on epoch end)
-# plt.plot(np.arange(1, epochs + 1), D)         #  test accuracy (on epoch end)
-# # plt.plot(histories.losses_val)
-# plt.title("training scores")
-# plt.xlabel('epochs')
-# plt.ylabel('accuracy')
-# plt.legend(['train', 'test'], loc="upper left")
-# title = "./fig_UCF101_3DCNN.png"
-# plt.savefig(title, dpi=600)
-# # plt.close(fig)
-# plt.show()
+    print("Train losses: ", np.array(epoch_train_losses))
+    print("Train scores: ", np.array(epoch_train_scores))
+    print("Test losses: ", np.array(epoch_test_losses))
+    print("Test scores: ", np.array(epoch_test_scores))
