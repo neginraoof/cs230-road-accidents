@@ -15,9 +15,9 @@ import numpy as np
 np.save('dummy_test.npy', np.array([2]))
 
 # Dataloader parameters
-batch_size = 20
+batch_size = 15
 image_height, image_width = 256, 342  # resize video 2d frame size
-n_frames = 30  #number of frames in a video clip
+n_frames = 20  #number of frames in a video clip
 num_classes = 4
 categories = [1, 2, 3, 4]
 
@@ -54,7 +54,6 @@ label_encoder = LabelEncoder()
 # print(danger_category)
 label_encoder.fit(danger_category)
 label_cats = label_encoder.transform(labels.reshape(-1,))
-print(label_cats.shape)
 
 # train, test split
 train_list, test_list, train_label, test_label = train_test_split(video_ids, label_cats, test_size=0.25, random_state=42)
@@ -77,7 +76,7 @@ spatial_transform_test = torchvision.transforms.Compose([
 ])
 
 
-print("========= Loading Data ==========")
+print("============== Loading Data ==============")
 train_set = MyVideoDataset('./video_data', train_list, train_label, n_frames=n_frames, spatial_transform=spatial_transform_train)
 valid_set = MyVideoDataset('./video_data', test_list, test_label, n_frames=n_frames, spatial_transform=spatial_transform_test)
 
