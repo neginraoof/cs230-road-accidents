@@ -29,9 +29,8 @@ class Conv3dModel(nn.Module):
         self.num_classes = num_classes
 
         self.conv1_outshape = output_size_3d((self.t_dim, self.image_height, self.image_width), self.pd1, self.k1, self.s1)
-        self.max1_outshape = output_size_3d(self.conv1_outshape, 0, 2, 2)
-        self.conv2_outshape = output_size_3d(self.max1_outshape, self.pd2, self.k2, self.s2)
-        self.max2_outshape = output_size_3d(self.conv2_outshape, 0, 2, 2)
+        self.conv2_outshape = output_size_3d(self.conv1_outshape, self.pd2, self.k2, self.s2)
+        self.max_outshape = output_size_3d(self.conv2_outshape, (0, 0, 0), (2, 2, 2), (2, 2, 2))
 
         self.cnn_layers = nn.Sequential(
             # First 3D convolution layer + BN + ReLU (dropout optional)
@@ -39,7 +38,6 @@ class Conv3dModel(nn.Module):
                       padding=self.pd1),
             nn.BatchNorm3d(self.ch1),
             nn.ReLU(inplace=True),
-            nn.MaxPool3d(2),
             nn.Dropout3d(self.drop_p),
             # Second 3D convolution layer + BN + ReLU (dropout optional)
             nn.Conv3d(in_channels=self.ch1, out_channels=self.ch2, kernel_size=self.k2, stride=self.s2,
@@ -51,7 +49,7 @@ class Conv3dModel(nn.Module):
         )
 
         self.linear_layers = nn.Sequential(
-            nn.Linear(self.ch2 * self.max2_outshape[0] * self.max2_outshape[1] * self.max2_outshape[2],
+            nn.Linear(self.ch2 * self.max_outshape[0] * self.max_outshape[1] * self.max_outshape[2],
                       self.fc_hidden1),
             nn.ReLU(inplace=True),
             nn.Linear(self.fc_hidden1, self.fc_hidden2),
