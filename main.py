@@ -4,7 +4,7 @@ from datasets import *
 from train import *
 from evaluate import *
 from sklearn.model_selection import train_test_split
-#from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 import transforms as T
 import pandas as pd
 import numpy as np
@@ -15,13 +15,11 @@ import numpy as np
 np.save('dummy_test.npy', np.array([2]))
 
 # Dataloader parameters
-batch_size = 15 
+batch_size = 20
 image_height, image_width = 256, 342  # resize video 2d frame size
-n_frames = 20  #number of frames in a video clip
-
-
-# Select which frame to begin & end in videos
-begin_frame, end_frame, skip_frame = 1, 17, 1
+n_frames = 30  #number of frames in a video clip
+num_classes = 4
+categories = [1, 2, 3, 4]
 
 
 # Detect devices
@@ -34,6 +32,7 @@ else:
     print("============== USING CPU ==============")
     device = torch.device("cpu")
     params = {'batch_size': batch_size, 'shuffle': True, 'pin_memory': True}
+
 
 df = pd.read_csv('merged_videos_labels.csv')
 video_ids = df['Video ID'].to_numpy()
@@ -48,10 +47,17 @@ data_subset = df.loc[df['Video ID'].isin(video_ids)]
 video_ids = data_subset['Video ID'].to_numpy()
 labels = data_subset['Final Label'].to_numpy()
 
-# train, test split
-train_list, test_list, train_label, test_label = train_test_split(video_ids, labels, test_size=0.25, random_state=42)
+# Transform labels to categories
+labels = np.rint(labels)
+danger_category = np.asarray(categories).reshape(-1,)
+label_encoder = LabelEncoder()
+# print(danger_category)
+label_encoder.fit(danger_category)
+label_cats = label_encoder.transform(labels.reshape(-1,))
+print(label_cats.shape)
 
-selected_frames = np.arange(begin_frame, end_frame, skip_frame).tolist()
+# train, test split
+train_list, test_list, train_label, test_label = train_test_split(video_ids, label_cats, test_size=0.25, random_state=42)
 
 spatial_transform_train = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
@@ -80,7 +86,7 @@ train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
 
 # create model
-model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width).to(device)
+model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
 
 # Parallelize model to multiple GPUs
 if torch.cuda.device_count() > 1:
@@ -89,7 +95,7 @@ if torch.cuda.device_count() > 1:
 
 # training parameters
 epochs = 15
-learning_rate = 1e-4
+learning_rate = 1e-5
 
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  # optimize all cnn parameters
 

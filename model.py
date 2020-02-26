@@ -12,7 +12,8 @@ def conv3d_output_size(img_size, padding, kernel_size, stride):
 
 
 class Conv3dModel(nn.Module):
-    def __init__(self, image_t_frames=120, image_height=300, image_width=400, drop_p=0, fc_hidden1=256, fc_hidden2=128):
+    def __init__(self, image_t_frames=120, image_height=300, image_width=400, drop_p=0.2, fc_hidden1=256, fc_hidden2=128,
+                 num_classes=4):
         super(Conv3dModel, self).__init__()
 
         self.t_dim = image_t_frames
@@ -25,6 +26,7 @@ class Conv3dModel(nn.Module):
         self.k1, self.k2 = (5, 5, 5), (3, 3, 3)
         self.s1, self.s2 = (2, 2, 2), (2, 2, 2)
         self.pd1, self.pd2 = (0, 0, 0), (0, 0, 0)
+        self.num_classes = num_classes
 
         self.conv1_outshape = conv3d_output_size((self.t_dim, self.image_height, self.image_width), self.pd1, self.k1, self.s1)
         self.conv2_outshape = conv3d_output_size(self.conv1_outshape, self.pd2, self.k2, self.s2)
@@ -35,14 +37,15 @@ class Conv3dModel(nn.Module):
                       padding=self.pd1),
             nn.BatchNorm3d(self.ch1),
             nn.ReLU(inplace=True),
+            #nn.MaxPool3d(2),
             nn.Dropout3d(self.drop_p),
             # Second 3D convolution layer + BN + ReLU (dropout optional)
             nn.Conv3d(in_channels=self.ch1, out_channels=self.ch2, kernel_size=self.k2, stride=self.s2,
                       padding=self.pd2),
             nn.BatchNorm3d(self.ch2),
             nn.ReLU(inplace=True),
+            #nn.MaxPool3d(2),
             nn.Dropout3d(self.drop_p),
-            # MaxPool3d(kernel_size=2, stride=2),
         )
 
         self.linear_layers = nn.Sequential(
@@ -52,8 +55,7 @@ class Conv3dModel(nn.Module):
             nn.Linear(self.fc_hidden1, self.fc_hidden2),
             nn.ReLU(inplace=True),
             nn.Dropout3d(p=self.drop_p),
-            nn.Linear(self.fc_hidden2, 1),
-            nn.ReLU(inplace=True)
+            nn.Linear(self.fc_hidden2, self.num_classes),
         )
 
     def forward(self, x_3d):
