@@ -15,12 +15,14 @@ def calculate_accuracy(outputs, targets):
 
 
 def evaluate(model, device, optimizer, test_loader):
-    model.eval()
+    model.eval() 
     test_loss = 0
+    scores = []
     y_s = []
     y_preds = []
     criteration = torch.nn.CrossEntropyLoss()
-
+    
+    N_count = 0
     # Iterate over test data batches
     with torch.no_grad():
         for X, y in test_loader:
@@ -32,16 +34,23 @@ def evaluate(model, device, optimizer, test_loader):
             loss = criteration(y_pred, y)
             test_loss += loss.item()
 
+            acc1 = calculate_accuracy(y_pred, y)
+            scores.append(acc1)
+
             y_s.extend(y)
             y_preds.extend(y_pred)
-            print("Next Batch ...")
+
+            N_count += X.size(0)
+            print("Next Batch ... ", N_count, " from ", len(test_loader.dataset))
 
     test_loss /= len(test_loader.dataset)
 
     # Compute test accuracy
     y_s = torch.stack(y_s, dim=0)
     y_preds = torch.stack(y_preds, dim=0)
-    test_score = calculate_accuracy(y_s.cpu().data.squeeze().numpy(), y_preds.cpu().data.squeeze().numpy())
+    #test_score = calculate_accuracy(y_s.cpu().data.squeeze().numpy(), y_preds.cpu().data.squeeze().numpy())
+    import numpy
+    test_score = numpy.mean(scores)
 
     print('\nTest set ({:d} samples): Average loss: {:.4f}, Accuracy: {:.2f}%\n'.format(len(y_s), test_loss,
                                                                                         100 * test_score))

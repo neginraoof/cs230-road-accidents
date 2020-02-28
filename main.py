@@ -15,9 +15,9 @@ import numpy as np
 np.save('dummy_test.npy', np.array([2]))
 
 # Dataloader parameters
-batch_size = 15
+batch_size = 20
 image_height, image_width = 256, 342  # resize video 2d frame size
-n_frames = 20  #number of frames in a video clip
+n_frames = 30  #number of frames in a video clip
 num_classes = 4
 categories = [1, 2, 3, 4]
 
@@ -36,9 +36,9 @@ else:
 
 df = pd.read_csv('merged_videos_labels.csv')
 video_ids = df['Video ID'].to_numpy()
-video_ids = video_ids[:100]
+video_ids = video_ids[:75]
 labels = df['Final Label'].to_numpy()
-labels = labels[:100]
+labels = labels[:75]
 
 # TODO: remove these two lines to get all videos from CSV file
 video_ids = os.listdir("./video_data")
@@ -104,10 +104,14 @@ epoch_train_scores = []
 epoch_test_losses = []
 epoch_test_scores = []
 
+checkpoint = torch.load('./last.pth')
+model.load_state_dict(checkpoint['model_state_dict'])
+optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+
 # start training
 for epoch in range(epochs):
     # train, test model
-    train_losses, train_scores = train_one_epoch(model, device, train_loader, optimizer, epoch)
+    train_losses, train_scores = train_one_epoch(model, device, train_loader, optimizer, epoch)   
     epoch_test_loss, epoch_test_score = evaluate(model, device, optimizer, valid_loader)
 
     # save results
