@@ -63,3 +63,24 @@ class Conv3dModel(nn.Module):
         x = x.view(x.size(0), -1)
         x = self.linear_layers(x)
         return x
+    
+class Conv3dModelPretrained(nn.Module):
+    def __init__(self, num_classes=4, fc_hidden1=400, fc_hidden2=100):
+        self.fc_hidden1, self.fc_hidden2 = fc_hidden1, fc_hidden2
+        
+        self.resnet_layers = nn.Sequential(
+            torchvision.models.video.r3d_18(pretrained=True, progress=True)
+        )
+        
+        self.linear_layers = nn.Sequential(
+            nn.Linear(self.fc_hidden1, self.fc_hidden2),
+            nn.ReLU(inplace=True),
+            nn.Dropout3d(p=self.drop_p),
+            nn.Linear(self.fc_hidden2, self.num_classes),
+        )
+
+    def forward(self, x_3d):
+        x = self.resnet_layers(x_3d)
+        x = x.view(x.size(0), -1)
+        x = self.linear_layers(x)
+        return x
