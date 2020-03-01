@@ -14,7 +14,7 @@ class MyVideoDataset(data.Dataset):
         self.video_clips = VideoClips(self.videos,
                                       clip_length_in_frames=n_frames,
                                       frames_between_clips=n_frames,
-                                      # frame_rate5
+                                      frame_rate=5
                                       )
 
     def __getitem__(self, idx):

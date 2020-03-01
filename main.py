@@ -11,13 +11,14 @@ import numpy as np
 from utils import parser
 
 args = parser.parse_args()
+print("Args: ", args)
 #Test write 
 np.save('dummy_test.npy', np.array([2]))
 
 # Dataloader parameters
 batch_size = 20
-image_height, image_width = 256, 342  # resize video 2d frame size
-n_frames = 30  #number of frames in a video clip
+image_height, image_width = 112, 112  # resize video 2d frame size
+n_frames = 16  #number of frames in a video clip
 num_classes = 4
 categories = [1, 2, 3, 4]
 
@@ -87,9 +88,11 @@ valid_loader = data.DataLoader(valid_set, **params)
 # create model
 
 if args.pretrained:
-    model = torchvision.models.video.r3d_18(pretrained=True, progress=True)
+    model = torchvision.models.video.r3d_18(pretrained=True, progress=True, num_classes=4).to(device)
 else:
     model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
+print("Model: ", model)
+
 
 # Parallelize model to multiple GPUs
 if torch.cuda.device_count() > 1:
