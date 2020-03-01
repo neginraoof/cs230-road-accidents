@@ -8,9 +8,9 @@ from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 import transforms as T
 import pandas as pd
 import numpy as np
+from utils import parser
 
-
-
+args = parser.parse_args()
 #Test write 
 np.save('dummy_test.npy', np.array([2]))
 
@@ -62,16 +62,16 @@ spatial_transform_train = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
     T.Resize((image_height, image_width)),
     T.RandomHorizontalFlip(),
-    T.Normalize(mean=[0.5],
-                std=[0.8])
+    T.Normalize(mean = [0.43216, 0.394666, 0.37645],
+                std = [0.22803, 0.22145, 0.216989])
     # T.RandomCrop((112, 112))
 ])
 
 spatial_transform_test = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
     T.Resize((image_height, image_width)),
-    T.Normalize(mean=[0.5],
-                std=[0.8])
+    T.Normalize(mean = [0.43216, 0.394666, 0.37645],
+                std = [0.22803, 0.22145, 0.216989])
     # T.CenterCrop((112, 112))
 ])
 
@@ -85,7 +85,11 @@ train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
 
 # create model
-model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
+
+if args.pretrained:
+    model = torchvision.models.video.r3d_18(pretrained=True, progress=True)
+else:
+    model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
 
 # Parallelize model to multiple GPUs
 if torch.cuda.device_count() > 1:
