@@ -5,7 +5,7 @@ from torchvision.datasets.video_utils import VideoClips
 
 
 class MyVideoDataset(data.Dataset):
-    def __init__(self, root, data_dirs, labels, n_frames=30, temporal_transform=None, spatial_transform=None):
+    def __init__(self, root, data_dirs, labels, n_frames=30, fps=5, temporal_transform=None, spatial_transform=None):
         self.temporal_transform = temporal_transform
         self.spatial_transform = spatial_transform
         data_dirs = [os.path.join(root, d + ".avi") for d in data_dirs]
@@ -14,7 +14,7 @@ class MyVideoDataset(data.Dataset):
         self.video_clips = VideoClips(self.videos,
                                       clip_length_in_frames=n_frames,
                                       frames_between_clips=n_frames,
-                                      frame_rate=5
+                                      frame_rate=fps
                                       )
 
     def __getitem__(self, idx):

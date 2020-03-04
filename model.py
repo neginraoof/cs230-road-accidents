@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import os
 import numpy as np
-
+import torchvision
 
 def output_size_3d(img_size, padding, kernel_size, stride):
     outshape = (np.floor((img_size[0] + 2 * padding[0] - (kernel_size[0] - 1) - 1) / stride[0] + 1).astype(int),
@@ -64,14 +64,15 @@ class Conv3dModel(nn.Module):
         x = self.linear_layers(x)
         return x
     
-class Conv3dModelPretrained(nn.Module):
-    def __init__(self, num_classes=4, fc_hidden1=400, fc_hidden2=100):
+class ResNet18(nn.Module):
+    def __init__(self, num_classes=4, drop_p=0.2, fc_hidden1=400, fc_hidden2=100):
+        super(Conv3dModelPretrained, self).__init__()
+        
         self.fc_hidden1, self.fc_hidden2 = fc_hidden1, fc_hidden2
-        
-        self.resnet_layers = nn.Sequential(
-            torchvision.models.video.r3d_18(pretrained=True, progress=True)
-        )
-        
+        self.drop_p = drop_p
+        self.num_classes = num_classes
+ 
+        self.resnet_layers = torchvision.models.video.r3d_18(pretrained=True, progress=True)        
         self.linear_layers = nn.Sequential(
             nn.Linear(self.fc_hidden1, self.fc_hidden2),
             nn.ReLU(inplace=True),
