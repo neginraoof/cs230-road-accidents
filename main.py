@@ -8,7 +8,7 @@ from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 import transforms as T
 import pandas as pd
 import numpy as np
-from utils import parser
+from utils import *
 
 args = parser.parse_args()
 print("Args: ", args)
@@ -76,6 +76,8 @@ spatial_transform_test = torchvision.transforms.Compose([
     # T.CenterCrop((112, 112))
 ])
 
+
+utils.crop_video('./video_data')
 
 print("============== Loading Data ==============")
 train_set = MyVideoDataset('./video_data', train_list, train_label, n_frames=n_frames, spatial_transform=spatial_transform_train)
