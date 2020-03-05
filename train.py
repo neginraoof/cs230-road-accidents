@@ -1,6 +1,6 @@
 from sklearn.metrics import r2_score
 import torch
-import numpy
+import numpy as np
 import torch.nn.functional as F
 import torchvision.models as models
 import torch.utils.data as data
@@ -22,23 +22,6 @@ def calculate_accuracy(outputs, targets):
     return n_correct_elems / batch_size
 
 
-# def accuracy(output, target, topk=(1,)):
-#     """Computes the accuracy over the k top predictions for the specified values of k"""
-#     with torch.no_grad():
-#         maxk = max(topk)
-#         batch_size = target.size(0)
-#
-#         _, pred = output.topk(maxk, 1, True, True)
-#         pred = pred.t()
-#         correct = pred.eq(target[None])
-#
-#         res = []
-#         for k in topk:
-#             correct_k = correct[:k].flatten().sum(dtype=torch.float32)
-#             res.append(correct_k * (100.0 / batch_size))
-#         return res
-
-
 def train_one_epoch(model, device, train_loader, optimizer, epoch):
     model.train()
 
@@ -47,7 +30,9 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
     N_count = 0
     criteration = torch.nn.CrossEntropyLoss()
 
-    for batch_idx, (X, y) in enumerate(train_loader):
+    mapping = dict()
+
+    for batch_idx, (X, y, video_id) in enumerate(train_loader):
         X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.int64)
         N_count += X.size(0)
 
@@ -74,7 +59,17 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         if (batch_idx + 1) % log_interval == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}, Accuracy Score: {:.2f}'.format(
                 epoch + 1, N_count, len(train_loader.dataset), 100. * (batch_idx + 1) / len(train_loader), loss.item(),
-                100 * numpy.mean(scores)))
+                100 * np.mean(scores)))
+
+        # for v_id, label, true_label in zip(video_id, y_pred, y):
+        #     v_id = v_id.item()
+        #     print("ID: ", v_id)
+        #     if v_id in mapping.keys():
+        #         print("Id {} seen before. Prev_v {}, new_v: {}. True v: ".
+        #               format(v_id, mapping[v_id], np.argmax(label.detach().numpy()), true_label))
+        #     else:
+        #         print("Id {} set to {}".format(v_id, np.argmax(label.detach().numpy())))
+        #         mapping[v_id] = np.argmax(label.detach().numpy())
     
     
     torch.save({

@@ -1,7 +1,7 @@
 import argparse
 import moviepy.editor
 import numpy as np
-
+import torch
 
 parser = argparse.ArgumentParser(description="Video Classification")
 parser.add_argument('--pretrained', default=False, action="store_true")
@@ -31,3 +31,20 @@ def crop_video(data_dirs):
         outputs.append(out_clip)
 
     return outputs
+
+
+def get_stats(data_loader):
+    N_count = 0
+    inputs = ()
+    for batch_idx, (X, _, __) in enumerate(data_loader):
+        X = X.to(dtype=torch.float32)
+        print("x", X.shape)
+        N_count += X.shape[0]
+        inputs += (X,)
+    in_cat = torch.cat(inputs, 0)
+
+    mean = in_cat.mean(dim=[0, 2, 3, 4])
+    std = in_cat.std(dim=[0, 2, 3, 4])
+    print("Mean ", mean)
+    print("Std ", std)
+    return mean, std
