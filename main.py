@@ -8,7 +8,7 @@ from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 import transforms as T
 import pandas as pd
 import numpy as np
-from utils import parser
+from utils import *
 
 args = parser.parse_args()
 print("Args: ", args)
@@ -44,8 +44,9 @@ labels = df['Final Label'].to_numpy()
 labels = labels[:75]
 
 # TODO: remove these two lines to get all videos from CSV file
-video_ids = os.listdir("./video_data")
-video_ids = [vid_id.replace('.avi', '') for vid_id in video_ids]
+video_ids = os.listdir("./video_data_clip")
+#video_ids = [vid_id.replace('.avi', '') for vid_id in video_ids]
+video_ids = [vid_id.replace('.mp4', '') for vid_id in video_ids]
 data_subset = df.loc[df['Video ID'].isin(video_ids)]
 video_ids = data_subset['Video ID'].to_numpy()
 labels = data_subset['Final Label'].to_numpy()
@@ -79,10 +80,13 @@ spatial_transform_test = torchvision.transforms.Compose([
 ])
 
 
-print("============== Loading Data ==============")
-train_set = MyVideoDataset('./video_data', train_list, train_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_train)
-valid_set = MyVideoDataset('./video_data', test_list, test_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_test)
+if (args.crop_videos):
+    crop_video(train_list)
+    crop_video(test_list)
 
+print("============== Loading Data ==============")
+train_set = MyVideoDataset('./video_data_clip', train_list, train_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_train)
+valid_set = MyVideoDataset('./video_data_clip', test_list, test_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_test)
 
 train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
