@@ -19,7 +19,7 @@ np.save('dummy_test.npy', np.array([2]))
 # Dataloader parameters
 batch_size = 20
 image_height, image_width = 224, 224  # resize video 2d frame size
-n_frames = 30  #number of frames in a video clip
+n_frames = 15  #number of frames in a video clip
 fps = 10
 num_classes = 4
 categories = [1, 2, 3, 4]
@@ -105,10 +105,16 @@ train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
 
 #  Normalize Data
-m, s = get_stats(train_loader)
-train_set.set_stats(m, s)
-m, s = get_stats(valid_loader)
-valid_set.set_stats(m, s)
+if args.get_stats:
+    m_, s_ = get_stats(train_loader)
+    train_set.set_stats(m_, s_)
+    m_, s_ = get_stats(valid_loader)
+    valid_set.set_stats(m_, s_)
+else:
+    m_ = tensor([0.5707, 0.5650, 0.5351])
+    s_ = tensor([0.1882, 0.1890, 0.2004])
+    train_set.set_stats(m_, s_)
+    valid_set.set_stats(m_, s_)
 
 # create model
 if args.pretrained:
