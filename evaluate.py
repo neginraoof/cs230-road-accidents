@@ -21,15 +21,16 @@ def evaluate(model, device, optimizer, test_loader):
     y_s = []
     y_preds = []
     criteration = torch.nn.CrossEntropyLoss()
-    
+    criteration = torch.nn.BCEWithLogitsLoss()
+
     N_count = 0
     # Iterate over test data batches
     with torch.no_grad():
         for X, y, _ in test_loader:
-            X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.int64)
+            X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.float32)
             # Forward pass on test data batch
             y_pred = model(X)
-
+            y = y.unsqueeze(dim=-1)
             # Calculate MSE Loss
             loss = criteration(y_pred, y)
             test_loss += loss.item()

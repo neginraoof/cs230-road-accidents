@@ -16,9 +16,10 @@ def calculate_accuracy(outputs, targets):
 
     _, pred = outputs.topk(1, 1, True)
     pred = pred.t()
+    print("preeeed shape ", pred.shape)
+    print("targets shape ", targets.shape)
     correct = pred.eq(targets.view(1, -1))
     n_correct_elems = correct.float().sum().item()
-
     return n_correct_elems / batch_size
 
 
@@ -28,12 +29,13 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
     losses = []
     scores = []
     N_count = 0
-    criteration = torch.nn.CrossEntropyLoss()
+    criteration = torch.nn.BCEWithLogitsLoss()
+    # criteration = torch.nn.NLLLoss()
 
-    mapping = dict()
+    vid_id_mapping = dict()
 
     for batch_idx, (X, y, video_id) in enumerate(train_loader):
-        X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.int64)
+        X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.float32)
         N_count += X.size(0)
 
         # Initialize optimizer
@@ -42,13 +44,16 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         y_pred = model(X)
 
         # Calculate batch loss
+        y = y.unsqueeze(dim=-1)
+        print(y_pred.shape ,' and ', y.shape)
         loss = criteration(y_pred, y)
         losses.append(loss.item())
+        print("loooooooss ", loss)
 
         # Calculate accuracy score
         # step_score = r2_score(y.cpu().detach().numpy(), y_pred.cpu().detach().numpy())
-        acc1 = calculate_accuracy(y_pred, y)
-        scores.append(acc1)
+        # acc1 = calculate_accuracy(y_pred, y)
+        # scores.append(acc1)
 
         # backprop
         loss.backward()
@@ -64,12 +69,12 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         # for v_id, label, true_label in zip(video_id, y_pred, y):
         #     v_id = v_id.item()
         #     print("ID: ", v_id)
-        #     if v_id in mapping.keys():
+        #     if v_id in vid_id_mapping.keys():
         #         print("Id {} seen before. Prev_v {}, new_v: {}. True v: ".
-        #               format(v_id, mapping[v_id], np.argmax(label.detach().numpy()), true_label))
+        #               format(v_id, vid_id_mapping[v_id], np.argmax(label.detach().numpy()), true_label))
         #     else:
         #         print("Id {} set to {}".format(v_id, np.argmax(label.detach().numpy())))
-        #         mapping[v_id] = np.argmax(label.detach().numpy())
+        #         vid_id_mapping[v_id] = np.argmax(label.detach().numpy())
     
     
     torch.save({

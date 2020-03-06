@@ -40,7 +40,7 @@ else:
 #video_ids = os.listdir("./video_data_clip")
 df = pd.read_csv('merged_videos_labels.csv')
 video_ids = df['Video ID'].to_numpy()
-video_ids = video_ids[:5]
+video_ids = video_ids[:100]
 # labels = df['Final Label'].to_numpy()
 # labels = labels[:5]
 
@@ -58,24 +58,40 @@ label_encoder = LabelEncoder()
 label_encoder.fit(danger_category)
 label_cats = label_encoder.transform(labels.reshape(-1,))
 
+l = []
+print("label cats ", danger_category)
+for label in label_cats:
+    if label == 0:
+        l.append([1, 0, 0, 0, 0, 0])
+    elif label == 1:
+        l.append([0, 1, 1, 0, 0, 0])
+    elif label == 2:
+        l.append([0, 1, 0, 1, 1, 0])
+    elif label == 3:
+        l.append([0, 1, 0, 1, 0, 1])
+
+label_cats = torch.tensor(l)
+print(l)
+
 # train, test split
 train_list, test_list, train_label, test_label = train_test_split(video_ids, label_cats, test_size=0.25, random_state=42)
 
-if (args.crop_videos):
+if args.crop_videos:
     crop_video(train_list)
     crop_video(test_list)
-
 
 spatial_transform_train = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
     T.Resize((image_height, image_width)),
     T.RandomHorizontalFlip(),
+    # Normalization done after data is loaded
     # T.RandomCrop((112, 112))
 ])
 
 spatial_transform_test = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
     T.Resize((image_height, image_width)),
+    # Normalization done after data is loaded
     # T.CenterCrop((112, 112))
 ])
 
@@ -98,7 +114,7 @@ valid_set.set_stats(m, s)
 if args.pretrained:
     model = ResNet18(num_classes=4).to(device)
 else:
-    model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
+    model = Conv3dModelOrdinal(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
 print("Model: ", model)
 
 
