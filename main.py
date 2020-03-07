@@ -3,8 +3,6 @@ from model import *
 from datasets import *
 from train import *
 from evaluate import *
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 import transforms as T
 import pandas as pd
 import numpy as np
@@ -22,8 +20,7 @@ image_height, image_width = 224, 224  # resize video 2d frame size
 n_frames = 15  #number of frames in a video clip
 fps = 10
 num_classes = 4
-categories = [1, 2, 3, 4]
-
+categories = [0, 1, 2, 3]
 
 # Detect devices
 use_cuda = torch.cuda.is_available()  # check if GPU exists
@@ -36,45 +33,9 @@ else:
     device = torch.device("cpu")
     params = {'batch_size': batch_size, 'shuffle': True, 'pin_memory': True}
 
-# TODO: Fix these lines to get all videos from CSV file
-#video_ids = os.listdir("./video_data_clip")
-df = pd.read_csv('merged_videos_labels.csv')
-video_ids = df['Video ID'].to_numpy()
-video_ids = video_ids[:100]
-# labels = df['Final Label'].to_numpy()
-# labels = labels[:5]
 
-#video_ids = [vid_id.replace('.avi', '') for vid_id in video_ids]
-video_ids = [vid_id.replace('.mp4', '') for vid_id in video_ids]
-data_subset = df.loc[df['Video ID'].isin(video_ids)]
-video_ids = data_subset['Video ID'].to_numpy()
-labels = data_subset['Final Label'].to_numpy()
-
-# Transform labels to categories
-labels = np.rint(labels)
-danger_category = np.asarray(categories).reshape(-1,)
-label_encoder = LabelEncoder()
-# print(danger_category)
-label_encoder.fit(danger_category)
-label_cats = label_encoder.transform(labels.reshape(-1,))
-
-l = []
-print("label cats ", danger_category)
-for label in label_cats:
-    if label == 0:
-        l.append([1, 0, 0, 0, 0, 0])
-    elif label == 1:
-        l.append([0, 1, 1, 0, 0, 0])
-    elif label == 2:
-        l.append([0, 1, 0, 1, 1, 0])
-    elif label == 3:
-        l.append([0, 1, 0, 1, 0, 1])
-
-label_cats = torch.tensor(l)
-print(l)
-
-# train, test split
-train_list, test_list, train_label, test_label = train_test_split(video_ids, label_cats, test_size=0.25, random_state=42)
+train_list, train_label = read_data_labels('train1.csv', categories)
+test_list, test_label = read_data_labels('test1.csv', categories)
 
 if args.crop_videos:
     crop_video(train_list)
@@ -111,8 +72,8 @@ if args.get_stats:
     m_, s_ = get_stats(valid_loader)
     valid_set.set_stats(m_, s_)
 else:
-    m_ = tensor([0.5707, 0.5650, 0.5351])
-    s_ = tensor([0.1882, 0.1890, 0.2004])
+    m_ = torch.tensor([0.5707, 0.5650, 0.5351])
+    s_ = torch.tensor([0.1882, 0.1890, 0.2004])
     train_set.set_stats(m_, s_)
     valid_set.set_stats(m_, s_)
 

@@ -103,7 +103,7 @@ class Conv3dModelOrdinal(nn.Module):
         self.k1, self.k2 = (5, 5, 5), (3, 3, 3)
         self.s1, self.s2 = (2, 2, 2), (2, 2, 2)
         self.pd1, self.pd2 = (0, 0, 0), (0, 0, 0)
-        #self.num_classes = num_classes
+        self.num_classes = num_classes
         self.softmax = torch
 
         self.conv1_outshape = output_size_3d((self.t_dim, self.image_height, self.image_width), self.pd1, self.k1, self.s1)
@@ -141,21 +141,21 @@ class Conv3dModelOrdinal(nn.Module):
         x = x.view(x.size(0), -1)
         x = self.linear_layers(x)
 
+        pred = nn.Linear(self.fc_hidden2, self.num_classes)(x)
         lin_1 = nn.Linear(self.fc_hidden2, 1)(x)
-        sigma_1 = torch.nn.LogSoftmax()(lin_1)
+        # sigma_1 = torch.nn.Sigmoid()(lin_1)
         lin_2 = nn.Linear(self.fc_hidden2, 1)(x)
-        sigma_2 = torch.nn.LogSoftmax()(lin_2)
+        # sigma_2 = torch.nn.Sigmoid()(lin_2)
         lin_3 = nn.Linear(self.fc_hidden2, 1)(x)
-        sigma_3 = torch.nn.LogSoftmax()(lin_3)
+        # sigma_3 = torch.nn.Sigmoid()(lin_3)
 
-        r_1 = sigma_1
-        r_2 = 1 - sigma_1
-        r_3 = (1 - sigma_1) * sigma_2
-        r_4 = (1 - sigma_1) * (1 - sigma_2)
-        r_5 = (1 - sigma_1) * (1 - sigma_2) * sigma_3
-        r_6 = (1 - sigma_1) * (1 - sigma_2) * (1 - sigma_3)
-        out = torch.stack((r_1, r_2, r_3, r_4, r_5, r_6), dim=1)
+        # r_1 = sigma_1
+        # r_2 = 1 - sigma_1
+        # r_3 = (1 - sigma_1) * sigma_2
+        # r_4 = (1 - sigma_1) * (1 - sigma_2)
+        # r_5 = (1 - sigma_1) * (1 - sigma_2) * sigma_3
+        # r_6 = (1 - sigma_1) * (1 - sigma_2) * (1 - sigma_3)
+        # out = torch.stack((r_1, r_2, r_3, r_4, r_5, r_6), dim=1)
 
-        print(r_1.shape, " out shape ", out.shape)
-        print(out)
-        return out
+        # print(out)
+        return (pred, lin_1, lin_2, lin_3,)
