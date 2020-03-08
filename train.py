@@ -41,14 +41,26 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         # Initialize optimizer
         optimizer.zero_grad()
         # Forward pass
-        y_pred = model(X)
+        (pred, lin_1, lin_2, lin_3) = model(X)
+
+        sigma_1 = torch.nn.Sigmoid()(lin_1)
+        sigma_2 = torch.nn.Sigmoid()(lin_2)
+        sigma_3 = torch.nn.Sigmoid()(lin_3)
+        r_0 = sigma_1
+        r_1 = (1 - sigma_1) * sigma_2
+        r_2 = (1 - sigma_1) * (1 - sigma_2) * sigma_3
+        r_3 = (1 - sigma_1) * (1 - sigma_2) * (1 - sigma_3)
+        out = torch.stack((r_0, r_1, r_2, r_3), dim=1)
+
+        print("stack shape ", out.shape)
+        print("pred shape ", pred.shape)
 
         # Calculate batch loss
-        y = y.unsqueeze(dim=-1)
-        print(y_pred.shape ,' and ', y.shape)
-        loss = criteration(y_pred, y)
-        losses.append(loss.item())
-        print("loooooooss ", loss)
+        # y = y.unsqueeze(dim=-1)
+        # print(y_pred.shape,' and ', y.shape)
+        # loss = criteration(y_pred, y)
+        # losses.append(loss.item())
+        # print("loooooooss ", loss)
 
         # Calculate accuracy score
         # step_score = r2_score(y.cpu().detach().numpy(), y_pred.cpu().detach().numpy())
@@ -56,7 +68,7 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         # scores.append(acc1)
 
         # backprop
-        loss.backward()
+        # loss.backward()
         # optimize model params
         optimizer.step()
 
