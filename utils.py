@@ -2,12 +2,40 @@ import argparse
 import moviepy.editor
 import numpy as np
 import torch
-
+import pandas as pd
+import os
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 
 parser = argparse.ArgumentParser(description="Video Classification")
 parser.add_argument('--pretrained', default=False, action="store_true")
 parser.add_argument('--crop_videos', default=False, action="store_true")
 parser.add_argument('--get_stats', default=False, action="store_true")
+
+
+def read_data_labels(path_to_csv, categories):
+    # Load Train Data
+    df = pd.read_csv(path_to_csv)
+    video_ids = os.listdir("./video_data_clip")
+    #video_ids = [vid_id.replace('.avi', '') for vid_id in video_ids]
+    video_ids = [vid_id.replace('.mp4', '') for vid_id in video_ids]
+    data_subset = df.loc[df['Video ID'].isin(video_ids)]
+    video_ids = data_subset['Video ID'].to_numpy()
+    data_list = video_ids
+    data_label = data_subset['Label'].to_numpy()
+    # Transform labels to categories
+    data_label = np.rint(data_label)
+    danger_category = np.asarray(categories).reshape(-1,)
+    label_encoder = LabelEncoder()
+    # print(danger_category)
+    label_encoder.fit(danger_category)
+    data_label = label_encoder.transform(data_label.reshape(-1,))
+    # TODO: Fix these lines to get all videos from CSV file
+    data_list = data_list[:2]
+    data_label = data_label[:2]
+    print("data list ", data_list)
+    return data_list, data_label
+
 
 def crop_video(data_dirs):
     outputs = []
@@ -53,6 +81,5 @@ def get_stats(data_loader, device="cpu"):
     var = var_cat.mean(dim=0)
     std = torch.sqrt(var)
     print("Mean ", mean)
-    print("var ", var)
     print("Std ", std)
     return mean, std

@@ -3,8 +3,6 @@ from model import *
 from datasets import *
 from train import *
 from evaluate import *
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 import transforms as T
 import pandas as pd
 import numpy as np
@@ -22,8 +20,7 @@ image_height, image_width = 224, 224  # resize video 2d frame size
 n_frames = 15  #number of frames in a video clip
 fps = 10
 num_classes = 4
-categories = [1, 2, 3, 4]
-
+categories = [0, 1, 2, 3]
 
 # Detect devices
 use_cuda = torch.cuda.is_available()  # check if GPU exists
@@ -36,46 +33,26 @@ else:
     device = torch.device("cpu")
     params = {'batch_size': batch_size, 'shuffle': True, 'pin_memory': True}
 
-# TODO: Fix these lines to get all videos from CSV file
-#video_ids = os.listdir("./video_data_clip")
-df = pd.read_csv('merged_videos_labels.csv')
-video_ids = df['Video ID'].to_numpy()
-video_ids = video_ids[:5]
-# labels = df['Final Label'].to_numpy()
-# labels = labels[:5]
 
-#video_ids = [vid_id.replace('.avi', '') for vid_id in video_ids]
-video_ids = [vid_id.replace('.mp4', '') for vid_id in video_ids]
-data_subset = df.loc[df['Video ID'].isin(video_ids)]
-video_ids = data_subset['Video ID'].to_numpy()
-labels = data_subset['Final Label'].to_numpy()
+train_list, train_label = read_data_labels('train1.csv', categories)
+test_list, test_label = read_data_labels('test1.csv', categories)
 
-# Transform labels to categories
-labels = np.rint(labels)
-danger_category = np.asarray(categories).reshape(-1,)
-label_encoder = LabelEncoder()
-# print(danger_category)
-label_encoder.fit(danger_category)
-label_cats = label_encoder.transform(labels.reshape(-1,))
-
-# train, test split
-train_list, test_list, train_label, test_label = train_test_split(video_ids, label_cats, test_size=0.25, random_state=42)
-
-if (args.crop_videos):
+if args.crop_videos:
     crop_video(train_list)
     crop_video(test_list)
-
 
 spatial_transform_train = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
     T.Resize((image_height, image_width)),
     T.RandomHorizontalFlip(),
+    # Normalization done after data is loaded
     # T.RandomCrop((112, 112))
 ])
 
 spatial_transform_test = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
     T.Resize((image_height, image_width)),
+    # Normalization done after data is loaded
     # T.CenterCrop((112, 112))
 ])
 
@@ -95,8 +72,8 @@ if args.get_stats:
     m_, s_ = get_stats(valid_loader)
     valid_set.set_stats(m_, s_)
 else:
-    m_ = tensor([0.5707, 0.5650, 0.5351])
-    s_ = tensor([0.1882, 0.1890, 0.2004])
+    m_ = torch.tensor([0.5707, 0.5650, 0.5351])
+    s_ = torch.tensor([0.1882, 0.1890, 0.2004])
     train_set.set_stats(m_, s_)
     valid_set.set_stats(m_, s_)
 
@@ -104,7 +81,7 @@ else:
 if args.pretrained:
     model = ResNet18(num_classes=4).to(device)
 else:
-    model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
+    model = Conv3dModelOrdinal(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
 print("Model: ", model)
 
 
