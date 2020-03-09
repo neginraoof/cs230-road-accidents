@@ -6,7 +6,7 @@ import torchvision.models as models
 import torch.utils.data as data
 import torchvision
 # import matplotlib.pyplot as plt
-
+import csv
 
 log_interval = 10
 
@@ -25,6 +25,9 @@ def calculate_accuracy(outputs, targets):
 def train_one_epoch(model, device, train_loader, optimizer, epoch):
     model.train()
 
+    video_ids = []
+    clip_ids = []
+    probs = []
     losses = []
     scores = []
     N_count = 0
@@ -32,7 +35,7 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
 
     mapping = dict()
 
-    for batch_idx, (X, y, video_id) in enumerate(train_loader):
+    for batch_idx, (clip_id, X, y, video_id) in enumerate(train_loader):
         X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.int64)
         N_count += X.size(0)
 
@@ -40,6 +43,10 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         optimizer.zero_grad()
         # Forward pass
         y_pred = model(X)
+        clip_ids.append(clip_id.numpy())
+        video_ids.append(video_id.numpy())        
+        print("preeeeeed", torch.nn.Softmax(dim=1)(y_pred))
+        probs.append(torch.nn.Softmax(dim=1)(y_pred).detach().cpu().numpy())
 
         # Calculate batch loss
         loss = criteration(y_pred, y)
@@ -61,6 +68,9 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
                 epoch + 1, N_count, len(train_loader.dataset), 100. * (batch_idx + 1) / len(train_loader), loss.item(),
                 100 * np.mean(scores)))
 
+    with open('train_epoch_{}.csv'.format(epoch, clip_id), 'w') as csv_file:
+        csv_writer = csv.writer(csv_file, delimiter=',')
+        csv_writer.writerow(video_ids + clip_ids + probs)
         # for v_id, label, true_label in zip(video_id, y_pred, y):
         #     v_id = v_id.item()
         #     print("ID: ", v_id)
@@ -72,11 +82,11 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         #         mapping[v_id] = np.argmax(label.detach().numpy())
     
     
-    torch.save({
-        'epoch': epoch,
-        'model_state_dict': model.state_dict(),
-        'optimizer_state_dict': optimizer.state_dict(),
-        'loss': loss,
-    }, 'last.pth')
+#    torch.save({
+#        'epoch': epoch,
+#        'model_state_dict': model.state_dict(),
+#        'optimizer_state_dict': optimizer.state_dict(),
+#        'loss': loss,
+#    }, 'last.pth')
     
     return losses, scores

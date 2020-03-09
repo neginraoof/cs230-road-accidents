@@ -33,7 +33,7 @@ class MyVideoDataset(data.Dataset):
             video = T.Normalize(mean=self.data_mean, std=self.data_std)(video)
 
         label = self.labels[video_idx]
-        return video, label, video_idx
+        return idx, video, label, video_idx
 
     def __len__(self):
         return self.video_clips.num_clips()

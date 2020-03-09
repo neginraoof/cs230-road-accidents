@@ -16,7 +16,7 @@ np.save('dummy_test.npy', np.array([2]))
 
 # Dataloader parameters
 batch_size = 20
-image_height, image_width = 224, 224  # resize video 2d frame size
+image_height, image_width = 250, 350  # resize video 2d frame size
 n_frames = 15  #number of frames in a video clip
 fps = 10
 num_classes = 4
@@ -68,20 +68,18 @@ valid_loader = data.DataLoader(valid_set, **params)
 #  Normalize Data
 if args.get_stats:
     m_, s_ = get_stats(train_loader)
-    train_set.set_stats(m_, s_)
-    m_, s_ = get_stats(valid_loader)
-    valid_set.set_stats(m_, s_)
+    print("Calculated stats: mean ", m_ , "and std ", s_)
 else:
     m_ = torch.tensor([0.5707, 0.5650, 0.5351])
     s_ = torch.tensor([0.1882, 0.1890, 0.2004])
-    train_set.set_stats(m_, s_)
-    valid_set.set_stats(m_, s_)
+train_set.set_stats(m_, s_)
+valid_set.set_stats(m_, s_)
 
 # create model
 if args.pretrained:
     model = ResNet18(num_classes=4).to(device)
 else:
-    model = Conv3dModelOrdinal(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
+    model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
 print("Model: ", model)
 
 
@@ -91,8 +89,8 @@ if torch.cuda.device_count() > 1:
     model = nn.DataParallel(model)
 
 # training parameters
-epochs = 15
-learning_rate = 1e-5
+epochs = 10
+learning_rate = 1e-4
 
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  # optimize all cnn parameters
 
@@ -119,7 +117,7 @@ for epoch in range(epochs):
     print("Test losses: ", np.array(epoch_test_losses))
     print("Test scores: ", np.array(epoch_test_scores))
 
-    np.save('./3DCNN_epoch_{}_training_losses.npy'.format(epoch), np.array(epoch_train_losses))
-    np.save('./3DCNN_epoch_{}_training_scores.npy'.format(epoch), np.array(epoch_train_losses))
-    np.save('./3DCNN_epoch_{}_test_loss.npy'.format(epoch), np.array(epoch_test_losses))
-    np.save('./3DCNN_epoch_{}_test_score.npy'.format(epoch), np.array(epoch_test_scores))
+#    np.save('./3DCNN_epoch_{}_training_losses.npy'.format(epoch), np.array(epoch_train_losses))
+#    np.save('./3DCNN_epoch_{}_training_scores.npy'.format(epoch), np.array(epoch_train_losses))
+#    np.save('./3DCNN_epoch_{}_test_loss.npy'.format(epoch), np.array(epoch_test_losses))
+#    np.save('./3DCNN_epoch_{}_test_score.npy'.format(epoch), np.array(epoch_test_scores))

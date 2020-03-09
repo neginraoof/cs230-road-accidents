@@ -25,7 +25,7 @@ def evaluate(model, device, optimizer, test_loader):
     N_count = 0
     # Iterate over test data batches
     with torch.no_grad():
-        for X, y, _ in test_loader:
+        for _, X, y, __ in test_loader:
             X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.int64)
             # Forward pass on test data batch
             y_pred = model(X)
