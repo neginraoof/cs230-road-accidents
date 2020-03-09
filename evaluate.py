@@ -1,7 +1,7 @@
 import torch
 from sklearn.metrics import r2_score
 import torch.nn.functional as F
-
+import csv
 
 def calculate_accuracy(outputs, targets):
     batch_size = targets.size(0)
@@ -17,6 +17,11 @@ def calculate_accuracy(outputs, targets):
 def evaluate(model, device, optimizer, test_loader):
     model.eval() 
     test_loss = 0
+    
+    video_ids = []
+    clip_ids = []
+    probs = []
+
     scores = []
     y_s = []
     y_preds = []
@@ -25,10 +30,15 @@ def evaluate(model, device, optimizer, test_loader):
     N_count = 0
     # Iterate over test data batches
     with torch.no_grad():
-        for _, X, y, __ in test_loader:
+        for clip_id, X, y, video_id in test_loader:
             X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.int64)
             # Forward pass on test data batch
             y_pred = model(X)
+
+            clip_ids.append(clip_id.numpy())
+            video_ids.append(video_id.numpy())
+            #print("preeeeeed", torch.nn.Softmax(dim=1)(y_pred))
+            probs.append(torch.nn.Softmax(dim=1)(y_pred).detach().cpu().numpy())
 
             # Calculate MSE Loss
             loss = criteration(y_pred, y)
@@ -42,6 +52,10 @@ def evaluate(model, device, optimizer, test_loader):
 
             N_count += X.size(0)
             print("Next Batch ... ", N_count, " from ", len(test_loader.dataset))
+
+    with open('test.csv', 'w') as csv_file:
+        csv_writer = csv.writer(csv_file, delimiter=',')
+        csv_writer.writerow(video_ids + clip_ids + probs)
 
     test_loss /= len(test_loader.dataset)
 

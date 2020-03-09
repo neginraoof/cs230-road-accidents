@@ -45,7 +45,7 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         y_pred = model(X)
         clip_ids.append(clip_id.numpy())
         video_ids.append(video_id.numpy())        
-        print("preeeeeed", torch.nn.Softmax(dim=1)(y_pred))
+        #print("preeeeeed", torch.nn.Softmax(dim=1)(y_pred))
         probs.append(torch.nn.Softmax(dim=1)(y_pred).detach().cpu().numpy())
 
         # Calculate batch loss
@@ -68,7 +68,7 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
                 epoch + 1, N_count, len(train_loader.dataset), 100. * (batch_idx + 1) / len(train_loader), loss.item(),
                 100 * np.mean(scores)))
 
-    with open('train_epoch_{}.csv'.format(epoch, clip_id), 'w') as csv_file:
+    with open('train_epoch_{}.csv'.format(epoch), 'w') as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=',')
         csv_writer.writerow(video_ids + clip_ids + probs)
         # for v_id, label, true_label in zip(video_id, y_pred, y):
@@ -82,11 +82,11 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         #         mapping[v_id] = np.argmax(label.detach().numpy())
     
     
-#    torch.save({
-#        'epoch': epoch,
-#        'model_state_dict': model.state_dict(),
-#        'optimizer_state_dict': optimizer.state_dict(),
-#        'loss': loss,
-#    }, 'last.pth')
+    torch.save({
+        'epoch': epoch,
+        'model_state_dict': model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict(),
+        'loss': loss,
+    }, 'last.pth')
     
     return losses, scores

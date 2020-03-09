@@ -90,7 +90,7 @@ if torch.cuda.device_count() > 1:
 
 # training parameters
 epochs = 10
-learning_rate = 1e-4
+learning_rate = 1e-5
 
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  # optimize all cnn parameters
 
