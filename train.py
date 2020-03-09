@@ -45,7 +45,7 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         y_pred = model(X)
         clip_ids.append(clip_id.numpy())
         video_ids.append(video_id.numpy())        
-        print("preeeeeed", torch.nn.Softmax(dim=1)(y_pred))
+        #print("preeeeeed", torch.nn.Softmax(dim=1)(y_pred))
         probs.append(torch.nn.Softmax(dim=1)(y_pred).detach().cpu().numpy())
 
         # Calculate batch loss

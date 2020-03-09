@@ -18,7 +18,7 @@ np.save('dummy_test.npy', np.array([2]))
 batch_size = 20
 image_height, image_width = 250, 350  # resize video 2d frame size
 n_frames = 15  #number of frames in a video clip
-fps = 10
+fps = 1
 num_classes = 4
 categories = [0, 1, 2, 3]
 
