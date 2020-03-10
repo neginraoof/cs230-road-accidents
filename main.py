@@ -37,8 +37,8 @@ else:
 train_list, train_label = read_data_labels('train1.csv', categories)
 test_list, test_label = read_data_labels('test1.csv', categories)
 
-train_list, train_label = train_list[:20], train_label[:20]
-test_list, test_label = test_list[:10], test_label[:10]
+train_list, train_label = train_list, train_label
+test_list, test_label = test_list, test_label
 
 if args.crop_videos:
     crop_video(train_list)
