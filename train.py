@@ -68,19 +68,20 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
                 epoch + 1, N_count, len(train_loader.dataset), 100. * (batch_idx + 1) / len(train_loader), loss.item(),
                 100 * np.mean(scores)))
 
+    clip_ids = np.concatenate(clip_ids).reshape(-1, 1)
+    video_ids = np.concatenate(video_ids).reshape(-1, 1)
+    probs = np.concatenate(probs)
+    data = np.concatenate([clip_ids, video_ids, probs], axis=1)
+
     with open('train_epoch_{}.csv'.format(epoch), 'w') as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=',')
-        csv_writer.writerow(video_ids + clip_ids + probs)
-        # for v_id, label, true_label in zip(video_id, y_pred, y):
-        #     v_id = v_id.item()
-        #     print("ID: ", v_id)
-        #     if v_id in mapping.keys():
-        #         print("Id {} seen before. Prev_v {}, new_v: {}. True v: ".
-        #               format(v_id, mapping[v_id], np.argmax(label.detach().numpy()), true_label))
-        #     else:
-        #         print("Id {} set to {}".format(v_id, np.argmax(label.detach().numpy())))
-        #         mapping[v_id] = np.argmax(label.detach().numpy())
-    
+        csv_writer.writerow(["clip_id", "video_id", "p1", "p2", "p3", "p4"])
+        csv_writer.writerows(data)
+        csv_writer.writerow(["Losses"])
+        csv_writer.writerow(losses)
+        csv_writer.writerow(["Scores"])
+        csv_writer.writerow(scores)
+ 
     
     torch.save({
         'epoch': epoch,

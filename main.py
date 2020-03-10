@@ -37,6 +37,9 @@ else:
 train_list, train_label = read_data_labels('train1.csv', categories)
 test_list, test_label = read_data_labels('test1.csv', categories)
 
+train_list, train_label = train_list[:20], train_label[:20]
+test_list, test_label = test_list[:10], test_label[:10]
+
 if args.crop_videos:
     crop_video(train_list)
     crop_video(test_list)
@@ -57,21 +60,24 @@ spatial_transform_test = torchvision.transforms.Compose([
 ])
 
 print("============== Loading Data ==============")
-print("Train {} clips".format(len(train_list)))
-print("Test {} clips".format(len(test_list)))
+print("Train {} videos".format(len(train_list)))
+print("Test {} videos".format(len(test_list)))
 train_set = MyVideoDataset('./video_data_clip', train_list, train_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_train)
 valid_set = MyVideoDataset('./video_data_clip', test_list, test_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_test)
 
 train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
 
+print("Train {} clips".format(len(train_loader)))
+print("Test {} clips".format(len(valid_loader)))
+
 #  Normalize Data
 if args.get_stats:
     m_, s_ = get_stats(train_loader)
     print("Calculated stats: mean ", m_ , "and std ", s_)
 else:
-    m_ = torch.tensor([0.5707, 0.5650, 0.5351])
-    s_ = torch.tensor([0.1882, 0.1890, 0.2004])
+    m_ = torch.tensor([0.4926, 0.4835, 0.4777])
+    s_ = torch.tensor([0.2355, 0.2401, 0.2485])
 train_set.set_stats(m_, s_)
 valid_set.set_stats(m_, s_)
 
