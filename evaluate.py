@@ -32,7 +32,7 @@ def evaluate(model, device, optimizer, test_loader):
     N_count = 0
     # Iterate over test data batches
     with torch.no_grad():
-        for clip_id, X, y, video_id in test_loader:
+        for batch_idx, (clip_id, X, y, video_id) in enumerate(test_loader):
             X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.int64)
             # Forward pass on test data batch
             y_pred = model(X)
