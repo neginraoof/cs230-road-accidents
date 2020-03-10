@@ -141,21 +141,15 @@ class Conv3dModelOrdinal(nn.Module):
         x = x.view(x.size(0), -1)
         x = self.linear_layers(x)
 
-        pred = nn.Linear(self.fc_hidden2, self.num_classes)(x)
-        lin_1 = nn.Linear(self.fc_hidden2, 1)(x)
+        # pred = nn.Linear(self.fc_hidden2, self.num_classes)(x)
+        lin_1 = nn.Linear(self.fc_hidden2, self.num_classes)(x)
         # sigma_1 = torch.nn.Sigmoid()(lin_1)
-        lin_2 = nn.Linear(self.fc_hidden2, 1)(x)
-        # sigma_2 = torch.nn.Sigmoid()(lin_2)
-        lin_3 = nn.Linear(self.fc_hidden2, 1)(x)
-        # sigma_3 = torch.nn.Sigmoid()(lin_3)
-
-        # r_1 = sigma_1
-        # r_2 = 1 - sigma_1
-        # r_3 = (1 - sigma_1) * sigma_2
-        # r_4 = (1 - sigma_1) * (1 - sigma_2)
-        # r_5 = (1 - sigma_1) * (1 - sigma_2) * sigma_3
-        # r_6 = (1 - sigma_1) * (1 - sigma_2) * (1 - sigma_3)
-        # out = torch.stack((r_1, r_2, r_3, r_4, r_5, r_6), dim=1)
-
+        # lin_2 = nn.Linear(self.fc_hidden2, 1)(x)
+        # # sigma_2 = torch.nn.Sigmoid()(lin_1)
+        # lin_3 = nn.Linear(self.fc_hidden2, 1)(x)
+        # # sigma_3 = torch.nn.Sigmoid()(lin_1)
+        # lin_4 = nn.Linear(self.fc_hidden2, 1)(x)
+        # sigma_4 = torch.nn.Sigmoid()(lin_1)
+        y_pred = lin_1
         # print(out)
-        return (pred, lin_1, lin_2, lin_3,)
+        return y_pred

@@ -15,10 +15,10 @@ print("Args: ", args)
 np.save('dummy_test.npy', np.array([2]))
 
 # Dataloader parameters
-batch_size = 20
+batch_size = 10
 image_height, image_width = 224, 224  # resize video 2d frame size
 n_frames = 15  #number of frames in a video clip
-fps = 10
+fps = 1
 num_classes = 4
 categories = [0, 1, 2, 3]
 
@@ -34,8 +34,8 @@ else:
     params = {'batch_size': batch_size, 'shuffle': True, 'pin_memory': True}
 
 
-train_list, train_label = read_data_labels('train1.csv', categories)
-test_list, test_label = read_data_labels('test1.csv', categories)
+train_list, train_label = read_data_multi_labels('train1.csv', categories)
+test_list, test_label = read_data_multi_labels('test1.csv', categories)
 
 if args.crop_videos:
     crop_video(train_list)
@@ -56,11 +56,15 @@ spatial_transform_test = torchvision.transforms.Compose([
     # T.CenterCrop((112, 112))
 ])
 
+samples_ = 2
 print("============== Loading Data ==============")
-print("Train {} clips".format(len(train_list)))
-print("Test {} clips".format(len(test_list)))
+print("Train {} videos".format(len(train_list)))
+print("Test {} videos".format(len(test_list)))
 train_set = MyVideoDataset('./video_data_clip', train_list, train_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_train)
 valid_set = MyVideoDataset('./video_data_clip', test_list, test_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_test)
+
+print("Train {} clips".format(len(train_set)))
+print("Test {} videos".format(len(valid_set)))
 
 train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
@@ -91,8 +95,8 @@ if torch.cuda.device_count() > 1:
     model = nn.DataParallel(model)
 
 # training parameters
-epochs = 15
-learning_rate = 1e-5
+epochs = 10
+learning_rate = 1e-4
 
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  # optimize all cnn parameters
 
