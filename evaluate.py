@@ -52,12 +52,23 @@ def evaluate(model, device, optimizer, test_loader):
 
             N_count += X.size(0)
             print("Next Batch ... ", N_count, " from ", len(test_loader.dataset))
+    
+    test_loss /= len(test_loader.dataset)
+
+    clip_ids = np.concatenate(clip_ids).reshape(-1, 1)
+    video_ids = np.concatenate(video_ids).reshape(-1, 1)
+    probs = np.concatenate(probs)
+    data = np.concatenate([clip_ids, video_ids, probs], axis=1)
 
     with open('test.csv', 'w') as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=',')
-        csv_writer.writerow(video_ids + clip_ids + probs)
+        csv_writer.writerow(["clip_id", "video_id", "p1", "p2", "p3", "p4"])
+        csv_writer.writerows(data)
+        csv_writer.writerow(["Losses"])
+        csv_writer.writerow(test_loss)
+        csv_writer.writerow(["Scores"])
+        csv_writer.writerow(scores)
 
-    test_loss /= len(test_loader.dataset)
 
     # Compute test accuracy
     y_s = torch.stack(y_s, dim=0)

@@ -18,7 +18,7 @@ np.save('dummy_test.npy', np.array([2]))
 batch_size = 20
 image_height, image_width = 250, 350  # resize video 2d frame size
 n_frames = 15  #number of frames in a video clip
-fps = 10
+fps = 1
 num_classes = 4
 categories = [0, 1, 2, 3]
 
@@ -36,6 +36,9 @@ else:
 
 train_list, train_label = read_data_labels('train1.csv', categories)
 test_list, test_label = read_data_labels('test1.csv', categories)
+
+train_list, train_label = train_list, train_label
+test_list, test_label = test_list, test_label
 
 if args.crop_videos:
     crop_video(train_list)
@@ -57,13 +60,16 @@ spatial_transform_test = torchvision.transforms.Compose([
 ])
 
 print("============== Loading Data ==============")
-print("Train {} clips".format(len(train_list)))
-print("Test {} clips".format(len(test_list)))
+print("Train {} videos".format(len(train_list)))
+print("Test {} videos".format(len(test_list)))
 train_set = MyVideoDataset('./video_data_clip', train_list, train_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_train)
 valid_set = MyVideoDataset('./video_data_clip', test_list, test_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_test)
 
 train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
+
+print("Train {} clips".format(len(train_loader)))
+print("Test {} clips".format(len(valid_loader)))
 
 #  Normalize Data
 if args.get_stats:
