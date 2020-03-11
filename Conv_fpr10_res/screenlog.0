@@ -1,0 +1,886 @@
+Next Batch ...  5140  from  7185
+Next Batch ...  5160  from  7185
+Next Batch ...  5180  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5220  from  7185
+Next Batch ...  5240  from  7185
+Next Batch ...  5260  from  7185
+Next Batch ...  5280  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5320  from  7185
+Next Batch ...  5340  from  7185
+Next Batch ...  5360  from  7185
+Next Batch ...  5380  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5420  from  7185
+Next Batch ...  5440  from  7185
+Next Batch ...  5460  from  7185
+Next Batch ...  5480  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5520  from  7185
+Next Batch ...  5540  from  7185
+Next Batch ...  5560  from  7185
+Next Batch ...  5580  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5620  from  7185
+Next Batch ...  5640  from  7185
+Next Batch ...  5660  from  7185
+Next Batch ...  5680  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5720  from  7185
+Next Batch ...  5740  from  7185
+Next Batch ...  5760  from  7185
+Next Batch ...  5780  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5820  from  7185
+Next Batch ...  5840  from  7185
+Next Batch ...  5860  from  7185
+Next Batch ...  5880  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  5920  from  7185
+Next Batch ...  5940  from  7185
+Next Batch ...  5960  from  7185
+Next Batch ...  5980  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6020  from  7185
+Next Batch ...  6040  from  7185
+Next Batch ...  6060  from  7185
+Next Batch ...  6080  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6120  from  7185
+Next Batch ...  6140  from  7185
+Next Batch ...  6160  from  7185
+Next Batch ...  6180  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6220  from  7185
+Next Batch ...  6240  from  7185
+Next Batch ...  6260  from  7185
+Next Batch ...  6280  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6320  from  7185
+Next Batch ...  6340  from  7185
+Next Batch ...  6360  from  7185
+Next Batch ...  6380  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6420  from  7185
+Next Batch ...  6440  from  7185
+Next Batch ...  6460  from  7185
+Next Batch ...  6480  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6520  from  7185
+Next Batch ...  6540  from  7185
+Next Batch ...  6560  from  7185
+Next Batch ...  6580  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6620  from  7185
+Next Batch ...  6640  from  7185
+Next Batch ...  6660  from  7185
+Next Batch ...  6680  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6720  from  7185
+Next Batch ...  6740  from  7185
+Next Batch ...  6760  from  7185
+Next Batch ...  6780  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6820  from  7185
+Next Batch ...  6840  from  7185
+Next Batch ...  6860  from  7185
+Next Batch ...  6880  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  6920  from  7185
+Next Batch ...  6940  from  7185
+Next Batch ...  6960  from  7185
+Next Batch ...  6980  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7020  from  7185
+Next Batch ...  7040  from  7185
+Next Batch ...  7060  from  7185
+Next Batch ...  7080  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7120  from  7185
+Next Batch ...  7140  from  7185
+Next Batch ...  7160  from  7185
+Next Batch ...  7180  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0557, Accuracy: 53.96%
+
+Train losses:  [[1.51055372 1.32826781 1.14400554 ... 1.0175674  1.20469368 1.37956059]
+ [0.87345791 1.00728345 1.14251113 ... 1.02521837 0.69595993 0.92767364]
+ [0.94892263 0.87420022 0.80519313 ... 0.68062055 0.76507807 1.25971746]
+ [0.97736299 0.59247994 0.83921593 ... 0.95077717 0.64361149 0.68439484]]
+Train scores:  [[0.         0.4        0.6        ... 0.5        0.5        0.33333333]
+ [0.6        0.5        0.4        ... 0.55       0.8        0.66666667]
+ [0.7        0.7        0.6        ... 0.85       0.8        0.44444444]
+ [0.55       0.7        0.65       ... 0.6        0.7        0.66666667]]
+Test losses:  [0.05743787 0.05745014 0.0566211  0.05570663]
+Test scores:  [0.51388889 0.50861111 0.52416667 0.53958333]
+Train Epoch: 5 [200/5869 (3%)]  Loss: 0.889091, Accuracy Score: 67.50
+Train Epoch: 5 [400/5869 (7%)]  Loss: 0.814811, Accuracy Score: 68.50
+Train Epoch: 5 [600/5869 (10%)] Loss: 0.695258, Accuracy Score: 66.83
+Train Epoch: 5 [800/5869 (14%)] Loss: 0.665247, Accuracy Score: 67.50
+Train Epoch: 5 [1000/5869 (17%)]        Loss: 0.748997, Accuracy Score: 68.20
+Train Epoch: 5 [1200/5869 (20%)]        Loss: 0.549591, Accuracy Score: 68.42
+Train Epoch: 5 [1400/5869 (24%)]        Loss: 0.804948, Accuracy Score: 68.79
+Train Epoch: 5 [1600/5869 (27%)]        Loss: 0.977007, Accuracy Score: 68.06
+Train Epoch: 5 [1800/5869 (31%)]        Loss: 0.820723, Accuracy Score: 68.22
+Train Epoch: 5 [2000/5869 (34%)]        Loss: 0.807609, Accuracy Score: 67.50
+Train Epoch: 5 [2200/5869 (37%)]        Loss: 0.659056, Accuracy Score: 67.91
+Train Epoch: 5 [2400/5869 (41%)]        Loss: 0.807455, Accuracy Score: 68.17
+Train Epoch: 5 [2600/5869 (44%)]        Loss: 0.502125, Accuracy Score: 68.23
+Train Epoch: 5 [2800/5869 (48%)]        Loss: 0.712260, Accuracy Score: 68.21
+Train Epoch: 5 [3000/5869 (51%)]        Loss: 0.746005, Accuracy Score: 68.30
+Train Epoch: 5 [3200/5869 (54%)]        Loss: 0.702905, Accuracy Score: 68.22
+^CTraceback (most recent call last):
+  File "main.py", line 106, in <module>
+    train_losses, train_scores = train_one_epoch(model, device, train_loader, optimizer, epoch)
+  File "/data/cs230-road-accidents/train.py", line 38, in train_one_epoch
+    for batch_idx, (clip_id, X, y, video_id) in enumerate(train_loader):
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 385, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data/cs230-road-accidents/datasets.py", line 27, in __getitem__
+    video, audio, info, video_idx = self.video_clips.get_clip(idx)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/datasets/video_utils.py", line 277, in get_clip
+    video, audio, info = read_video(video_path, start_pts, end_pts)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/io/video.py", line 235, in read_video
+    container.streams.video[0], {'video': 0})
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/io/video.py", line 144, in _read_from_stream
+    for idx, frame in enumerate(container.decode(**stream_name)):
+KeyboardInterrupt
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[BTrain Epoch: 1 [4000/5869 (68%)]        Loss: 1.233892, Accuracy Score: 47.77
+Train Epoch: 1 [5000/5869 (85%)]        Loss: 1.000926, Accuracy Score: 48.32
+Next Batch ...  100  from  7185
+Next Batch ...  200  from  7185
+Next Batch ...  300  from  7185
+Next Batch ...  400  from  7185
+Next Batch ...  500  from  7185
+Next Batch ...  600  from  7185
+Next Batch ...  700  from  7185
+Next Batch ...  800  from  7185
+Next Batch ...  900  from  7185
+Next Batch ...  1000  from  7185
+Next Batch ...  1100  from  7185
+Next Batch ...  1200  from  7185
+Next Batch ...  1300  from  7185
+Next Batch ...  1400  from  7185
+Next Batch ...  1500  from  7185
+Next Batch ...  1600  from  7185
+Next Batch ...  1700  from  7185
+Next Batch ...  1800  from  7185
+Next Batch ...  1900  from  7185
+Next Batch ...  2000  from  7185
+Next Batch ...  2100  from  7185
+Next Batch ...  2200  from  7185
+Next Batch ...  2300  from  7185
+Next Batch ...  2400  from  7185
+Next Batch ...  2500  from  7185
+Next Batch ...  2600  from  7185
+Next Batch ...  2700  from  7185
+Next Batch ...  2800  from  7185
+Next Batch ...  2900  from  7185
+Next Batch ...  3000  from  7185
+Next Batch ...  3100  from  7185
+Next Batch ...  3200  from  7185
+Next Batch ...  3300  from  7185
+Next Batch ...  3400  from  7185
+Next Batch ...  3500  from  7185
+Next Batch ...  3600  from  7185
+Next Batch ...  3700  from  7185
+Next Batch ...  3800  from  7185
+Next Batch ...  3900  from  7185
+Next Batch ...  4000  from  7185
+Next Batch ...  4100  from  7185
+Next Batch ...  4200  from  7185
+Next Batch ...  4300  from  7185
+Next Batch ...  4400  from  7185
+Next Batch ...  4500  from  7185
+Next Batch ...  4600  from  7185
+Next Batch ...  4700  from  7185
+Next Batch ...  4800  from  7185
+Next Batch ...  4900  from  7185
+Next Batch ...  5000  from  7185
+Next Batch ...  5100  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0115, Accuracy: 51.42%
+
+Train losses:  [[1.35118091 1.23451281 1.25205851 1.10405099 1.167665   1.10261798
+  1.24480319 1.16672587 1.10206461 1.11672497 1.15798414 1.12853003
+  1.04930341 1.14371967 1.12115705 1.1006676  1.03688514 1.21609235
+  1.13710713 1.10702908 1.01930881 1.10338473 1.08094394 1.18649983
+  0.97330976 1.13646686 1.05293286 1.13704431 1.04794526 1.02895725
+  1.25688386 1.23891473 1.06677628 0.94582367 1.0055896  1.01017952
+  1.0574584  1.03260255 1.06979811 1.23389196 1.106071   1.11939931
+  1.10289383 1.03917849 1.13261569 1.12821412 1.09707546 1.01053929
+  1.09621251 1.00092578 0.94740677 0.95861125 1.0585922  1.00512004
+  1.08309889 1.05179465 0.95175391 1.09110296 1.01546466]]
+Train scores:  [[0.38       0.39       0.4        0.38       0.46       0.47
+  0.39       0.46       0.45       0.46       0.47       0.49
+  0.47       0.45       0.53       0.51       0.52       0.4
+  0.49       0.46       0.58       0.42       0.51       0.43
+  0.63       0.45       0.52       0.55       0.49       0.53
+  0.37       0.48       0.42       0.65       0.53       0.52
+  0.5        0.54       0.5        0.46       0.45       0.53
+  0.48       0.48       0.44       0.55       0.51       0.56
+  0.52       0.53       0.6        0.55       0.54       0.56
+  0.46       0.56       0.53       0.51       0.44927536]]
+Test losses:  [0.01149393]
+Test scores:  [0.51424837]
+Train Epoch: 2 [1000/5869 (17%)]        Loss: 0.993856, Accuracy Score: 55.50
+Train Epoch: 2 [2000/5869 (34%)]        Loss: 1.056824, Accuracy Score: 55.85
+Train Epoch: 2 [3000/5869 (51%)]        Loss: 0.991142, Accuracy Score: 57.17
+Train Epoch: 2 [4000/5869 (68%)]        Loss: 0.901915, Accuracy Score: 57.73
+Train Epoch: 2 [5000/5869 (85%)]        Loss: 0.882651, Accuracy Score: 57.86
+Next Batch ...  100  from  7185
+Next Batch ...  200  from  7185
+Next Batch ...  300  from  7185
+Next Batch ...  400  from  7185
+Next Batch ...  500  from  7185
+Next Batch ...  600  from  7185
+Next Batch ...  700  from  7185
+Next Batch ...  800  from  7185
+Next Batch ...  900  from  7185
+Next Batch ...  1000  from  7185
+Next Batch ...  1100  from  7185
+Next Batch ...  1200  from  7185
+Next Batch ...  1300  from  7185
+Next Batch ...  1400  from  7185
+Next Batch ...  1500  from  7185
+Next Batch ...  1600  from  7185
+Next Batch ...  1700  from  7185
+Next Batch ...  1800  from  7185
+Next Batch ...  1900  from  7185
+Next Batch ...  2000  from  7185
+Next Batch ...  2100  from  7185
+Next Batch ...  2200  from  7185
+Next Batch ...  2300  from  7185
+Next Batch ...  2400  from  7185
+Next Batch ...  2500  from  7185
+Next Batch ...  2600  from  7185
+Next Batch ...  2700  from  7185
+Next Batch ...  2800  from  7185
+Next Batch ...  2900  from  7185
+Next Batch ...  3000  from  7185
+Next Batch ...  3100  from  7185
+Next Batch ...  3200  from  7185
+Next Batch ...  3300  from  7185
+Next Batch ...  3400  from  7185
+Next Batch ...  3500  from  7185
+Next Batch ...  3600  from  7185
+Next Batch ...  3700  from  7185
+Next Batch ...  3800  from  7185
+Next Batch ...  3900  from  7185
+Next Batch ...  4000  from  7185
+Next Batch ...  4100  from  7185
+Next Batch ...  4200  from  7185
+Next Batch ...  4300  from  7185
+Next Batch ...  4400  from  7185
+Next Batch ...  4500  from  7185
+Next Batch ...  4600  from  7185
+Next Batch ...  4700  from  7185
+Next Batch ...  4800  from  7185
+Next Batch ...  4900  from  7185
+Next Batch ...  5000  from  7185
+Next Batch ...  5100  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0114, Accuracy: 50.97%
+
+Train losses:  [[1.35118091 1.23451281 1.25205851 1.10405099 1.167665   1.10261798
+  1.24480319 1.16672587 1.10206461 1.11672497 1.15798414 1.12853003
+  1.04930341 1.14371967 1.12115705 1.1006676  1.03688514 1.21609235
+  1.13710713 1.10702908 1.01930881 1.10338473 1.08094394 1.18649983
+  0.97330976 1.13646686 1.05293286 1.13704431 1.04794526 1.02895725
+  1.25688386 1.23891473 1.06677628 0.94582367 1.0055896  1.01017952
+  1.0574584  1.03260255 1.06979811 1.23389196 1.106071   1.11939931
+  1.10289383 1.03917849 1.13261569 1.12821412 1.09707546 1.01053929
+  1.09621251 1.00092578 0.94740677 0.95861125 1.0585922  1.00512004
+  1.08309889 1.05179465 0.95175391 1.09110296 1.01546466]
+ [0.96562296 0.92036557 1.0123173  1.02232707 1.09486043 1.01744056
+  1.03953838 1.13949323 0.92656744 0.9938556  0.91538972 0.95361525
+  0.97050607 0.98260134 1.07374203 0.93046761 1.12649775 1.05544245
+  0.92452127 1.05682409 0.96436858 0.97890389 0.92154253 1.07648957
+  0.85569131 0.92201853 1.09392583 1.06857622 0.9125607  0.99114203
+  0.95460242 1.0724324  1.01373565 0.8975215  1.01409733 0.96133119
+  1.02182388 0.8765232  0.96187514 0.90191495 0.93944287 0.94597763
+  1.03304255 0.98539197 1.06967521 0.93364251 0.91868776 0.94413012
+  0.95255506 0.88265067 1.02788091 0.89620209 0.92084551 0.87563634
+  0.96611488 0.99015075 1.00230443 1.19271731 1.02688098]]
+Train scores:  [[0.38       0.39       0.4        0.38       0.46       0.47
+  0.39       0.46       0.45       0.46       0.47       0.49
+  0.47       0.45       0.53       0.51       0.52       0.4
+  0.49       0.46       0.58       0.42       0.51       0.43
+  0.63       0.45       0.52       0.55       0.49       0.53
+  0.37       0.48       0.42       0.65       0.53       0.52
+  0.5        0.54       0.5        0.46       0.45       0.53
+  0.48       0.48       0.44       0.55       0.51       0.56
+  0.52       0.53       0.6        0.55       0.54       0.56
+  0.46       0.56       0.53       0.51       0.44927536]
+ [0.62       0.54       0.59       0.6        0.47       0.55
+  0.53       0.46       0.62       0.57       0.65       0.67
+  0.59       0.49       0.46       0.57       0.53       0.55
+  0.6        0.51       0.58       0.62       0.66       0.56
+  0.63       0.66       0.56       0.54       0.58       0.59
+  0.62       0.52       0.57       0.64       0.55       0.57
+  0.55       0.69       0.56       0.67       0.58       0.6
+  0.55       0.57       0.53       0.61       0.6        0.62
+  0.54       0.64       0.59       0.63       0.63       0.65
+  0.58       0.58       0.53       0.47       0.55072464]]
+Test losses:  [0.01149393 0.01139261]
+Test scores:  [0.51424837 0.50973856]
+Train Epoch: 3 [1000/5869 (17%)]        Loss: 0.831948, Accuracy Score: 61.20
+Train Epoch: 3 [2000/5869 (34%)]        Loss: 0.913668, Accuracy Score: 60.00
+Train Epoch: 3 [3000/5869 (51%)]        Loss: 0.891801, Accuracy Score: 60.83
+Train Epoch: 3 [4000/5869 (68%)]        Loss: 0.848238, Accuracy Score: 61.45
+Train Epoch: 3 [5000/5869 (85%)]        Loss: 0.975352, Accuracy Score: 61.42
+Next Batch ...  100  from  7185
+Next Batch ...  200  from  7185
+Next Batch ...  300  from  7185
+Next Batch ...  400  from  7185
+Next Batch ...  500  from  7185
+Next Batch ...  600  from  7185
+Next Batch ...  700  from  7185
+Next Batch ...  800  from  7185
+Next Batch ...  900  from  7185
+Next Batch ...  1000  from  7185
+Next Batch ...  1100  from  7185
+Next Batch ...  1200  from  7185
+Next Batch ...  1300  from  7185
+Next Batch ...  1400  from  7185
+Next Batch ...  1500  from  7185
+Next Batch ...  1600  from  7185
+Next Batch ...  1700  from  7185
+Next Batch ...  1800  from  7185
+Next Batch ...  1900  from  7185
+Next Batch ...  2000  from  7185
+Next Batch ...  2100  from  7185
+Next Batch ...  2200  from  7185
+Next Batch ...  2300  from  7185
+Next Batch ...  2400  from  7185
+Next Batch ...  2500  from  7185
+Next Batch ...  2600  from  7185
+Next Batch ...  2700  from  7185
+Next Batch ...  2800  from  7185
+Next Batch ...  2900  from  7185
+Next Batch ...  3000  from  7185
+Next Batch ...  3100  from  7185
+Next Batch ...  3200  from  7185
+Next Batch ...  3300  from  7185
+Next Batch ...  3400  from  7185
+Next Batch ...  3500  from  7185
+Next Batch ...  3600  from  7185
+Next Batch ...  3700  from  7185
+Next Batch ...  3800  from  7185
+Next Batch ...  3900  from  7185
+Next Batch ...  4000  from  7185
+Next Batch ...  4100  from  7185
+Next Batch ...  4200  from  7185
+Next Batch ...  4300  from  7185
+Next Batch ...  4400  from  7185
+Next Batch ...  4500  from  7185
+Next Batch ...  4600  from  7185
+Next Batch ...  4700  from  7185
+Next Batch ...  4800  from  7185
+Next Batch ...  4900  from  7185
+Next Batch ...  5000  from  7185
+Next Batch ...  5100  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0111, Accuracy: 53.02%
+
+Train losses:  [[1.35118091 1.23451281 1.25205851 1.10405099 1.167665   1.10261798
+  1.24480319 1.16672587 1.10206461 1.11672497 1.15798414 1.12853003
+  1.04930341 1.14371967 1.12115705 1.1006676  1.03688514 1.21609235
+  1.13710713 1.10702908 1.01930881 1.10338473 1.08094394 1.18649983
+  0.97330976 1.13646686 1.05293286 1.13704431 1.04794526 1.02895725
+  1.25688386 1.23891473 1.06677628 0.94582367 1.0055896  1.01017952
+  1.0574584  1.03260255 1.06979811 1.23389196 1.106071   1.11939931
+  1.10289383 1.03917849 1.13261569 1.12821412 1.09707546 1.01053929
+  1.09621251 1.00092578 0.94740677 0.95861125 1.0585922  1.00512004
+  1.08309889 1.05179465 0.95175391 1.09110296 1.01546466]
+ [0.96562296 0.92036557 1.0123173  1.02232707 1.09486043 1.01744056
+  1.03953838 1.13949323 0.92656744 0.9938556  0.91538972 0.95361525
+  0.97050607 0.98260134 1.07374203 0.93046761 1.12649775 1.05544245
+  0.92452127 1.05682409 0.96436858 0.97890389 0.92154253 1.07648957
+  0.85569131 0.92201853 1.09392583 1.06857622 0.9125607  0.99114203
+  0.95460242 1.0724324  1.01373565 0.8975215  1.01409733 0.96133119
+  1.02182388 0.8765232  0.96187514 0.90191495 0.93944287 0.94597763
+  1.03304255 0.98539197 1.06967521 0.93364251 0.91868776 0.94413012
+  0.95255506 0.88265067 1.02788091 0.89620209 0.92084551 0.87563634
+  0.96611488 0.99015075 1.00230443 1.19271731 1.02688098]
+ [0.89138067 0.95200348 0.95390463 1.06559134 1.01378632 0.92387909
+  0.93098342 0.90605301 0.92764419 0.83194846 1.0898093  1.00304973
+  0.94474161 1.06884074 0.98658592 0.86693001 0.94021219 0.90573448
+  0.89200705 0.9136675  0.8803277  0.94996595 0.89619946 0.85179883
+  0.87848991 0.79995865 0.91763407 1.13569891 0.85551471 0.8918007
+  0.88545066 0.96634263 0.80446184 0.9302336  0.93375564 0.92862773
+  0.87819391 0.89430445 0.92879206 0.84823835 0.93552434 0.83817023
+  0.94887412 0.83337176 0.88493627 0.94644892 0.91171873 0.89734846
+  0.96057397 0.97535193 0.90023059 0.85286331 0.90863228 0.89241087
+  0.93024254 0.85971075 0.80631983 0.98004723 0.91017973]]
+Train scores:  [[0.38       0.39       0.4        0.38       0.46       0.47
+  0.39       0.46       0.45       0.46       0.47       0.49
+  0.47       0.45       0.53       0.51       0.52       0.4
+  0.49       0.46       0.58       0.42       0.51       0.43
+  0.63       0.45       0.52       0.55       0.49       0.53
+  0.37       0.48       0.42       0.65       0.53       0.52
+  0.5        0.54       0.5        0.46       0.45       0.53
+  0.48       0.48       0.44       0.55       0.51       0.56
+  0.52       0.53       0.6        0.55       0.54       0.56
+  0.46       0.56       0.53       0.51       0.44927536]
+ [0.62       0.54       0.59       0.6        0.47       0.55
+  0.53       0.46       0.62       0.57       0.65       0.67
+  0.59       0.49       0.46       0.57       0.53       0.55
+  0.6        0.51       0.58       0.62       0.66       0.56
+  0.63       0.66       0.56       0.54       0.58       0.59
+  0.62       0.52       0.57       0.64       0.55       0.57
+  0.55       0.69       0.56       0.67       0.58       0.6
+  0.55       0.57       0.53       0.61       0.6        0.62
+  0.54       0.64       0.59       0.63       0.63       0.65
+  0.58       0.58       0.53       0.47       0.55072464]
+ [0.62       0.62       0.65       0.54       0.53       0.58
+  0.62       0.61       0.63       0.72       0.5        0.59
+  0.59       0.52       0.6        0.61       0.58       0.65
+  0.57       0.67       0.62       0.57       0.61       0.61
+  0.68       0.73       0.58       0.55       0.66       0.64
+  0.64       0.56       0.69       0.6        0.68       0.64
+  0.65       0.65       0.57       0.65       0.61       0.68
+  0.62       0.62       0.61       0.56       0.6        0.62
+  0.63       0.58       0.65       0.7        0.64       0.66
+  0.56       0.63       0.71       0.61       0.69565217]]
+Test losses:  [0.01149393 0.01139261 0.01110691]
+Test scores:  [0.51424837 0.50973856 0.53023693]
+Train Epoch: 4 [1000/5869 (17%)]        Loss: 0.806541, Accuracy Score: 65.60
+Train Epoch: 4 [2000/5869 (34%)]        Loss: 0.926408, Accuracy Score: 65.85
+Train Epoch: 4 [3000/5869 (51%)]        Loss: 0.875277, Accuracy Score: 65.63
+Train Epoch: 4 [4000/5869 (68%)]        Loss: 0.998850, Accuracy Score: 64.77
+Train Epoch: 4 [5000/5869 (85%)]        Loss: 0.850939, Accuracy Score: 64.66
+Next Batch ...  100  from  7185
+Next Batch ...  200  from  7185
+Next Batch ...  300  from  7185
+Next Batch ...  400  from  7185
+Next Batch ...  500  from  7185
+Next Batch ...  600  from  7185
+Next Batch ...  700  from  7185
+Next Batch ...  800  from  7185
+Next Batch ...  900  from  7185
+Next Batch ...  1000  from  7185
+Next Batch ...  1100  from  7185
+Next Batch ...  1200  from  7185
+Next Batch ...  1300  from  7185
+Next Batch ...  1400  from  7185
+Next Batch ...  1500  from  7185
+Next Batch ...  1600  from  7185
+Next Batch ...  1700  from  7185
+Next Batch ...  1800  from  7185
+Next Batch ...  1900  from  7185
+Next Batch ...  2000  from  7185
+Next Batch ...  2100  from  7185
+Next Batch ...  2200  from  7185
+Next Batch ...  2300  from  7185
+Next Batch ...  2400  from  7185
+Next Batch ...  2500  from  7185
+Next Batch ...  2600  from  7185
+Next Batch ...  2700  from  7185
+Next Batch ...  2800  from  7185
+Next Batch ...  2900  from  7185
+Next Batch ...  3000  from  7185
+Next Batch ...  3100  from  7185
+Next Batch ...  3200  from  7185
+Next Batch ...  3300  from  7185
+Next Batch ...  3400  from  7185
+Next Batch ...  3500  from  7185
+Next Batch ...  3600  from  7185
+Next Batch ...  3700  from  7185
+Next Batch ...  3800  from  7185
+Next Batch ...  3900  from  7185
+Next Batch ...  4000  from  7185
+Next Batch ...  4100  from  7185
+Next Batch ...  4200  from  7185
+Next Batch ...  4300  from  7185
+Next Batch ...  4400  from  7185
+Next Batch ...  4500  from  7185
+Next Batch ...  4600  from  7185
+Next Batch ...  4700  from  7185
+Next Batch ...  4800  from  7185
+Next Batch ...  4900  from  7185
+Next Batch ...  5000  from  7185
+Next Batch ...  5100  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0112, Accuracy: 52.12%
+
+Train losses:  [[1.35118091 1.23451281 1.25205851 1.10405099 1.167665   1.10261798
+  1.24480319 1.16672587 1.10206461 1.11672497 1.15798414 1.12853003
+  1.04930341 1.14371967 1.12115705 1.1006676  1.03688514 1.21609235
+  1.13710713 1.10702908 1.01930881 1.10338473 1.08094394 1.18649983
+  0.97330976 1.13646686 1.05293286 1.13704431 1.04794526 1.02895725
+  1.25688386 1.23891473 1.06677628 0.94582367 1.0055896  1.01017952
+  1.0574584  1.03260255 1.06979811 1.23389196 1.106071   1.11939931
+  1.10289383 1.03917849 1.13261569 1.12821412 1.09707546 1.01053929
+  1.09621251 1.00092578 0.94740677 0.95861125 1.0585922  1.00512004
+  1.08309889 1.05179465 0.95175391 1.09110296 1.01546466]
+ [0.96562296 0.92036557 1.0123173  1.02232707 1.09486043 1.01744056
+  1.03953838 1.13949323 0.92656744 0.9938556  0.91538972 0.95361525
+  0.97050607 0.98260134 1.07374203 0.93046761 1.12649775 1.05544245
+  0.92452127 1.05682409 0.96436858 0.97890389 0.92154253 1.07648957
+  0.85569131 0.92201853 1.09392583 1.06857622 0.9125607  0.99114203
+  0.95460242 1.0724324  1.01373565 0.8975215  1.01409733 0.96133119
+  1.02182388 0.8765232  0.96187514 0.90191495 0.93944287 0.94597763
+  1.03304255 0.98539197 1.06967521 0.93364251 0.91868776 0.94413012
+  0.95255506 0.88265067 1.02788091 0.89620209 0.92084551 0.87563634
+  0.96611488 0.99015075 1.00230443 1.19271731 1.02688098]
+ [0.89138067 0.95200348 0.95390463 1.06559134 1.01378632 0.92387909
+  0.93098342 0.90605301 0.92764419 0.83194846 1.0898093  1.00304973
+  0.94474161 1.06884074 0.98658592 0.86693001 0.94021219 0.90573448
+  0.89200705 0.9136675  0.8803277  0.94996595 0.89619946 0.85179883
+  0.87848991 0.79995865 0.91763407 1.13569891 0.85551471 0.8918007
+  0.88545066 0.96634263 0.80446184 0.9302336  0.93375564 0.92862773
+  0.87819391 0.89430445 0.92879206 0.84823835 0.93552434 0.83817023
+  0.94887412 0.83337176 0.88493627 0.94644892 0.91171873 0.89734846
+  0.96057397 0.97535193 0.90023059 0.85286331 0.90863228 0.89241087
+  0.93024254 0.85971075 0.80631983 0.98004723 0.91017973]
+ [0.80078262 0.85642153 0.83485281 0.94108576 0.93106347 0.84933341
+  0.72858703 0.79873216 0.83862519 0.80654061 0.83524925 0.92587417
+  0.80343741 0.89502436 0.85901529 0.94490236 0.70749056 0.75178176
+  0.81346422 0.92640793 0.70936424 0.78421837 0.84914666 0.81248629
+  0.8845405  0.87846184 0.94325531 0.79539198 0.92575181 0.87527657
+  0.90334433 0.80318969 0.84379822 1.0361656  0.79169244 0.90622216
+  0.79099113 0.93048823 1.0840745  0.99884993 0.90433741 0.78013992
+  0.89720309 0.89122891 0.93064314 0.88635522 0.70636129 0.9886663
+  0.82486123 0.85093904 0.9288885  0.81281084 0.85022372 0.80567384
+  0.95988047 0.83680505 0.9250316  0.80765289 0.85102224]]
+Train scores:  [[0.38       0.39       0.4        0.38       0.46       0.47
+  0.39       0.46       0.45       0.46       0.47       0.49
+  0.47       0.45       0.53       0.51       0.52       0.4
+  0.49       0.46       0.58       0.42       0.51       0.43
+  0.63       0.45       0.52       0.55       0.49       0.53
+  0.37       0.48       0.42       0.65       0.53       0.52
+  0.5        0.54       0.5        0.46       0.45       0.53
+  0.48       0.48       0.44       0.55       0.51       0.56
+  0.52       0.53       0.6        0.55       0.54       0.56
+  0.46       0.56       0.53       0.51       0.44927536]
+ [0.62       0.54       0.59       0.6        0.47       0.55
+  0.53       0.46       0.62       0.57       0.65       0.67
+  0.59       0.49       0.46       0.57       0.53       0.55
+  0.6        0.51       0.58       0.62       0.66       0.56
+  0.63       0.66       0.56       0.54       0.58       0.59
+  0.62       0.52       0.57       0.64       0.55       0.57
+  0.55       0.69       0.56       0.67       0.58       0.6
+  0.55       0.57       0.53       0.61       0.6        0.62
+  0.54       0.64       0.59       0.63       0.63       0.65
+  0.58       0.58       0.53       0.47       0.55072464]
+ [0.62       0.62       0.65       0.54       0.53       0.58
+  0.62       0.61       0.63       0.72       0.5        0.59
+  0.59       0.52       0.6        0.61       0.58       0.65
+  0.57       0.67       0.62       0.57       0.61       0.61
+  0.68       0.73       0.58       0.55       0.66       0.64
+  0.64       0.56       0.69       0.6        0.68       0.64
+  0.65       0.65       0.57       0.65       0.61       0.68
+  0.62       0.62       0.61       0.56       0.6        0.62
+  0.63       0.58       0.65       0.7        0.64       0.66
+  0.56       0.63       0.71       0.61       0.69565217]
+ [0.69       0.64       0.65       0.63       0.59       0.63
+  0.7        0.67       0.68       0.68       0.69       0.63
+  0.61       0.69       0.62       0.55       0.77       0.72
+  0.71       0.62       0.76       0.66       0.65       0.64
+  0.61       0.63       0.64       0.63       0.63       0.67
+  0.6        0.7        0.65       0.53       0.69       0.63
+  0.67       0.63       0.56       0.56       0.64       0.67
+  0.63       0.63       0.57       0.61       0.77       0.59
+  0.68       0.63       0.63       0.69       0.63       0.69
+  0.64       0.67       0.56       0.65       0.63768116]]
+Test losses:  [0.01149393 0.01139261 0.01110691 0.01117438]
+Test scores:  [0.51424837 0.50973856 0.53023693 0.52119281]
+Train Epoch: 5 [1000/5869 (17%)]        Loss: 0.798670, Accuracy Score: 69.40
+Train Epoch: 5 [2000/5869 (34%)]        Loss: 0.826282, Accuracy Score: 67.40
+Train Epoch: 5 [3000/5869 (51%)]        Loss: 0.750415, Accuracy Score: 66.73
+Train Epoch: 5 [4000/5869 (68%)]        Loss: 0.890906, Accuracy Score: 66.97
+Train Epoch: 5 [5000/5869 (85%)]        Loss: 0.896004, Accuracy Score: 67.24
+Next Batch ...  100  from  7185
+Next Batch ...  200  from  7185
+Next Batch ...  300  from  7185
+Next Batch ...  400  from  7185
+Next Batch ...  500  from  7185
+Next Batch ...  600  from  7185
+Next Batch ...  700  from  7185
+Next Batch ...  800  from  7185
+Next Batch ...  900  from  7185
+Next Batch ...  1000  from  7185
+Next Batch ...  1100  from  7185
+Next Batch ...  1200  from  7185
+Next Batch ...  1300  from  7185
+Next Batch ...  1400  from  7185
+Next Batch ...  1500  from  7185
+Next Batch ...  1600  from  7185
+Next Batch ...  1700  from  7185
+Next Batch ...  1800  from  7185
+Next Batch ...  1900  from  7185
+Next Batch ...  2000  from  7185
+Next Batch ...  2100  from  7185
+Next Batch ...  2200  from  7185
+Next Batch ...  2300  from  7185
+Next Batch ...  2400  from  7185
+Next Batch ...  2500  from  7185
+Next Batch ...  2600  from  7185
+Next Batch ...  2700  from  7185
+Next Batch ...  2800  from  7185
+Next Batch ...  2900  from  7185
+Next Batch ...  3000  from  7185
+Next Batch ...  3100  from  7185
+Next Batch ...  3200  from  7185
+Next Batch ...  3300  from  7185
+Next Batch ...  3400  from  7185
+Next Batch ...  3500  from  7185
+Next Batch ...  3600  from  7185
+Next Batch ...  3700  from  7185
+Next Batch ...  3800  from  7185
+Next Batch ...  3900  from  7185
+Next Batch ...  4000  from  7185
+Next Batch ...  4100  from  7185
+Next Batch ...  4200  from  7185
+Next Batch ...  4300  from  7185
+Next Batch ...  4400  from  7185
+Next Batch ...  4500  from  7185
+Next Batch ...  4600  from  7185
+Next Batch ...  4700  from  7185
+Next Batch ...  4800  from  7185
+Next Batch ...  4900  from  7185
+Next Batch ...  5000  from  7185
+Next Batch ...  5100  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0111, Accuracy: 53.47%
+
+Train losses:  [[1.35118091 1.23451281 1.25205851 1.10405099 1.167665   1.10261798
+  1.24480319 1.16672587 1.10206461 1.11672497 1.15798414 1.12853003
+  1.04930341 1.14371967 1.12115705 1.1006676  1.03688514 1.21609235
+  1.13710713 1.10702908 1.01930881 1.10338473 1.08094394 1.18649983
+  0.97330976 1.13646686 1.05293286 1.13704431 1.04794526 1.02895725
+  1.25688386 1.23891473 1.06677628 0.94582367 1.0055896  1.01017952
+  1.0574584  1.03260255 1.06979811 1.23389196 1.106071   1.11939931
+  1.10289383 1.03917849 1.13261569 1.12821412 1.09707546 1.01053929
+  1.09621251 1.00092578 0.94740677 0.95861125 1.0585922  1.00512004
+  1.08309889 1.05179465 0.95175391 1.09110296 1.01546466]
+ [0.96562296 0.92036557 1.0123173  1.02232707 1.09486043 1.01744056
+  1.03953838 1.13949323 0.92656744 0.9938556  0.91538972 0.95361525
+  0.97050607 0.98260134 1.07374203 0.93046761 1.12649775 1.05544245
+  0.92452127 1.05682409 0.96436858 0.97890389 0.92154253 1.07648957
+  0.85569131 0.92201853 1.09392583 1.06857622 0.9125607  0.99114203
+  0.95460242 1.0724324  1.01373565 0.8975215  1.01409733 0.96133119
+  1.02182388 0.8765232  0.96187514 0.90191495 0.93944287 0.94597763
+  1.03304255 0.98539197 1.06967521 0.93364251 0.91868776 0.94413012
+  0.95255506 0.88265067 1.02788091 0.89620209 0.92084551 0.87563634
+  0.96611488 0.99015075 1.00230443 1.19271731 1.02688098]
+ [0.89138067 0.95200348 0.95390463 1.06559134 1.01378632 0.92387909
+  0.93098342 0.90605301 0.92764419 0.83194846 1.0898093  1.00304973
+  0.94474161 1.06884074 0.98658592 0.86693001 0.94021219 0.90573448
+  0.89200705 0.9136675  0.8803277  0.94996595 0.89619946 0.85179883
+  0.87848991 0.79995865 0.91763407 1.13569891 0.85551471 0.8918007
+  0.88545066 0.96634263 0.80446184 0.9302336  0.93375564 0.92862773
+  0.87819391 0.89430445 0.92879206 0.84823835 0.93552434 0.83817023
+  0.94887412 0.83337176 0.88493627 0.94644892 0.91171873 0.89734846
+  0.96057397 0.97535193 0.90023059 0.85286331 0.90863228 0.89241087
+  0.93024254 0.85971075 0.80631983 0.98004723 0.91017973]
+ [0.80078262 0.85642153 0.83485281 0.94108576 0.93106347 0.84933341
+  0.72858703 0.79873216 0.83862519 0.80654061 0.83524925 0.92587417
+  0.80343741 0.89502436 0.85901529 0.94490236 0.70749056 0.75178176
+  0.81346422 0.92640793 0.70936424 0.78421837 0.84914666 0.81248629
+  0.8845405  0.87846184 0.94325531 0.79539198 0.92575181 0.87527657
+  0.90334433 0.80318969 0.84379822 1.0361656  0.79169244 0.90622216
+  0.79099113 0.93048823 1.0840745  0.99884993 0.90433741 0.78013992
+  0.89720309 0.89122891 0.93064314 0.88635522 0.70636129 0.9886663
+  0.82486123 0.85093904 0.9288885  0.81281084 0.85022372 0.80567384
+  0.95988047 0.83680505 0.9250316  0.80765289 0.85102224]
+ [0.76151091 0.81502068 0.76877141 0.86073679 0.90347207 0.81244683
+  0.76267701 0.82514215 0.86243922 0.79867005 0.87983406 0.89173615
+  0.80429071 0.84670413 0.85734677 0.88830125 0.89445353 0.89781332
+  0.79926592 0.82628167 0.73647088 0.87143767 0.88244736 0.89517534
+  0.83862716 0.90284836 0.67648345 0.82127726 0.89056569 0.75041533
+  0.80678457 0.85934186 0.81969297 0.88722724 0.81206298 0.73090029
+  0.74552828 0.81780785 0.75833815 0.89090574 0.83187902 0.72000664
+  0.87967372 0.77632517 0.77631724 0.72374654 0.88439196 0.75145251
+  0.72683072 0.89600402 0.76968336 0.7487905  0.73608208 0.81026739
+  0.91480136 0.78126264 0.80581647 0.76293778 0.61335921]]
+Train scores:  [[0.38       0.39       0.4        0.38       0.46       0.47
+  0.39       0.46       0.45       0.46       0.47       0.49
+  0.47       0.45       0.53       0.51       0.52       0.4
+  0.49       0.46       0.58       0.42       0.51       0.43
+  0.63       0.45       0.52       0.55       0.49       0.53
+  0.37       0.48       0.42       0.65       0.53       0.52
+  0.5        0.54       0.5        0.46       0.45       0.53
+  0.48       0.48       0.44       0.55       0.51       0.56
+  0.52       0.53       0.6        0.55       0.54       0.56
+  0.46       0.56       0.53       0.51       0.44927536]
+ [0.62       0.54       0.59       0.6        0.47       0.55
+  0.53       0.46       0.62       0.57       0.65       0.67
+  0.59       0.49       0.46       0.57       0.53       0.55
+  0.6        0.51       0.58       0.62       0.66       0.56
+  0.63       0.66       0.56       0.54       0.58       0.59
+  0.62       0.52       0.57       0.64       0.55       0.57
+  0.55       0.69       0.56       0.67       0.58       0.6
+  0.55       0.57       0.53       0.61       0.6        0.62
+  0.54       0.64       0.59       0.63       0.63       0.65
+  0.58       0.58       0.53       0.47       0.55072464]
+ [0.62       0.62       0.65       0.54       0.53       0.58
+  0.62       0.61       0.63       0.72       0.5        0.59
+  0.59       0.52       0.6        0.61       0.58       0.65
+  0.57       0.67       0.62       0.57       0.61       0.61
+  0.68       0.73       0.58       0.55       0.66       0.64
+  0.64       0.56       0.69       0.6        0.68       0.64
+  0.65       0.65       0.57       0.65       0.61       0.68
+  0.62       0.62       0.61       0.56       0.6        0.62
+  0.63       0.58       0.65       0.7        0.64       0.66
+  0.56       0.63       0.71       0.61       0.69565217]
+ [0.69       0.64       0.65       0.63       0.59       0.63
+  0.7        0.67       0.68       0.68       0.69       0.63
+  0.61       0.69       0.62       0.55       0.77       0.72
+  0.71       0.62       0.76       0.66       0.65       0.64
+  0.61       0.63       0.64       0.63       0.63       0.67
+  0.6        0.7        0.65       0.53       0.69       0.63
+  0.67       0.63       0.56       0.56       0.64       0.67
+  0.63       0.63       0.57       0.61       0.77       0.59
+  0.68       0.63       0.63       0.69       0.63       0.69
+  0.64       0.67       0.56       0.65       0.63768116]
+ [0.71       0.68       0.75       0.68       0.61       0.7
+  0.75       0.67       0.65       0.74       0.68       0.62
+  0.73       0.66       0.64       0.58       0.6        0.67
+  0.64       0.72       0.74       0.63       0.61       0.61
+  0.68       0.64       0.72       0.58       0.63       0.7
+  0.7        0.64       0.7        0.67       0.72       0.72
+  0.71       0.65       0.64       0.62       0.65       0.72
+  0.63       0.7        0.7        0.7        0.64       0.71
+  0.75       0.63       0.71       0.7        0.69       0.63
+  0.59       0.67       0.66       0.68       0.82608696]]
+Test losses:  [0.01149393 0.01139261 0.01110691 0.01117438 0.01106186]
+Test scores:  [0.51424837 0.50973856 0.53023693 0.52119281 0.53473039]
+Train Epoch: 6 [1000/5869 (17%)]        Loss: 0.786769, Accuracy Score: 70.50
+Train Epoch: 6 [2000/5869 (34%)]        Loss: 0.895237, Accuracy Score: 68.70
+^CTraceback (most recent call last):
+  File "main.py", line 112, in <module>
+    train_losses, train_scores = train_one_epoch(model, device, train_loader, optimizer, epoch)
+  File "/data/cs230-road-accidents/train.py", line 38, in train_one_epoch
+    for batch_idx, (clip_id, X, y, video_id) in enumerate(train_loader):
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 385, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data/cs230-road-accidents/datasets.py", line 27, in __getitem__
+    video, audio, info, video_idx = self.video_clips.get_clip(idx)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/datasets/video_utils.py", line 277, in get_clip
+    video, audio, info = read_video(video_path, start_pts, end_pts)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/io/video.py", line 235, in read_video
+    container.streams.video[0], {'video': 0})
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/io/video.py", line 144, in _read_from_stream
+    for idx, frame in enumerate(container.decode(**stream_name)):
+KeyboardInterrupt
