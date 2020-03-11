@@ -35,10 +35,7 @@ else:
 
 
 train_list, train_label = read_data_labels('train1.csv', categories)
-test_list, test_label = read_data_labels('test1.csv', categories)
-
-train_list, train_label = train_list, train_label
-test_list, test_label = test_list, test_label
+test_list, test_label = read_data_labels('valid1.csv', categories)
 
 if args.crop_videos:
     crop_video(train_list)
