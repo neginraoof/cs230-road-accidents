@@ -13,7 +13,8 @@ class MyVideoDataset(data.Dataset):
         self.video_clips = VideoClips(self.videos,
                                       clip_length_in_frames=n_frames,
                                       frames_between_clips=n_frames,
-                                      frame_rate=fps
+                                      frame_rate=fps,
+                                      num_workers=2
                                       )
         self.spatial_transform = spatial_transform
         self.temporal_transform = temporal_transform
