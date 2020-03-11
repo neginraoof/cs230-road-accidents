@@ -11,7 +11,8 @@ import os
 
 log_interval = 10
 dir_name = 'Conv3d_1fps'
-os.mkdir(dir_name)
+if not os.path.exists(dir_name):
+     os.mkdir(dir_name)
 
 def calculate_accuracy(outputs, targets):
     batch_size = targets.size(0)
