@@ -7,9 +7,11 @@ import torch.utils.data as data
 import torchvision
 # import matplotlib.pyplot as plt
 import csv
+import os
 
 log_interval = 10
-
+dir_name = 'Conv3d_1fps'
+os.mkdir(dir_name)
 
 def calculate_accuracy(outputs, targets):
     batch_size = targets.size(0)
@@ -65,15 +67,14 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         # show information
         if (batch_idx + 1) % log_interval == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}, Accuracy Score: {:.2f}'.format(
-                epoch + 1, N_count, len(train_loader.dataset), 100. * (batch_idx + 1) / len(train_loader), loss.item(),
-                100 * np.mean(scores)))
+                epoch + 1, N_count, len(train_loader.dataset), 100. * (batch_idx + 1) / len(train_loader), loss.item(), 100 * np.mean(scores)))
 
     clip_ids = np.concatenate(clip_ids).reshape(-1, 1)
     video_ids = np.concatenate(video_ids).reshape(-1, 1)
     probs = np.concatenate(probs)
     data = np.concatenate([clip_ids, video_ids, probs], axis=1)
 
-    with open('train_epoch_{}.csv'.format(epoch), 'w') as csv_file:
+    with open(dir_name+'/train_epoch_{}.csv'.format(epoch), 'w') as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=',')
         csv_writer.writerow(["clip_id", "video_id", "p1", "p2", "p3", "p4"])
         csv_writer.writerows(data)

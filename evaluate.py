@@ -4,7 +4,6 @@ import torch.nn.functional as F
 import csv
 import numpy as np
 
-
 def calculate_accuracy(outputs, targets):
     batch_size = targets.size(0)
 
