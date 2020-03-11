@@ -35,10 +35,7 @@ else:
 
 
 train_list, train_label = read_data_labels('train1.csv', categories)
-test_list, test_label = read_data_labels('test1.csv', categories)
-
-train_list, train_label = train_list, train_label
-test_list, test_label = test_list, test_label
+test_list, test_label = read_data_labels('valid1.csv', categories)
 
 if args.crop_videos:
     crop_video(train_list)
@@ -68,8 +65,8 @@ valid_set = MyVideoDataset('./video_data_clip', test_list, test_label, n_frames=
 train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
 
-print("Train {} clips".format(len(train_loader)))
-print("Test {} clips".format(len(valid_loader)))
+print("Train {} clips".format(len(train_set)))
+print("Test {} clips".format(len(valid_set)))
 
 #  Normalize Data
 if args.get_stats:
