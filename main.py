@@ -73,8 +73,9 @@ if args.get_stats:
     m_, s_ = get_stats(train_loader)
     print("Calculated stats: mean ", m_ , "and std ", s_)
 else:
-    m_ = torch.tensor([0.5078, 0.4929, 0.4816])
-    s_ = torch.tensor([0.2329, 0.2376, 0.2498])
+    m_ = torch.tensor([0.4926, 0.4835, 0.4777])
+    s_ = torch.tensor([0.2355, 0.2401, 0.2485])
+
 train_set.set_stats(m_, s_)
 valid_set.set_stats(m_, s_)
 
