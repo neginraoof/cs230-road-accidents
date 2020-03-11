@@ -2,6 +2,7 @@ import torch
 from sklearn.metrics import r2_score
 import torch.nn.functional as F
 import csv
+import numpy as np
 
 def calculate_accuracy(outputs, targets):
     batch_size = targets.size(0)
@@ -65,7 +66,7 @@ def evaluate(model, device, optimizer, test_loader):
         csv_writer.writerow(["clip_id", "video_id", "p1", "p2", "p3", "p4"])
         csv_writer.writerows(data)
         csv_writer.writerow(["Losses"])
-        csv_writer.writerow(test_loss)
+        csv_writer.writerow([test_loss])
         csv_writer.writerow(["Scores"])
         csv_writer.writerow(scores)
 
