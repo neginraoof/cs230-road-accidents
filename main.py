@@ -81,7 +81,7 @@ valid_set.set_stats(m_, s_)
 
 # create model
 if args.pretrained:
-    model = ResNet18(num_classes=4).to(device)
+    model = Conv3dModelPretrained(num_classes=4).to(device)
 else:
     model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
 print("Model: ", model)

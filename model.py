@@ -63,8 +63,9 @@ class Conv3dModel(nn.Module):
         x = x.view(x.size(0), -1)
         x = self.linear_layers(x)
         return x
-    
-class ResNet18(nn.Module):
+
+
+class Conv3dModelPretrained(nn.Module):
     def __init__(self, num_classes=4, drop_p=0.2, fc_hidden1=400, fc_hidden2=100):
         super(Conv3dModelPretrained, self).__init__()
         
@@ -72,7 +73,10 @@ class ResNet18(nn.Module):
         self.drop_p = drop_p
         self.num_classes = num_classes
  
-        self.resnet_layers = torchvision.models.video.r3d_18(pretrained=True, progress=True)        
+        self.resnet_layers = torchvision.models.video.r3d_18(pretrained=True)
+        for param in self.resnet_layers.parameters():
+            param.requires_grad = False
+
         self.linear_layers = nn.Sequential(
             nn.Linear(self.fc_hidden1, self.fc_hidden2),
             nn.ReLU(inplace=True),
@@ -81,6 +85,7 @@ class ResNet18(nn.Module):
         )
 
     def forward(self, x_3d):
+
         x = self.resnet_layers(x_3d)
         x = x.view(x.size(0), -1)
         x = self.linear_layers(x)
