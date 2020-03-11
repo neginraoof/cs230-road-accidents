@@ -77,7 +77,7 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         csv_writer = csv.writer(csv_file, delimiter=',')
         csv_writer.writerow(["clip_id", "video_id", "p1", "p2", "p3", "p4"])
         csv_writer.writerows(data)
-        csv_writer.writerow(["Losses"])
+        csv_writer.writerow(["Train Losses"])
         csv_writer.writerow(losses)
         csv_writer.writerow(["Scores"])
         csv_writer.writerow(scores)
