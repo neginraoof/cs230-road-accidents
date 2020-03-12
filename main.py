@@ -15,7 +15,7 @@ print("Args: ", args)
 np.save('dummy_test.npy', np.array([2]))
 
 # Dataloader parameters
-batch_size = 20
+batch_size = 40
 image_height, image_width = 112, 112  # resize video 2d frame size
 n_frames = 15  #number of frames in a video clip
 fps = 1
@@ -73,8 +73,9 @@ if args.get_stats:
     m_, s_ = get_stats(train_loader)
     print("Calculated stats: mean ", m_ , "and std ", s_)
 else:
-    m_ = torch.tensor([0.5078, 0.4929, 0.4816])
-    s_ = torch.tensor([0.2329, 0.2376, 0.2498])
+    m_ = torch.tensor([0.4926, 0.4835, 0.4777])
+    s_ = torch.tensor([0.2355, 0.2401, 0.2485])
+
 train_set.set_stats(m_, s_)
 valid_set.set_stats(m_, s_)
 

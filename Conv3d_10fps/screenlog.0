@@ -1,0 +1,1645 @@
+Next Batch ...  5140  from  7185
+Next Batch ...  5160  from  7185
+Next Batch ...  5180  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5220  from  7185
+Next Batch ...  5240  from  7185
+Next Batch ...  5260  from  7185
+Next Batch ...  5280  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5320  from  7185
+Next Batch ...  5340  from  7185
+Next Batch ...  5360  from  7185
+Next Batch ...  5380  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5420  from  7185
+Next Batch ...  5440  from  7185
+Next Batch ...  5460  from  7185
+Next Batch ...  5480  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5520  from  7185
+Next Batch ...  5540  from  7185
+Next Batch ...  5560  from  7185
+Next Batch ...  5580  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5620  from  7185
+Next Batch ...  5640  from  7185
+Next Batch ...  5660  from  7185
+Next Batch ...  5680  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5720  from  7185
+Next Batch ...  5740  from  7185
+Next Batch ...  5760  from  7185
+Next Batch ...  5780  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5820  from  7185
+Next Batch ...  5840  from  7185
+Next Batch ...  5860  from  7185
+Next Batch ...  5880  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  5920  from  7185
+Next Batch ...  5940  from  7185
+Next Batch ...  5960  from  7185
+Next Batch ...  5980  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6020  from  7185
+Next Batch ...  6040  from  7185
+Next Batch ...  6060  from  7185
+Next Batch ...  6080  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6120  from  7185
+Next Batch ...  6140  from  7185
+Next Batch ...  6160  from  7185
+Next Batch ...  6180  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6220  from  7185
+Next Batch ...  6240  from  7185
+Next Batch ...  6260  from  7185
+Next Batch ...  6280  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6320  from  7185
+Next Batch ...  6340  from  7185
+Next Batch ...  6360  from  7185
+Next Batch ...  6380  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6420  from  7185
+Next Batch ...  6440  from  7185
+Next Batch ...  6460  from  7185
+Next Batch ...  6480  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6520  from  7185
+Next Batch ...  6540  from  7185
+Next Batch ...  6560  from  7185
+Next Batch ...  6580  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6620  from  7185
+Next Batch ...  6640  from  7185
+Next Batch ...  6660  from  7185
+Next Batch ...  6680  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6720  from  7185
+Next Batch ...  6740  from  7185
+Next Batch ...  6760  from  7185
+Next Batch ...  6780  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6820  from  7185
+Next Batch ...  6840  from  7185
+Next Batch ...  6860  from  7185
+Next Batch ...  6880  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  6920  from  7185
+Next Batch ...  6940  from  7185
+Next Batch ...  6960  from  7185
+Next Batch ...  6980  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7020  from  7185
+Next Batch ...  7040  from  7185
+Next Batch ...  7060  from  7185
+Next Batch ...  7080  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7120  from  7185
+Next Batch ...  7140  from  7185
+Next Batch ...  7160  from  7185
+Next Batch ...  7180  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0557, Accuracy: 53.96%
+
+Train losses:  [[1.51055372 1.32826781 1.14400554 ... 1.0175674  1.20469368 1.37956059]
+ [0.87345791 1.00728345 1.14251113 ... 1.02521837 0.69595993 0.92767364]
+ [0.94892263 0.87420022 0.80519313 ... 0.68062055 0.76507807 1.25971746]
+ [0.97736299 0.59247994 0.83921593 ... 0.95077717 0.64361149 0.68439484]]
+Train scores:  [[0.         0.4        0.6        ... 0.5        0.5        0.33333333]
+ [0.6        0.5        0.4        ... 0.55       0.8        0.66666667]
+ [0.7        0.7        0.6        ... 0.85       0.8        0.44444444]
+ [0.55       0.7        0.65       ... 0.6        0.7        0.66666667]]
+Test losses:  [0.05743787 0.05745014 0.0566211  0.05570663]
+Test scores:  [0.51388889 0.50861111 0.52416667 0.53958333]
+Train Epoch: 5 [200/5869 (3%)]  Loss: 0.889091, Accuracy Score: 67.50
+Train Epoch: 5 [400/5869 (7%)]  Loss: 0.814811, Accuracy Score: 68.50
+Train Epoch: 5 [600/5869 (10%)] Loss: 0.695258, Accuracy Score: 66.83
+Train Epoch: 5 [800/5869 (14%)] Loss: 0.665247, Accuracy Score: 67.50
+Train Epoch: 5 [1000/5869 (17%)]        Loss: 0.748997, Accuracy Score: 68.20
+Train Epoch: 5 [1200/5869 (20%)]        Loss: 0.549591, Accuracy Score: 68.42
+Train Epoch: 5 [1400/5869 (24%)]        Loss: 0.804948, Accuracy Score: 68.79
+Train Epoch: 5 [1600/5869 (27%)]        Loss: 0.977007, Accuracy Score: 68.06
+Train Epoch: 5 [1800/5869 (31%)]        Loss: 0.820723, Accuracy Score: 68.22
+Train Epoch: 5 [2000/5869 (34%)]        Loss: 0.807609, Accuracy Score: 67.50
+Train Epoch: 5 [2200/5869 (37%)]        Loss: 0.659056, Accuracy Score: 67.91
+Train Epoch: 5 [2400/5869 (41%)]        Loss: 0.807455, Accuracy Score: 68.17
+Train Epoch: 5 [2600/5869 (44%)]        Loss: 0.502125, Accuracy Score: 68.23
+Train Epoch: 5 [2800/5869 (48%)]        Loss: 0.712260, Accuracy Score: 68.21
+Train Epoch: 5 [3000/5869 (51%)]        Loss: 0.746005, Accuracy Score: 68.30
+Train Epoch: 5 [3200/5869 (54%)]        Loss: 0.702905, Accuracy Score: 68.22
+^CTraceback (most recent call last):
+  File "main.py", line 106, in <module>
+    train_losses, train_scores = train_one_epoch(model, device, train_loader, optimizer, epoch)
+  File "/data/cs230-road-accidents/train.py", line 38, in train_one_epoch
+    for batch_idx, (clip_id, X, y, video_id) in enumerate(train_loader):
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 385, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data/cs230-road-accidents/datasets.py", line 27, in __getitem__
+    video, audio, info, video_idx = self.video_clips.get_clip(idx)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/datasets/video_utils.py", line 277, in get_clip
+    video, audio, info = read_video(video_path, start_pts, end_pts)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/io/video.py", line 235, in read_video
+    container.streams.video[0], {'video': 0})
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/io/video.py", line 144, in _read_from_stream
+    for idx, frame in enumerate(container.decode(**stream_name)):
+KeyboardInterrupt
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[BTrain Epoch: 1 [4000/5869 (68%)]        Loss: 1.233892, Accuracy Score: 47.77
+Train Epoch: 1 [5000/5869 (85%)]        Loss: 1.000926, Accuracy Score: 48.32
+Next Batch ...  100  from  7185
+Next Batch ...  200  from  7185
+Next Batch ...  300  from  7185
+Next Batch ...  400  from  7185
+Next Batch ...  500  from  7185
+Next Batch ...  600  from  7185
+Next Batch ...  700  from  7185
+Next Batch ...  800  from  7185
+Next Batch ...  900  from  7185
+Next Batch ...  1000  from  7185
+Next Batch ...  1100  from  7185
+Next Batch ...  1200  from  7185
+Next Batch ...  1300  from  7185
+Next Batch ...  1400  from  7185
+Next Batch ...  1500  from  7185
+Next Batch ...  1600  from  7185
+Next Batch ...  1700  from  7185
+Next Batch ...  1800  from  7185
+Next Batch ...  1900  from  7185
+Next Batch ...  2000  from  7185
+Next Batch ...  2100  from  7185
+Next Batch ...  2200  from  7185
+Next Batch ...  2300  from  7185
+Next Batch ...  2400  from  7185
+Next Batch ...  2500  from  7185
+Next Batch ...  2600  from  7185
+Next Batch ...  2700  from  7185
+Next Batch ...  2800  from  7185
+Next Batch ...  2900  from  7185
+Next Batch ...  3000  from  7185
+Next Batch ...  3100  from  7185
+Next Batch ...  3200  from  7185
+Next Batch ...  3300  from  7185
+Next Batch ...  3400  from  7185
+Next Batch ...  3500  from  7185
+Next Batch ...  3600  from  7185
+Next Batch ...  3700  from  7185
+Next Batch ...  3800  from  7185
+Next Batch ...  3900  from  7185
+Next Batch ...  4000  from  7185
+Next Batch ...  4100  from  7185
+Next Batch ...  4200  from  7185
+Next Batch ...  4300  from  7185
+Next Batch ...  4400  from  7185
+Next Batch ...  4500  from  7185
+Next Batch ...  4600  from  7185
+Next Batch ...  4700  from  7185
+Next Batch ...  4800  from  7185
+Next Batch ...  4900  from  7185
+Next Batch ...  5000  from  7185
+Next Batch ...  5100  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0115, Accuracy: 51.42%
+
+Train losses:  [[1.35118091 1.23451281 1.25205851 1.10405099 1.167665   1.10261798
+  1.24480319 1.16672587 1.10206461 1.11672497 1.15798414 1.12853003
+  1.04930341 1.14371967 1.12115705 1.1006676  1.03688514 1.21609235
+  1.13710713 1.10702908 1.01930881 1.10338473 1.08094394 1.18649983
+  0.97330976 1.13646686 1.05293286 1.13704431 1.04794526 1.02895725
+  1.25688386 1.23891473 1.06677628 0.94582367 1.0055896  1.01017952
+  1.0574584  1.03260255 1.06979811 1.23389196 1.106071   1.11939931
+  1.10289383 1.03917849 1.13261569 1.12821412 1.09707546 1.01053929
+  1.09621251 1.00092578 0.94740677 0.95861125 1.0585922  1.00512004
+  1.08309889 1.05179465 0.95175391 1.09110296 1.01546466]]
+Train scores:  [[0.38       0.39       0.4        0.38       0.46       0.47
+  0.39       0.46       0.45       0.46       0.47       0.49
+  0.47       0.45       0.53       0.51       0.52       0.4
+  0.49       0.46       0.58       0.42       0.51       0.43
+  0.63       0.45       0.52       0.55       0.49       0.53
+  0.37       0.48       0.42       0.65       0.53       0.52
+  0.5        0.54       0.5        0.46       0.45       0.53
+  0.48       0.48       0.44       0.55       0.51       0.56
+  0.52       0.53       0.6        0.55       0.54       0.56
+  0.46       0.56       0.53       0.51       0.44927536]]
+Test losses:  [0.01149393]
+Test scores:  [0.51424837]
+Train Epoch: 2 [1000/5869 (17%)]        Loss: 0.993856, Accuracy Score: 55.50
+Train Epoch: 2 [2000/5869 (34%)]        Loss: 1.056824, Accuracy Score: 55.85
+Train Epoch: 2 [3000/5869 (51%)]        Loss: 0.991142, Accuracy Score: 57.17
+Train Epoch: 2 [4000/5869 (68%)]        Loss: 0.901915, Accuracy Score: 57.73
+Train Epoch: 2 [5000/5869 (85%)]        Loss: 0.882651, Accuracy Score: 57.86
+Next Batch ...  100  from  7185
+Next Batch ...  200  from  7185
+Next Batch ...  300  from  7185
+Next Batch ...  400  from  7185
+Next Batch ...  500  from  7185
+Next Batch ...  600  from  7185
+Next Batch ...  700  from  7185
+Next Batch ...  800  from  7185
+Next Batch ...  900  from  7185
+Next Batch ...  1000  from  7185
+Next Batch ...  1100  from  7185
+Next Batch ...  1200  from  7185
+Next Batch ...  1300  from  7185
+Next Batch ...  1400  from  7185
+Next Batch ...  1500  from  7185
+Next Batch ...  1600  from  7185
+Next Batch ...  1700  from  7185
+Next Batch ...  1800  from  7185
+Next Batch ...  1900  from  7185
+Next Batch ...  2000  from  7185
+Next Batch ...  2100  from  7185
+Next Batch ...  2200  from  7185
+Next Batch ...  2300  from  7185
+Next Batch ...  2400  from  7185
+Next Batch ...  2500  from  7185
+Next Batch ...  2600  from  7185
+Next Batch ...  2700  from  7185
+Next Batch ...  2800  from  7185
+Next Batch ...  2900  from  7185
+Next Batch ...  3000  from  7185
+Next Batch ...  3100  from  7185
+Next Batch ...  3200  from  7185
+Next Batch ...  3300  from  7185
+Next Batch ...  3400  from  7185
+Next Batch ...  3500  from  7185
+Next Batch ...  3600  from  7185
+Next Batch ...  3700  from  7185
+Next Batch ...  3800  from  7185
+Next Batch ...  3900  from  7185
+Next Batch ...  4000  from  7185
+Next Batch ...  4100  from  7185
+Next Batch ...  4200  from  7185
+Next Batch ...  4300  from  7185
+Next Batch ...  4400  from  7185
+Next Batch ...  4500  from  7185
+Next Batch ...  4600  from  7185
+Next Batch ...  4700  from  7185
+Next Batch ...  4800  from  7185
+Next Batch ...  4900  from  7185
+Next Batch ...  5000  from  7185
+Next Batch ...  5100  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0114, Accuracy: 50.97%
+
+Train losses:  [[1.35118091 1.23451281 1.25205851 1.10405099 1.167665   1.10261798
+  1.24480319 1.16672587 1.10206461 1.11672497 1.15798414 1.12853003
+  1.04930341 1.14371967 1.12115705 1.1006676  1.03688514 1.21609235
+  1.13710713 1.10702908 1.01930881 1.10338473 1.08094394 1.18649983
+  0.97330976 1.13646686 1.05293286 1.13704431 1.04794526 1.02895725
+  1.25688386 1.23891473 1.06677628 0.94582367 1.0055896  1.01017952
+  1.0574584  1.03260255 1.06979811 1.23389196 1.106071   1.11939931
+  1.10289383 1.03917849 1.13261569 1.12821412 1.09707546 1.01053929
+  1.09621251 1.00092578 0.94740677 0.95861125 1.0585922  1.00512004
+  1.08309889 1.05179465 0.95175391 1.09110296 1.01546466]
+ [0.96562296 0.92036557 1.0123173  1.02232707 1.09486043 1.01744056
+  1.03953838 1.13949323 0.92656744 0.9938556  0.91538972 0.95361525
+  0.97050607 0.98260134 1.07374203 0.93046761 1.12649775 1.05544245
+  0.92452127 1.05682409 0.96436858 0.97890389 0.92154253 1.07648957
+  0.85569131 0.92201853 1.09392583 1.06857622 0.9125607  0.99114203
+  0.95460242 1.0724324  1.01373565 0.8975215  1.01409733 0.96133119
+  1.02182388 0.8765232  0.96187514 0.90191495 0.93944287 0.94597763
+  1.03304255 0.98539197 1.06967521 0.93364251 0.91868776 0.94413012
+  0.95255506 0.88265067 1.02788091 0.89620209 0.92084551 0.87563634
+  0.96611488 0.99015075 1.00230443 1.19271731 1.02688098]]
+Train scores:  [[0.38       0.39       0.4        0.38       0.46       0.47
+  0.39       0.46       0.45       0.46       0.47       0.49
+  0.47       0.45       0.53       0.51       0.52       0.4
+  0.49       0.46       0.58       0.42       0.51       0.43
+  0.63       0.45       0.52       0.55       0.49       0.53
+  0.37       0.48       0.42       0.65       0.53       0.52
+  0.5        0.54       0.5        0.46       0.45       0.53
+  0.48       0.48       0.44       0.55       0.51       0.56
+  0.52       0.53       0.6        0.55       0.54       0.56
+  0.46       0.56       0.53       0.51       0.44927536]
+ [0.62       0.54       0.59       0.6        0.47       0.55
+  0.53       0.46       0.62       0.57       0.65       0.67
+  0.59       0.49       0.46       0.57       0.53       0.55
+  0.6        0.51       0.58       0.62       0.66       0.56
+  0.63       0.66       0.56       0.54       0.58       0.59
+  0.62       0.52       0.57       0.64       0.55       0.57
+  0.55       0.69       0.56       0.67       0.58       0.6
+  0.55       0.57       0.53       0.61       0.6        0.62
+  0.54       0.64       0.59       0.63       0.63       0.65
+  0.58       0.58       0.53       0.47       0.55072464]]
+Test losses:  [0.01149393 0.01139261]
+Test scores:  [0.51424837 0.50973856]
+Train Epoch: 3 [1000/5869 (17%)]        Loss: 0.831948, Accuracy Score: 61.20
+Train Epoch: 3 [2000/5869 (34%)]        Loss: 0.913668, Accuracy Score: 60.00
+Train Epoch: 3 [3000/5869 (51%)]        Loss: 0.891801, Accuracy Score: 60.83
+Train Epoch: 3 [4000/5869 (68%)]        Loss: 0.848238, Accuracy Score: 61.45
+Train Epoch: 3 [5000/5869 (85%)]        Loss: 0.975352, Accuracy Score: 61.42
+Next Batch ...  100  from  7185
+Next Batch ...  200  from  7185
+Next Batch ...  300  from  7185
+Next Batch ...  400  from  7185
+Next Batch ...  500  from  7185
+Next Batch ...  600  from  7185
+Next Batch ...  700  from  7185
+Next Batch ...  800  from  7185
+Next Batch ...  900  from  7185
+Next Batch ...  1000  from  7185
+Next Batch ...  1100  from  7185
+Next Batch ...  1200  from  7185
+Next Batch ...  1300  from  7185
+Next Batch ...  1400  from  7185
+Next Batch ...  1500  from  7185
+Next Batch ...  1600  from  7185
+Next Batch ...  1700  from  7185
+Next Batch ...  1800  from  7185
+Next Batch ...  1900  from  7185
+Next Batch ...  2000  from  7185
+Next Batch ...  2100  from  7185
+Next Batch ...  2200  from  7185
+Next Batch ...  2300  from  7185
+Next Batch ...  2400  from  7185
+Next Batch ...  2500  from  7185
+Next Batch ...  2600  from  7185
+Next Batch ...  2700  from  7185
+Next Batch ...  2800  from  7185
+Next Batch ...  2900  from  7185
+Next Batch ...  3000  from  7185
+Next Batch ...  3100  from  7185
+Next Batch ...  3200  from  7185
+Next Batch ...  3300  from  7185
+Next Batch ...  3400  from  7185
+Next Batch ...  3500  from  7185
+Next Batch ...  3600  from  7185
+Next Batch ...  3700  from  7185
+Next Batch ...  3800  from  7185
+Next Batch ...  3900  from  7185
+Next Batch ...  4000  from  7185
+Next Batch ...  4100  from  7185
+Next Batch ...  4200  from  7185
+Next Batch ...  4300  from  7185
+Next Batch ...  4400  from  7185
+Next Batch ...  4500  from  7185
+Next Batch ...  4600  from  7185
+Next Batch ...  4700  from  7185
+Next Batch ...  4800  from  7185
+Next Batch ...  4900  from  7185
+Next Batch ...  5000  from  7185
+Next Batch ...  5100  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0111, Accuracy: 53.02%
+
+Train losses:  [[1.35118091 1.23451281 1.25205851 1.10405099 1.167665   1.10261798
+  1.24480319 1.16672587 1.10206461 1.11672497 1.15798414 1.12853003
+  1.04930341 1.14371967 1.12115705 1.1006676  1.03688514 1.21609235
+  1.13710713 1.10702908 1.01930881 1.10338473 1.08094394 1.18649983
+  0.97330976 1.13646686 1.05293286 1.13704431 1.04794526 1.02895725
+  1.25688386 1.23891473 1.06677628 0.94582367 1.0055896  1.01017952
+  1.0574584  1.03260255 1.06979811 1.23389196 1.106071   1.11939931
+  1.10289383 1.03917849 1.13261569 1.12821412 1.09707546 1.01053929
+  1.09621251 1.00092578 0.94740677 0.95861125 1.0585922  1.00512004
+  1.08309889 1.05179465 0.95175391 1.09110296 1.01546466]
+ [0.96562296 0.92036557 1.0123173  1.02232707 1.09486043 1.01744056
+  1.03953838 1.13949323 0.92656744 0.9938556  0.91538972 0.95361525
+  0.97050607 0.98260134 1.07374203 0.93046761 1.12649775 1.05544245
+  0.92452127 1.05682409 0.96436858 0.97890389 0.92154253 1.07648957
+  0.85569131 0.92201853 1.09392583 1.06857622 0.9125607  0.99114203
+  0.95460242 1.0724324  1.01373565 0.8975215  1.01409733 0.96133119
+  1.02182388 0.8765232  0.96187514 0.90191495 0.93944287 0.94597763
+  1.03304255 0.98539197 1.06967521 0.93364251 0.91868776 0.94413012
+  0.95255506 0.88265067 1.02788091 0.89620209 0.92084551 0.87563634
+  0.96611488 0.99015075 1.00230443 1.19271731 1.02688098]
+ [0.89138067 0.95200348 0.95390463 1.06559134 1.01378632 0.92387909
+  0.93098342 0.90605301 0.92764419 0.83194846 1.0898093  1.00304973
+  0.94474161 1.06884074 0.98658592 0.86693001 0.94021219 0.90573448
+  0.89200705 0.9136675  0.8803277  0.94996595 0.89619946 0.85179883
+  0.87848991 0.79995865 0.91763407 1.13569891 0.85551471 0.8918007
+  0.88545066 0.96634263 0.80446184 0.9302336  0.93375564 0.92862773
+  0.87819391 0.89430445 0.92879206 0.84823835 0.93552434 0.83817023
+  0.94887412 0.83337176 0.88493627 0.94644892 0.91171873 0.89734846
+  0.96057397 0.97535193 0.90023059 0.85286331 0.90863228 0.89241087
+  0.93024254 0.85971075 0.80631983 0.98004723 0.91017973]]
+Train scores:  [[0.38       0.39       0.4        0.38       0.46       0.47
+  0.39       0.46       0.45       0.46       0.47       0.49
+  0.47       0.45       0.53       0.51       0.52       0.4
+  0.49       0.46       0.58       0.42       0.51       0.43
+  0.63       0.45       0.52       0.55       0.49       0.53
+  0.37       0.48       0.42       0.65       0.53       0.52
+  0.5        0.54       0.5        0.46       0.45       0.53
+  0.48       0.48       0.44       0.55       0.51       0.56
+  0.52       0.53       0.6        0.55       0.54       0.56
+  0.46       0.56       0.53       0.51       0.44927536]
+ [0.62       0.54       0.59       0.6        0.47       0.55
+  0.53       0.46       0.62       0.57       0.65       0.67
+  0.59       0.49       0.46       0.57       0.53       0.55
+  0.6        0.51       0.58       0.62       0.66       0.56
+  0.63       0.66       0.56       0.54       0.58       0.59
+  0.62       0.52       0.57       0.64       0.55       0.57
+  0.55       0.69       0.56       0.67       0.58       0.6
+  0.55       0.57       0.53       0.61       0.6        0.62
+  0.54       0.64       0.59       0.63       0.63       0.65
+  0.58       0.58       0.53       0.47       0.55072464]
+ [0.62       0.62       0.65       0.54       0.53       0.58
+  0.62       0.61       0.63       0.72       0.5        0.59
+  0.59       0.52       0.6        0.61       0.58       0.65
+  0.57       0.67       0.62       0.57       0.61       0.61
+  0.68       0.73       0.58       0.55       0.66       0.64
+  0.64       0.56       0.69       0.6        0.68       0.64
+  0.65       0.65       0.57       0.65       0.61       0.68
+  0.62       0.62       0.61       0.56       0.6        0.62
+  0.63       0.58       0.65       0.7        0.64       0.66
+  0.56       0.63       0.71       0.61       0.69565217]]
+Test losses:  [0.01149393 0.01139261 0.01110691]
+Test scores:  [0.51424837 0.50973856 0.53023693]
+Train Epoch: 4 [1000/5869 (17%)]        Loss: 0.806541, Accuracy Score: 65.60
+Train Epoch: 4 [2000/5869 (34%)]        Loss: 0.926408, Accuracy Score: 65.85
+Train Epoch: 4 [3000/5869 (51%)]        Loss: 0.875277, Accuracy Score: 65.63
+Train Epoch: 4 [4000/5869 (68%)]        Loss: 0.998850, Accuracy Score: 64.77
+Train Epoch: 4 [5000/5869 (85%)]        Loss: 0.850939, Accuracy Score: 64.66
+Next Batch ...  100  from  7185
+Next Batch ...  200  from  7185
+Next Batch ...  300  from  7185
+Next Batch ...  400  from  7185
+Next Batch ...  500  from  7185
+Next Batch ...  600  from  7185
+Next Batch ...  700  from  7185
+Next Batch ...  800  from  7185
+Next Batch ...  900  from  7185
+Next Batch ...  1000  from  7185
+Next Batch ...  1100  from  7185
+Next Batch ...  1200  from  7185
+Next Batch ...  1300  from  7185
+Next Batch ...  1400  from  7185
+Next Batch ...  1500  from  7185
+Next Batch ...  1600  from  7185
+Next Batch ...  1700  from  7185
+Next Batch ...  1800  from  7185
+Next Batch ...  1900  from  7185
+Next Batch ...  2000  from  7185
+Next Batch ...  2100  from  7185
+Next Batch ...  2200  from  7185
+Next Batch ...  2300  from  7185
+Next Batch ...  2400  from  7185
+Next Batch ...  2500  from  7185
+Next Batch ...  2600  from  7185
+Next Batch ...  2700  from  7185
+Next Batch ...  2800  from  7185
+Next Batch ...  2900  from  7185
+Next Batch ...  3000  from  7185
+Next Batch ...  3100  from  7185
+Next Batch ...  3200  from  7185
+Next Batch ...  3300  from  7185
+Next Batch ...  3400  from  7185
+Next Batch ...  3500  from  7185
+Next Batch ...  3600  from  7185
+Next Batch ...  3700  from  7185
+Next Batch ...  3800  from  7185
+Next Batch ...  3900  from  7185
+Next Batch ...  4000  from  7185
+Next Batch ...  4100  from  7185
+Next Batch ...  4200  from  7185
+Next Batch ...  4300  from  7185
+Next Batch ...  4400  from  7185
+Next Batch ...  4500  from  7185
+Next Batch ...  4600  from  7185
+Next Batch ...  4700  from  7185
+Next Batch ...  4800  from  7185
+Next Batch ...  4900  from  7185
+Next Batch ...  5000  from  7185
+Next Batch ...  5100  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0112, Accuracy: 52.12%
+
+Train losses:  [[1.35118091 1.23451281 1.25205851 1.10405099 1.167665   1.10261798
+  1.24480319 1.16672587 1.10206461 1.11672497 1.15798414 1.12853003
+  1.04930341 1.14371967 1.12115705 1.1006676  1.03688514 1.21609235
+  1.13710713 1.10702908 1.01930881 1.10338473 1.08094394 1.18649983
+  0.97330976 1.13646686 1.05293286 1.13704431 1.04794526 1.02895725
+  1.25688386 1.23891473 1.06677628 0.94582367 1.0055896  1.01017952
+  1.0574584  1.03260255 1.06979811 1.23389196 1.106071   1.11939931
+  1.10289383 1.03917849 1.13261569 1.12821412 1.09707546 1.01053929
+  1.09621251 1.00092578 0.94740677 0.95861125 1.0585922  1.00512004
+  1.08309889 1.05179465 0.95175391 1.09110296 1.01546466]
+ [0.96562296 0.92036557 1.0123173  1.02232707 1.09486043 1.01744056
+  1.03953838 1.13949323 0.92656744 0.9938556  0.91538972 0.95361525
+  0.97050607 0.98260134 1.07374203 0.93046761 1.12649775 1.05544245
+  0.92452127 1.05682409 0.96436858 0.97890389 0.92154253 1.07648957
+  0.85569131 0.92201853 1.09392583 1.06857622 0.9125607  0.99114203
+  0.95460242 1.0724324  1.01373565 0.8975215  1.01409733 0.96133119
+  1.02182388 0.8765232  0.96187514 0.90191495 0.93944287 0.94597763
+  1.03304255 0.98539197 1.06967521 0.93364251 0.91868776 0.94413012
+  0.95255506 0.88265067 1.02788091 0.89620209 0.92084551 0.87563634
+  0.96611488 0.99015075 1.00230443 1.19271731 1.02688098]
+ [0.89138067 0.95200348 0.95390463 1.06559134 1.01378632 0.92387909
+  0.93098342 0.90605301 0.92764419 0.83194846 1.0898093  1.00304973
+  0.94474161 1.06884074 0.98658592 0.86693001 0.94021219 0.90573448
+  0.89200705 0.9136675  0.8803277  0.94996595 0.89619946 0.85179883
+  0.87848991 0.79995865 0.91763407 1.13569891 0.85551471 0.8918007
+  0.88545066 0.96634263 0.80446184 0.9302336  0.93375564 0.92862773
+  0.87819391 0.89430445 0.92879206 0.84823835 0.93552434 0.83817023
+  0.94887412 0.83337176 0.88493627 0.94644892 0.91171873 0.89734846
+  0.96057397 0.97535193 0.90023059 0.85286331 0.90863228 0.89241087
+  0.93024254 0.85971075 0.80631983 0.98004723 0.91017973]
+ [0.80078262 0.85642153 0.83485281 0.94108576 0.93106347 0.84933341
+  0.72858703 0.79873216 0.83862519 0.80654061 0.83524925 0.92587417
+  0.80343741 0.89502436 0.85901529 0.94490236 0.70749056 0.75178176
+  0.81346422 0.92640793 0.70936424 0.78421837 0.84914666 0.81248629
+  0.8845405  0.87846184 0.94325531 0.79539198 0.92575181 0.87527657
+  0.90334433 0.80318969 0.84379822 1.0361656  0.79169244 0.90622216
+  0.79099113 0.93048823 1.0840745  0.99884993 0.90433741 0.78013992
+  0.89720309 0.89122891 0.93064314 0.88635522 0.70636129 0.9886663
+  0.82486123 0.85093904 0.9288885  0.81281084 0.85022372 0.80567384
+  0.95988047 0.83680505 0.9250316  0.80765289 0.85102224]]
+Train scores:  [[0.38       0.39       0.4        0.38       0.46       0.47
+  0.39       0.46       0.45       0.46       0.47       0.49
+  0.47       0.45       0.53       0.51       0.52       0.4
+  0.49       0.46       0.58       0.42       0.51       0.43
+  0.63       0.45       0.52       0.55       0.49       0.53
+  0.37       0.48       0.42       0.65       0.53       0.52
+  0.5        0.54       0.5        0.46       0.45       0.53
+  0.48       0.48       0.44       0.55       0.51       0.56
+  0.52       0.53       0.6        0.55       0.54       0.56
+  0.46       0.56       0.53       0.51       0.44927536]
+ [0.62       0.54       0.59       0.6        0.47       0.55
+  0.53       0.46       0.62       0.57       0.65       0.67
+  0.59       0.49       0.46       0.57       0.53       0.55
+  0.6        0.51       0.58       0.62       0.66       0.56
+  0.63       0.66       0.56       0.54       0.58       0.59
+  0.62       0.52       0.57       0.64       0.55       0.57
+  0.55       0.69       0.56       0.67       0.58       0.6
+  0.55       0.57       0.53       0.61       0.6        0.62
+  0.54       0.64       0.59       0.63       0.63       0.65
+  0.58       0.58       0.53       0.47       0.55072464]
+ [0.62       0.62       0.65       0.54       0.53       0.58
+  0.62       0.61       0.63       0.72       0.5        0.59
+  0.59       0.52       0.6        0.61       0.58       0.65
+  0.57       0.67       0.62       0.57       0.61       0.61
+  0.68       0.73       0.58       0.55       0.66       0.64
+  0.64       0.56       0.69       0.6        0.68       0.64
+  0.65       0.65       0.57       0.65       0.61       0.68
+  0.62       0.62       0.61       0.56       0.6        0.62
+  0.63       0.58       0.65       0.7        0.64       0.66
+  0.56       0.63       0.71       0.61       0.69565217]
+ [0.69       0.64       0.65       0.63       0.59       0.63
+  0.7        0.67       0.68       0.68       0.69       0.63
+  0.61       0.69       0.62       0.55       0.77       0.72
+  0.71       0.62       0.76       0.66       0.65       0.64
+  0.61       0.63       0.64       0.63       0.63       0.67
+  0.6        0.7        0.65       0.53       0.69       0.63
+  0.67       0.63       0.56       0.56       0.64       0.67
+  0.63       0.63       0.57       0.61       0.77       0.59
+  0.68       0.63       0.63       0.69       0.63       0.69
+  0.64       0.67       0.56       0.65       0.63768116]]
+Test losses:  [0.01149393 0.01139261 0.01110691 0.01117438]
+Test scores:  [0.51424837 0.50973856 0.53023693 0.52119281]
+Train Epoch: 5 [1000/5869 (17%)]        Loss: 0.798670, Accuracy Score: 69.40
+Train Epoch: 5 [2000/5869 (34%)]        Loss: 0.826282, Accuracy Score: 67.40
+Train Epoch: 5 [3000/5869 (51%)]        Loss: 0.750415, Accuracy Score: 66.73
+Train Epoch: 5 [4000/5869 (68%)]        Loss: 0.890906, Accuracy Score: 66.97
+Train Epoch: 5 [5000/5869 (85%)]        Loss: 0.896004, Accuracy Score: 67.24
+Next Batch ...  100  from  7185
+Next Batch ...  200  from  7185
+Next Batch ...  300  from  7185
+Next Batch ...  400  from  7185
+Next Batch ...  500  from  7185
+Next Batch ...  600  from  7185
+Next Batch ...  700  from  7185
+Next Batch ...  800  from  7185
+Next Batch ...  900  from  7185
+Next Batch ...  1000  from  7185
+Next Batch ...  1100  from  7185
+Next Batch ...  1200  from  7185
+Next Batch ...  1300  from  7185
+Next Batch ...  1400  from  7185
+Next Batch ...  1500  from  7185
+Next Batch ...  1600  from  7185
+Next Batch ...  1700  from  7185
+Next Batch ...  1800  from  7185
+Next Batch ...  1900  from  7185
+Next Batch ...  2000  from  7185
+Next Batch ...  2100  from  7185
+Next Batch ...  2200  from  7185
+Next Batch ...  2300  from  7185
+Next Batch ...  2400  from  7185
+Next Batch ...  2500  from  7185
+Next Batch ...  2600  from  7185
+Next Batch ...  2700  from  7185
+Next Batch ...  2800  from  7185
+Next Batch ...  2900  from  7185
+Next Batch ...  3000  from  7185
+Next Batch ...  3100  from  7185
+Next Batch ...  3200  from  7185
+Next Batch ...  3300  from  7185
+Next Batch ...  3400  from  7185
+Next Batch ...  3500  from  7185
+Next Batch ...  3600  from  7185
+Next Batch ...  3700  from  7185
+Next Batch ...  3800  from  7185
+Next Batch ...  3900  from  7185
+Next Batch ...  4000  from  7185
+Next Batch ...  4100  from  7185
+Next Batch ...  4200  from  7185
+Next Batch ...  4300  from  7185
+Next Batch ...  4400  from  7185
+Next Batch ...  4500  from  7185
+Next Batch ...  4600  from  7185
+Next Batch ...  4700  from  7185
+Next Batch ...  4800  from  7185
+Next Batch ...  4900  from  7185
+Next Batch ...  5000  from  7185
+Next Batch ...  5100  from  7185
+Next Batch ...  5200  from  7185
+Next Batch ...  5300  from  7185
+Next Batch ...  5400  from  7185
+Next Batch ...  5500  from  7185
+Next Batch ...  5600  from  7185
+Next Batch ...  5700  from  7185
+Next Batch ...  5800  from  7185
+Next Batch ...  5900  from  7185
+Next Batch ...  6000  from  7185
+Next Batch ...  6100  from  7185
+Next Batch ...  6200  from  7185
+Next Batch ...  6300  from  7185
+Next Batch ...  6400  from  7185
+Next Batch ...  6500  from  7185
+Next Batch ...  6600  from  7185
+Next Batch ...  6700  from  7185
+Next Batch ...  6800  from  7185
+Next Batch ...  6900  from  7185
+Next Batch ...  7000  from  7185
+Next Batch ...  7100  from  7185
+Next Batch ...  7185  from  7185
+
+Test set (7185 samples): Average loss: 0.0111, Accuracy: 53.47%
+
+Train losses:  [[1.35118091 1.23451281 1.25205851 1.10405099 1.167665   1.10261798
+  1.24480319 1.16672587 1.10206461 1.11672497 1.15798414 1.12853003
+  1.04930341 1.14371967 1.12115705 1.1006676  1.03688514 1.21609235
+  1.13710713 1.10702908 1.01930881 1.10338473 1.08094394 1.18649983
+  0.97330976 1.13646686 1.05293286 1.13704431 1.04794526 1.02895725
+  1.25688386 1.23891473 1.06677628 0.94582367 1.0055896  1.01017952
+  1.0574584  1.03260255 1.06979811 1.23389196 1.106071   1.11939931
+  1.10289383 1.03917849 1.13261569 1.12821412 1.09707546 1.01053929
+  1.09621251 1.00092578 0.94740677 0.95861125 1.0585922  1.00512004
+  1.08309889 1.05179465 0.95175391 1.09110296 1.01546466]
+ [0.96562296 0.92036557 1.0123173  1.02232707 1.09486043 1.01744056
+  1.03953838 1.13949323 0.92656744 0.9938556  0.91538972 0.95361525
+  0.97050607 0.98260134 1.07374203 0.93046761 1.12649775 1.05544245
+  0.92452127 1.05682409 0.96436858 0.97890389 0.92154253 1.07648957
+  0.85569131 0.92201853 1.09392583 1.06857622 0.9125607  0.99114203
+  0.95460242 1.0724324  1.01373565 0.8975215  1.01409733 0.96133119
+  1.02182388 0.8765232  0.96187514 0.90191495 0.93944287 0.94597763
+  1.03304255 0.98539197 1.06967521 0.93364251 0.91868776 0.94413012
+  0.95255506 0.88265067 1.02788091 0.89620209 0.92084551 0.87563634
+  0.96611488 0.99015075 1.00230443 1.19271731 1.02688098]
+ [0.89138067 0.95200348 0.95390463 1.06559134 1.01378632 0.92387909
+  0.93098342 0.90605301 0.92764419 0.83194846 1.0898093  1.00304973
+  0.94474161 1.06884074 0.98658592 0.86693001 0.94021219 0.90573448
+  0.89200705 0.9136675  0.8803277  0.94996595 0.89619946 0.85179883
+  0.87848991 0.79995865 0.91763407 1.13569891 0.85551471 0.8918007
+  0.88545066 0.96634263 0.80446184 0.9302336  0.93375564 0.92862773
+  0.87819391 0.89430445 0.92879206 0.84823835 0.93552434 0.83817023
+  0.94887412 0.83337176 0.88493627 0.94644892 0.91171873 0.89734846
+  0.96057397 0.97535193 0.90023059 0.85286331 0.90863228 0.89241087
+  0.93024254 0.85971075 0.80631983 0.98004723 0.91017973]
+ [0.80078262 0.85642153 0.83485281 0.94108576 0.93106347 0.84933341
+  0.72858703 0.79873216 0.83862519 0.80654061 0.83524925 0.92587417
+  0.80343741 0.89502436 0.85901529 0.94490236 0.70749056 0.75178176
+  0.81346422 0.92640793 0.70936424 0.78421837 0.84914666 0.81248629
+  0.8845405  0.87846184 0.94325531 0.79539198 0.92575181 0.87527657
+  0.90334433 0.80318969 0.84379822 1.0361656  0.79169244 0.90622216
+  0.79099113 0.93048823 1.0840745  0.99884993 0.90433741 0.78013992
+  0.89720309 0.89122891 0.93064314 0.88635522 0.70636129 0.9886663
+  0.82486123 0.85093904 0.9288885  0.81281084 0.85022372 0.80567384
+  0.95988047 0.83680505 0.9250316  0.80765289 0.85102224]
+ [0.76151091 0.81502068 0.76877141 0.86073679 0.90347207 0.81244683
+  0.76267701 0.82514215 0.86243922 0.79867005 0.87983406 0.89173615
+  0.80429071 0.84670413 0.85734677 0.88830125 0.89445353 0.89781332
+  0.79926592 0.82628167 0.73647088 0.87143767 0.88244736 0.89517534
+  0.83862716 0.90284836 0.67648345 0.82127726 0.89056569 0.75041533
+  0.80678457 0.85934186 0.81969297 0.88722724 0.81206298 0.73090029
+  0.74552828 0.81780785 0.75833815 0.89090574 0.83187902 0.72000664
+  0.87967372 0.77632517 0.77631724 0.72374654 0.88439196 0.75145251
+  0.72683072 0.89600402 0.76968336 0.7487905  0.73608208 0.81026739
+  0.91480136 0.78126264 0.80581647 0.76293778 0.61335921]]
+Train scores:  [[0.38       0.39       0.4        0.38       0.46       0.47
+  0.39       0.46       0.45       0.46       0.47       0.49
+  0.47       0.45       0.53       0.51       0.52       0.4
+  0.49       0.46       0.58       0.42       0.51       0.43
+  0.63       0.45       0.52       0.55       0.49       0.53
+  0.37       0.48       0.42       0.65       0.53       0.52
+  0.5        0.54       0.5        0.46       0.45       0.53
+  0.48       0.48       0.44       0.55       0.51       0.56
+  0.52       0.53       0.6        0.55       0.54       0.56
+  0.46       0.56       0.53       0.51       0.44927536]
+ [0.62       0.54       0.59       0.6        0.47       0.55
+  0.53       0.46       0.62       0.57       0.65       0.67
+  0.59       0.49       0.46       0.57       0.53       0.55
+  0.6        0.51       0.58       0.62       0.66       0.56
+  0.63       0.66       0.56       0.54       0.58       0.59
+  0.62       0.52       0.57       0.64       0.55       0.57
+  0.55       0.69       0.56       0.67       0.58       0.6
+  0.55       0.57       0.53       0.61       0.6        0.62
+  0.54       0.64       0.59       0.63       0.63       0.65
+  0.58       0.58       0.53       0.47       0.55072464]
+ [0.62       0.62       0.65       0.54       0.53       0.58
+  0.62       0.61       0.63       0.72       0.5        0.59
+  0.59       0.52       0.6        0.61       0.58       0.65
+  0.57       0.67       0.62       0.57       0.61       0.61
+  0.68       0.73       0.58       0.55       0.66       0.64
+  0.64       0.56       0.69       0.6        0.68       0.64
+  0.65       0.65       0.57       0.65       0.61       0.68
+  0.62       0.62       0.61       0.56       0.6        0.62
+  0.63       0.58       0.65       0.7        0.64       0.66
+  0.56       0.63       0.71       0.61       0.69565217]
+ [0.69       0.64       0.65       0.63       0.59       0.63
+  0.7        0.67       0.68       0.68       0.69       0.63
+  0.61       0.69       0.62       0.55       0.77       0.72
+  0.71       0.62       0.76       0.66       0.65       0.64
+  0.61       0.63       0.64       0.63       0.63       0.67
+  0.6        0.7        0.65       0.53       0.69       0.63
+  0.67       0.63       0.56       0.56       0.64       0.67
+  0.63       0.63       0.57       0.61       0.77       0.59
+  0.68       0.63       0.63       0.69       0.63       0.69
+  0.64       0.67       0.56       0.65       0.63768116]
+ [0.71       0.68       0.75       0.68       0.61       0.7
+  0.75       0.67       0.65       0.74       0.68       0.62
+  0.73       0.66       0.64       0.58       0.6        0.67
+  0.64       0.72       0.74       0.63       0.61       0.61
+  0.68       0.64       0.72       0.58       0.63       0.7
+  0.7        0.64       0.7        0.67       0.72       0.72
+  0.71       0.65       0.64       0.62       0.65       0.72
+  0.63       0.7        0.7        0.7        0.64       0.71
+  0.75       0.63       0.71       0.7        0.69       0.63
+  0.59       0.67       0.66       0.68       0.82608696]]
+Test losses:  [0.01149393 0.01139261 0.01110691 0.01117438 0.01106186]
+Test scores:  [0.51424837 0.50973856 0.53023693 0.52119281 0.53473039]
+Train Epoch: 6 [1000/5869 (17%)]        Loss: 0.786769, Accuracy Score: 70.50
+Train Epoch: 6 [2000/5869 (34%)]        Loss: 0.895237, Accuracy Score: 68.70
+^CTraceback (most recent call last):
+  File "main.py", line 112, in <module>
+    train_losses, train_scores = train_one_epoch(model, device, train_loader, optimizer, epoch)
+  File "/data/cs230-road-accidents/train.py", line 38, in train_one_epoch
+    for batch_idx, (clip_id, X, y, video_id) in enumerate(train_loader):
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 385, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data/cs230-road-accidents/datasets.py", line 27, in __getitem__
+    video, audio, info, video_idx = self.video_clips.get_clip(idx)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/datasets/video_utils.py", line 277, in get_clip
+    video, audio, info = read_video(video_path, start_pts, end_pts)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/io/video.py", line 235, in read_video
+    container.streams.video[0], {'video': 0})
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/io/video.py", line 144, in _read_from_stream
+    for idx, frame in enumerate(container.decode(**stream_name)):
+KeyboardInterrupt
+road_h101_s4_a_1: Duration  300.67 sec
+road_h149_s1_s2_b: Duration  310.7 sec
+road_h50_s1_b_1: Duration  152.62 sec
+road_h185_s2_a: Duration  303.31 sec
+road_h166_s1_ab: Duration  432.65 sec
+road_h101_s3_a_1: Duration  325.77 sec
+road_h58_s2_s3_s4_b: Duration  311.78 sec
+road_h184_s5_a: Duration  301.85 sec
+road_h120_s2,3_b: Duration  301.46 sec
+road_h157_s1_b: Duration  300.7 sec
+road_h121_s3 and 4_a,b: Duration  304.68 sec
+road_h17_s1_a: Duration  303.5 sec
+road_h189_s4_a_b: Duration  302.8 sec
+road_h171_s4_5_a: Duration  308.21 sec
+road_h127_s7_b: Duration  300.41 sec
+road_h184_s6_ab: Duration  313.49 sec
+road_h123_s4_a: Duration  317.06 sec
+road_h96_s4_a: Duration  301.56 sec
+road_h96_s2_a: Duration  299.9 sec
+road_h35_s1_a_2: Duration  303.5 sec
+road_h169_s1,2_aleft_bright: Duration  303.4 sec
+road_h58_s1_a: Duration  151.62 sec
+road_h108_s4_b: Duration  301.3 sec
+road_h137_s6_a_b: Duration  295.67 sec
+road_h167_s1,2_aright_bleft: Duration  299.38 sec
+road_h185_s1_b: Duration  304.23 sec
+road_h110_s1,2,3_a: Duration  314.35 sec
+road_h111_s4 and 5_a: Duration  314.45 sec
+road_h41_s2_a_1: Duration  312.6 sec
+road_h146_s3,4_b: Duration  319.94 sec
+road_h121_s3 and 4_a,b: Duration  304.68 sec
+road_h95_s7: Duration  300.26 sec
+road_h132_s2_aleft_bright: Duration  307.7 sec
+road_h131_s4_a_right_b_left: Duration  152.27 sec
+road_h123_s3_b: Duration  26.83 sec
+road_h143_s1,2,3_a: Duration  302.62 sec
+road_h35_s2&3_a_1: Duration  303.17 sec
+road_h45_b: Duration  301.66 sec
+road_h173_b: Duration  301.66 sec
+road_h132_s2_a_1: Duration  302.07 sec
+road_h121_s1_a,b: Duration  392.02 sec
+road_h111_s2_a: Duration  302.59 sec
+road_h123_s2_a,b: Duration  358.03 sec
+road_h157_s3_a: Duration  300.58 sec
+road_h101_s3_a_1: Duration  325.77 sec
+road_h162_s5_a_b: Duration  302.45 sec
+road_h98_s1_a: Duration  302.83 sec
+road_h137_s8_a_b: Duration  304.44 sec
+road_h106_s2_b: Duration  309.12 sec
+road_h188_s5,6_a,b: Duration  301.32 sec
+road_h1_s1_a_1: Duration  154.75 sec
+road_h93_s1,2_ab: Duration  323.98 sec
+road_h148_s2_a_1: Duration  224.73 sec
+road_h137_s6_a_b: Duration  295.67 sec
+road_h128_s2_b,a: Duration  302.57 sec
+road_h171_s1_2_3_a: Duration  303.91 sec
+road_h184_s6_ab: Duration  313.49 sec
+road_h147_s4_a: Duration  304.97 sec
+road_h51_s4_a: Duration  300.55 sec
+road_h189_s2_a_b: Duration  307.07 sec
+road_h123_s2_a,b: Duration  358.03 sec
+road_h111_s4 and 5_b: Duration  303.98 sec
+road_h131_s2_a_left_b_right: Duration  152.13 sec
+road_h139_s3_a_1: Duration  301.3 sec
+road_h137_s8_a_b: Duration  304.44 sec
+road_h150_s3_a_1: Duration  150.98 sec
+road_h166_s4,5_ab: Duration  324.31 sec
+road_h131_s3_a_left_b-right: Duration  164.83 sec
+road_h131_s2_a_right_b_left: Duration  151.33 sec
+road_h162_s7_a_b: Duration  301.57 sec
+road_h139_s10_a_1: Duration  301.87 sec
+road_h57_s6_a_1: Duration  302.97 sec
+road_h91_s1,2_a: Duration  302.88 sec
+road_h125_s4_a_1: Duration  171.97 sec
+road_h146_s2_a: Duration  305.16 sec
+road_h96_s3_b: Duration  315.67 sec
+road_h129_s1_a,b: Duration  303.5 sec
+road_h163_s2_a_b: Duration  303.72 sec
+road_h150_s3_b_1: Duration  150.77 sec
+road_h101_s1_a_1: Duration  302.47 sec
+road_h106_s3_a: Duration  307.3 sec
+road_h10_s6_b: Duration  300.19 sec
+road_h188_s4_a,b: Duration  317.66 sec
+road_h98_s1_b: Duration  303.72 sec
+road_h192_s1_s2_a: Duration  306.5 sec
+road_h28_s1_b_2: Duration  156.14 sec
+road_h189_s1_a_b: Duration  306.73 sec
+road_h55_a: Duration  303.65 sec
+road_h91_s1,2_b: Duration  308.14 sec
+road_h163_s1_a_b: Duration  301.58 sec
+road_h137_s3_a_b: Duration  304.61 sec
+road_h35_s1_a_2: Duration  303.5 sec
+road_h98_s2_a: Duration  304.87 sec
+road_h57_s6_a_1: Duration  302.97 sec
+road_h137_s2_a: Duration  306.29 sec
+road_h98_s3_a: Duration  313.78 sec
+road_h3_a: Duration  301.54 sec
+road_h123_s1_a,b: Duration  328.34 sec
+road_h90_s4_b_2: Duration  151.57 sec
+road_h96_s3_a: Duration  301.99 sec
+road_h162_s5_a_b: Duration  302.45 sec
+road_h121_s5_a,b: Duration  302.47 sec
+road_h30_s14_a: Duration  300.74 sec
+road_h170_s1_b: Duration  303.82 sec
+road_h162_s2_a_b: Duration  301.97 sec
+road_h68_s2_a: Duration  300.5 sec
+road_h156_s6_a_1: Duration  301.47 sec
+road_h57_s7&8_a_1: Duration  301.47 sec
+road_h131_s3_a_left_b-right: Duration  164.83 sec
+road_h148_s4_a_2: Duration  161.77 sec
+road_h166_s2,3_ab: Duration  308.04 sec
+road_h188_s2_a,b: Duration  309.34 sec
+road_h106_s1_b: Duration  308.35 sec
+road_h162_s1_a_b: Duration  303.63 sec
+road_h189_s2_a_b: Duration  307.07 sec
+road_h63_s2_a: Duration  300.74 sec
+road_h188_s4_a,b: Duration  317.66 sec
+road_h14_s2_b: Duration  313.46 sec
+road_h65_s3_b: Duration  301.54 sec
+road_h119_s1_b: Duration  302.26 sec
+road_h129_s2_a,b: Duration  326.3 sec
+road_h117_s2,3,4_a_1: Duration  304.49 sec
+road_h123_s3_a: Duration  302.5 sec
+road_h110_s1,2,3_b: Duration  339.91 sec
+road_h57_s1_a_1: Duration  309.27 sec
+road_h146_s1_a: Duration  301.97 sec
+road_h51_s4_b: Duration  300.05 sec
+road_h132_s2_a_1: Duration  302.07 sec
+road_h146_s3,4_a: Duration  317.35 sec
+road_h123_s5a: Duration  346.13 sec
+road_h131_s4_a_left_b_right: Duration  151.08 sec
+road_h121_s6_a,b: Duration  302.45 sec
+road_h184_s4_a: Duration  334.58 sec
+road_h157_s1_a: Duration  301.22 sec
+road_h101_s2_a_2: Duration  326.53 sec
+road_h104_s2_a: Duration  301.34 sec
+road_h106_s3_b: Duration  318.46 sec
+road_h57_s1_a_1: Duration  309.27 sec
+road_h134_1,2_a: Duration  304.76 sec
+road_h192_s1_s2_b: Duration  307.1 sec
+road_h125_s4_a_2: Duration  169.6 sec
+road_h185_s1_a: Duration  303.0 sec
+road_h184_s5_b: Duration  309.89 sec
+road_h111_s3_b: Duration  313.94 sec
+road_h29_s12_a_1: Duration  301.9 sec
+road_h135_s2_a: Duration  305.0 sec
+road_h170_s3_a: Duration  301.18 sec
+road_h85_s1_a_1: Duration  364.58 sec
+road_h121_s1_a,b: Duration  392.02 sec
+road_h162_s7_a_b: Duration  301.57 sec
+road_h35_s2&3_a_1: Duration  303.17 sec
+road_h128_s1_ab: Duration  300.94 sec
+road_h137_s7_a_b: Duration  290.5 sec
+road_h188_s5,6_a,b: Duration  301.32 sec
+road_h90_s1_a_2: Duration  152.09 sec
+road_h111_s3_a: Duration  306.46 sec
+road_h90_s4_b_1: Duration  152.86 sec
+road_h50_s1_b_2: Duration  151.58 sec
+road_h171_s4_5_b (1): Duration  302.77 sec
+road_h157_s2_a: Duration  300.7 sec
+road_h119_s4_b: Duration  309.82 sec
+road_h129_s1_a,b: Duration  303.5 sec
+road_h134_1,2_b: Duration  303.29 sec
+road_h184_s4_b: Duration  302.78 sec
+road_h169_s1,2_aleft_bright: Duration  303.4 sec
+road_h17_s1_b: Duration  308.21 sec
+road_h146_s2_b: Duration  307.08 sec
+road_h128_s3_b,a: Duration  315.12 sec
+road_h52_s2_s1_b: Duration  301.87 sec
+road_h90_s3_b_2: Duration  155.9 sec
+road_h47_s1_b: Duration  304.1 sec
+road_h166_s2,3_ab: Duration  308.04 sec
+road_h188_s2_a,b: Duration  309.34 sec
+road_h121_s5_a,b: Duration  302.47 sec
+road_h136_s1 and 2_b: Duration  351.38 sec
+road_h93_s1,2_ab: Duration  323.98 sec
+road_h162_s3_a_b: Duration  301.27 sec
+road_h117_s2,3,4_b_1: Duration  299.69 sec
+road_h28_s1_a: Duration  301.51 sec
+road_h170_s1_a: Duration  301.49 sec
+road_h90_s1_b_2: Duration  151.18 sec
+road_h166_s1_ab: Duration  432.65 sec
+road_h58_s1_b: Duration  154.06 sec
+road_h120_s1_a: Duration  306.34 sec
+road_h135_s1_a: Duration  305.02 sec
+road_h147_s4_b: Duration  312.13 sec
+road_h62_s1_a_1: Duration  302.1 sec
+road_h52_s2_a: Duration  302.47 sec
+road_h100_s4_a: Duration  303.05 sec
+road_h35_s4&5_a_1: Duration  301.49 sec
+road_h77_s1_a_2: Duration  61.25 sec
+road_h127_s4_a: Duration  300.43 sec
+road_h34_s3_a: Duration  305.54 sec
+road_h77_s1_b: Duration  299.8 sec
+road_h57_s4_b_2: Duration  305.77 sec
+road_h148_s3_a_1: Duration  301.73 sec
+road_h56_s2_a_b: Duration  314.0 sec
+road_h31_s2_b: Duration  306.65 sec
+road_h124_s5_a_1: Duration  266.8 sec
+road_h124_s4_a_1: Duration  295.5 sec
+road_h46_s5_a_1: Duration  304.17 sec
+road_h147_s2_a: Duration  301.46 sec
+road_h56_s5_a: Duration  301.9 sec
+road_h68_s5_b: Duration  301.37 sec
+road_h64_s1_a,b: Duration  302.9 sec
+road_h100_s1_b: Duration  303.07 sec
+road_h115_s2_b: Duration  301.8 sec
+road_h150_s2_a_1: Duration  151.77 sec
+road_h68_s4_b: Duration  300.5 sec
+road_h113_s1_a_1: Duration  311.97 sec
+road_h20_s3_b: Duration  304.17 sec
+road_h88_s5_b: Duration  301.1 sec
+road_h34_s2_a: Duration  304.9 sec
+road_h126_s2_a: Duration  300.31 sec
+road_h51_s3_a: Duration  299.5 sec
+road_h75_s4_a: Duration  306.74 sec
+road_h48_s4_b: Duration  301.63 sec
+road_h81_s4_a_b: Duration  304.3 sec
+road_h64_s2_a,b: Duration  313.85 sec
+road_h72_s1_a: Duration  304.43 sec
+road_h59_s3_b: Duration  301.7 sec
+road_h65_s2_a: Duration  301.18 sec
+road_h93_s3_ba: Duration  305.14 sec
+road_h47_s3_a: Duration  302.18 sec
+road_h102_s2_a: Duration  300.96 sec
+road_h74_s2_b: Duration  313.56 sec
+road_h48_s7_b: Duration  300.94 sec
+road_h76_s2_b[1]: Duration  302.4 sec
+road_h51_s2_a: Duration  300.48 sec
+road_h57_s4_b_2: Duration  305.77 sec
+road_h76_s1_b[2]: Duration  303.48 sec
+road_h125_s1_a_1: Duration  171.1 sec
+road_h74_s7_a,b: Duration  302.11 sec
+road_h127_s5_a: Duration  300.22 sec
+road_h93_s3_ba: Duration  305.14 sec
+road_h39_s2,3,4_a_2: Duration  302.02 sec
+road_h124_s2_a_2: Duration  258.1 sec
+road_h74_s2_a: Duration  303.82 sec
+road_h20_s2_b: Duration  302.27 sec
+road_h74_s1_a,b: Duration  313.37 sec
+road_h75_s4_b: Duration  310.2 sec
+road_h126_s3: Duration  300.07 sec
+road_h87_s1_a_1: Duration  301.7 sec
+road_h79_s3_b: Duration  306.12 sec
+road_h41_s4&5_aleft_bright: Duration  326.45 sec
+road_h20_s1_b: Duration  301.77 sec
+road_h80_s2_a_2: Duration  303.77 sec
+road_h68_s5_a: Duration  300.79 sec
+road_h41_s3_a_2: Duration  360.1 sec
+road_h20_s1_a: Duration  301.7 sec
+road_h54_s2_a_1: Duration  158.18 sec
+road_h56_s4_a: Duration  302.17 sec
+road_h80_s3,4,5_a_2: Duration  300.87 sec
+road_h124_s1_a_1: Duration  293.93 sec
+road_h72_s3_a: Duration  313.8 sec
+road_h153_s7_b: Duration  299.42 sec
+road_h44_s1,2_a_2: Duration  304.33 sec
+road_h41_s4&5_aleft_bright: Duration  326.45 sec
+road_h79_s3_a: Duration  151.87 sec
+road_h113_s2_a_2: Duration  301.53 sec
+road_h64_s2_a,b: Duration  313.85 sec
+road_h92_s2_a: Duration  306.6 sec
+road_h122_s1_a,b: Duration  312.6 sec
+road_h56_s6_a_b: Duration  307.82 sec
+road_h125_s5_a_1: Duration  130.2 sec
+road_h34_s2_b: Duration  308.7 sec
+road_h46_s1&2_a_1: Duration  301.77 sec
+road_h76_s2_a[1]: Duration  307.39 sec
+road_h151_s4_a: Duration  300.36 sec
+road_h40_s2_a: Duration  301.25 sec
+road_h56_s1_a_b: Duration  304.07 sec
+road_h75_s3_a: Duration  301.1 sec
+road_h48_s3_b: Duration  301.42 sec
+road_h51_s3_b: Duration  300.96 sec
+road_h125_s5_a_2: Duration  110.52 sec
+road_h74_s9_a,b: Duration  317.4 sec
+road_h57_s2_b_2: Duration  171.4 sec
+road_h150_s2_b_2: Duration  151.03 sec
+road_h103_s4_a: Duration  303.43 sec
+road_h95_s4_a: Duration  300.22 sec
+road_h39_s1_a_1: Duration  303.96 sec
+road_h100_s3_b: Duration  303.55 sec
+road_h148_s5_a_1: Duration  211.73 sec
+road_h68_s3_a: Duration  300.48 sec
+road_h31_s2_a: Duration  301.85 sec
+road_h80_s1_a_1: Duration  301.87 sec
+road_h151_s4_b: Duration  25.15 sec
+road_h188_s3_a,b: Duration  318.86 sec
+road_h87_s1_a_1: Duration  301.7 sec
+road_h60_s2,3_a: Duration  303.58 sec
+road_h103_s1_a_b: Duration  247.07 sec
+road_h79_s4_a: Duration  153.43 sec
+road_h151_s7: Duration  299.81 sec
+road_h74_s7_a,b: Duration  302.11 sec
+road_h20_s2_a: Duration  301.5 sec
+road_h86_s2_b: Duration  153.4 sec
+road_h147_s2_b: Duration  301.4 sec
+road_h79_s4_b2: Duration  152.26 sec
+road_h109_s1,2_a: Duration  308.45 sec
+road_h112_s1_a: Duration  211.8 sec
+road_h49_s1_b: Duration  312.7 sec
+road_h153_s7_a: Duration  151.01 sec
+road_h164_s1_a: Duration  155.6 sec
+road_h75_s3_b_1: Duration  154.44 sec
+road_h57_s3_a_2: Duration  301.23 sec
+road_h60_s2,3_b: Duration  322.44 sec
+road_h94_s2: Duration  301.92 sec
+road_h74_s6_a: Duration  304.15 sec
+road_h164_s2_s3_b: Duration  311.38 sec
+road_h61_s3_a: Duration  13.1 sec
+road_h72_s5_a_b: Duration  306.12 sec
+road_h47_s2_a: Duration  307.43 sec
+road_h145_s2,3_b: Duration  302.38 sec
+road_h31_s1_a: Duration  329.5 sec
+road_h60_s4_a: Duration  301.46 sec
+road_h116_s1,2,3,4_b_1: Duration  308.8 sec
+road_h109_s1,2_b: Duration  303.38 sec
+road_h81_s2_b: Duration  303.33 sec
+road_h35_s6_a_1: Duration  307.01 sec
+road_h147_s3_a: Duration  302.83 sec
+road_h72_s4_a: Duration  303.07 sec
+road_h4_s5_b: Duration  301.2 sec
+road_h122_s2_a,b: Duration  315.48 sec
+road_h112_s2_a: Duration  302.17 sec
+road_h92_s3,4_a: Duration  317.21 sec
+road_h150_s2_a_2: Duration  151.22 sec
+road_h125_s6_a_1: Duration  140.18 sec
+road_h67_s1_a_1: Duration  301.2 sec
+road_h92_s3,4_b: Duration  345.31 sec
+road_h79_s4_b_1: Duration  302.42 sec
+road_h122_s3_ a,b: Duration  338.42 sec
+road_h35_s4&5_a_1: Duration  301.49 sec
+road_h65_s5_b: Duration  300.41 sec
+road_h46_s1&2_a_1: Duration  301.77 sec
+road_h61_s3,2,1_b: Duration  305.62 sec
+road_h65_s2_b: Duration  301.92 sec
+road_h86_s2_a: Duration  152.1 sec
+road_h57_s5_a_1: Duration  301.7 sec
+road_h164_s3_s2_a: Duration  304.23 sec
+road_h125_s2_a_1: Duration  158.17 sec
+road_h56_s2_a_b: Duration  314.0 sec
+road_h81_s1_s2_a: Duration  303.1 sec
+road_h100_s2_a: Duration  310.99 sec
+road_h124_s5_a_1: Duration  266.8 sec
+road_h64_s3_b: Duration  315.48 sec
+road_h61_s2_a: Duration  305.42 sec
+road_h126_s2_b: Duration  300.02 sec
+road_h95_s4_b: Duration  300.24 sec
+road_h92_s1_a,b: Duration  302.33 sec
+road_h172_s1_a: Duration  314.57 sec
+road_h80_s2_a_2: Duration  303.77 sec
+road_h40_s1,2_b: Duration  301.68 sec
+road_h34_s1_b: Duration  303.4 sec
+road_h72_s5_a_b: Duration  306.12 sec
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[Aroad_h48_s2: Duration  300.41 sec
+road_h52_s2_s1_b: Duration  301.87 sec
+road_h95_s5: Duration  301.46 sec
+road_h122_s2_a,b: Duration  315.48 sec
+road_h47_s2_b: Duration  307.13 sec
+road_h100_s4_b: Duration  303.72 sec
+road_h49_s1_a: Duration  321.46 sec
+road_h39_s2,3,4_b_1: Duration  302.74 sec
+^CTraceback (most recent call last):
+  File "main.py", line 41, in <module>
+    crop_video(train_list)
+  File "/data/cs230-road-accidents/utils.py", line 47, in crop_video
+    clip = moviepy.editor.VideoFileClip("./video_data/{}.avi".format(i))
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/moviepy/video/io/VideoFileClip.py", line 121, in __init__
+    nbytes=audio_nbytes)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/moviepy/audio/io/AudioFileClip.py", line 72, in __init__
+    buffersize=buffersize)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/moviepy/audio/io/readers.py", line 63, in __init__
+    self.initialize()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/moviepy/audio/io/readers.py", line 95, in initialize
+    self.proc = sp.Popen( cmd, **popen_params)
+  File "/home/ubuntu/anaconda3/lib/python3.6/subprocess.py", line 729, in __init__
+    restore_signals, start_new_session)
+  File "/home/ubuntu/anaconda3/lib/python3.6/subprocess.py", line 1295, in _execute_child
+    restore_signals, start_new_session, preexec_fn)
+KeyboardInterrupt
+Exception ignored in: <bound method AudioFileClip.__del__ of <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x7f469682a7f0>>
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/moviepy/audio/io/AudioFileClip.py", line 94, in __del__
+    self.close()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/moviepy/audio/io/AudioFileClip.py", line 89, in close
+    if self.reader:
+AttributeError: 'AudioFileClip' object has no attribute 'reader'
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^C^C                                                                                                                                    ^C  0%|                                                    | 0/39 [03:23<?, ?it/s]
+Traceback (most recent call last):
+  File "main.py", line 62, in <module>
+    train_set = MyVideoDataset('./video_data_clip', train_list, train_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_train)
+  File "/data/cs230-road-accidents/datasets.py", line 17, in __init__
+    num_workers=2
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/datasets/video_utils.py", line 102, in __init__
+    self._compute_frame_pts()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/datasets/video_utils.py", line 124, in _compute_frame_pts
+    for batch in dl:
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 841, in _next_data
+    idx, data = self._get_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 808, in _get_data
+    success, data = self._try_get_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 761, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/ubuntu/anaconda3/lib/python3.6/multiprocessing/queues.py", line 104, in get
+    if not self._poll(timeout):
+  File "/home/ubuntu/anaconda3/lib/python3.6/multiprocessing/connection.py", line 257, in poll
+    return self._poll(timeout)
+  File "/home/ubuntu/anaconda3/lib/python3.6/multiprocessing/connection.py", line 414, in _poll
+    r = wait([self], timeout)
+  File "/home/ubuntu/anaconda3/lib/python3.6/multiprocessing/connection.py", line 911, in wait
+    ready = selector.select(timeout)
+  File "/home/ubuntu/anaconda3/lib/python3.6/selectors.py", line 376, in select
+    fd_event_list = self._poll.poll(timeout)
+KeyboardInterrupt
+  3%|█                                        | 1/39 [03:29<2:12:42, 209.53s/it]  8%|███▏                                     | 3/39 [05:45<1:40:14, 167.07s/it] 13%|█████▎                                   | 5/39 [10:02<1:28:08, 155.53s/it] 18%|███████▎                                 | 7/39 [11:59<1:07:25, 126.41s/it] 23%|█████████▍                               | 9/39 [15:41<1:00:51, 121.72s/it] 28%|███████████▊                              | 11/39 [19:07<54:13, 116.20s/it] 33%|██████████████                            | 13/39 [23:27<52:07, 120.31s/it]^^C^C 36%|███████████████                           | 14/39 [24:26<43:39, 104.76s/it]
+Traceback (most recent call last):
+  File "main.py", line 62, in <module>
+    train_set = MyVideoDataset('./video_data_clip', train_list, train_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_train)
+  File "/data/cs230-road-accidents/datasets.py", line 17, in __init__
+    num_workers=2
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/datasets/video_utils.py", line 102, in __init__
+    self._compute_frame_pts()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/datasets/video_utils.py", line 124, in _compute_frame_pts
+    for batch in dl:
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 841, in _next_data
+    idx, data = self._get_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 808, in _get_data
+    success, data = self._try_get_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 761, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/ubuntu/anaconda3/lib/python3.6/multiprocessing/queues.py", line 104, in get
+    if not self._poll(timeout):
+  File "/home/ubuntu/anaconda3/lib/python3.6/multiprocessing/connection.py", line 257, in poll
+    return self._poll(timeout)
+  File "/home/ubuntu/anaconda3/lib/python3.6/multiprocessing/connection.py", line 414, in _poll
+    r = wait([self], timeout)
+  File "/home/ubuntu/anaconda3/lib/python3.6/multiprocessing/connection.py", line 911, in wait
+    ready = selector.select(timeout)
+  File "/home/ubuntu/anaconda3/lib/python3.6/selectors.py", line 376, in select
+    fd_event_list = self._poll.poll(timeout)
+KeyboardInterrupt
+^CError in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/lib/python3.6/multiprocessing/popen_fork.py", line 28, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+KeyboardInterrupt
+  3%|█                                        | 1/39 [03:26<2:10:45, 206.46s/it]  8%|███▏                                     | 3/39 [05:14<1:36:24, 160.67s/it] 13%|█████▎                                   | 5/39 [08:50<1:22:06, 144.90s/it] 18%|███████▎                                 | 7/39 [10:19<1:01:15, 114.87s/it] 23%|█████████▉                                 | 9/39 [13:33<54:44, 109.49s/it] 28%|███████████▊                              | 11/39 [16:36<48:31, 103.98s/it] 33%|██████████████                            | 13/39 [20:29<46:41, 107.77s/it] 38%|████████████████▏                         | 15/39 [24:28<44:33, 111.38s/it] 44%|██████████████████▋                        | 17/39 [26:41<35:53, 97.90s/it] 49%|████████████████████▉                      | 19/39 [29:20<30:46, 92.32s/it] 54%|███████████████████████▏                   | 21/39 [31:15<24:33, 81.86s/it] 56%|████████████████████████▎                  | 22/39 [31:32<17:44, 62.61s/it] 59%|█████████████████████████▎                 | 23/39 [34:05<23:51, 89.46s/it] 62%|██████████████████████████▍                | 24/39 [34:20<16:48, 67.20s/it] 64%|███████████████████████████▌               | 25/39 [36:13<18:52, 80.92s/it] 69%|█████████████████████████████▊             | 27/39 [39:38<17:28, 87.41s/it] 74%|███████████████████████████████▉           | 29/39 [41:17<12:41, 76.13s/it] 79%|██████████████████████████████████▏        | 31/39 [43:45<10:03, 75.49s/it] 85%|████████████████████████████████████▍      | 33/39 [47:25<08:34, 85.71s/it] 90%|██████████████████████████████████████▌    | 35/39 [50:06<05:36, 84.24s/it] 95%|████████████████████████████████████████▊  | 37/39 [51:54<02:30, 75.14s/it]100%|███████████████████████████████████████████| 39/39 [54:10<00:00, 73.01s/it]100%|███████████████████████████████████████████| 39/39 [54:11<00:00, 83.36s/it]
+  0%|                                                     | 0/6 [00:00<?, ?it/s] 17%|███████▎                                    | 1/6 [02:55<14:35, 175.15s/it] 50%|██████████████████████                      | 3/6 [04:31<06:51, 137.05s/it] 67%|█████████████████████████████▎              | 4/6 [04:47<03:21, 100.71s/it] 83%|█████████████████████████████████████▌       | 5/6 [06:16<01:37, 97.34s/it]100%|█████████████████████████████████████████████| 6/6 [06:17<00:00, 68.30s/it]100%|█████████████████████████████████████████████| 6/6 [06:17<00:00, 62.96s/it]
+Train 25310 clips
+Test 2927 clips
+Model:  Conv3dModel(
+  (cnn_layers): Sequential(
+    (0): Conv3d(3, 32, kernel_size=(5, 5, 5), stride=(2, 2, 2))
+    (1): BatchNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout3d(p=0.2, inplace=False)
+    (4): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2))
+    (5): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU(inplace=True)
+    (7): MaxPool3d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Dropout3d(p=0.2, inplace=False)
+  )
+  (linear_layers): Sequential(
+    (0): Linear(in_features=82560, out_features=256, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=256, out_features=128, bias=True)
+    (3): ReLU(inplace=True)
+    (4): Dropout3d(p=0.2, inplace=False)
+    (5): Linear(in_features=128, out_features=4, bias=True)
+  )
+)
+Traceback (most recent call last):
+  File "main.py", line 110, in <module>
+    train_losses, train_scores = train_one_epoch(model, device, train_loader, optimizer, epoch)
+  File "/data/cs230-road-accidents/train.py", line 64, in train_one_epoch
+    loss.backward()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/autograd/__init__.py", line 99, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+RuntimeError: CUDA out of memory. Tried to allocate 2.28 GiB (GPU 0; 11.17 GiB total capacity; 9.58 GiB already allocated; 1.29 GiB free; 9.59 GiB reserved in total by PyTorch)
+ 74%|███████████████████████████████▉           | 29/39 [36:05<10:04, 60.49s/it] 79%|██████████████████████████████████▏        | 31/39 [38:00<07:56, 59.60s/it] 85%|████████████████████████████████████▍      | 33/39 [41:01<06:53, 68.88s/it] 90%|██████████████████████████████████████▌    | 35/39 [43:07<04:28, 67.01s/it] 95%|████████████████████████████████████████▊  | 37/39 [44:38<02:01, 60.55s/it]100%|███████████████████████████████████████████| 39/39 [46:26<00:00, 58.63s/it]100%|███████████████████████████████████████████| 39/39 [46:26<00:00, 71.46s/it]
+  0%|                                                     | 0/6 [00:00<?, ?it/s] 17%|███████▎                                    | 1/6 [02:21<11:49, 141.84s/it] 50%|██████████████████████                      | 3/6 [03:41<05:33, 111.30s/it] 67%|██████████████████████████████               | 4/6 [03:53<02:42, 81.50s/it] 83%|█████████████████████████████████████▌       | 5/6 [05:13<01:20, 80.95s/it]100%|█████████████████████████████████████████████| 6/6 [05:13<00:00, 52.33s/it]
+Train 25310 clips
+Test 2927 clips
+Model:  Conv3dModel(
+  (cnn_layers): Sequential(
+    (0): Conv3d(3, 32, kernel_size=(5, 5, 5), stride=(2, 2, 2))
+    (1): BatchNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout3d(p=0.2, inplace=False)
+    (4): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2))
+    (5): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU(inplace=True)
+    (7): MaxPool3d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Dropout3d(p=0.2, inplace=False)
+  )
+  (linear_layers): Sequential(
+    (0): Linear(in_features=82560, out_features=256, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=256, out_features=128, bias=True)
+    (3): ReLU(inplace=True)
+    (4): Dropout3d(p=0.2, inplace=False)
+    (5): Linear(in_features=128, out_features=4, bias=True)
+  )
+)
+Train Epoch: 1 [1000/25310 (4%)]        Loss: 1.254838, Accuracy Score: 44.40
+^CTraceback (most recent call last):
+  File "main.py", line 110, in <module>
+    train_losses, train_scores = train_one_epoch(model, device, train_loader, optimizer, epoch)
+  File "/data/cs230-road-accidents/train.py", line 41, in train_one_epoch
+    for batch_idx, (clip_id, X, y, video_id) in enumerate(train_loader):
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 385, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data/cs230-road-accidents/datasets.py", line 32, in __getitem__
+    video = self.spatial_transform(video)
+  File "/home/ubuntu/anaconda3/lib/python3.6/site-packages/torchvision/transforms/transforms.py", line 70, in __call__
+    img = t(img)
+  File "/data/cs230-road-accidents/transforms.py", line 117, in __call__
+    return hflip(vid)
+  File "/data/cs230-road-accidents/transforms.py", line 24, in hflip
+    return vid.flip(dims=(-1,))
+KeyboardInterrupt
+  3%|█▍                                                      | 1/39 [03:22<2:08:29, 202.89s/it]  8%|████▎                                                   | 3/39 [05:09<1:34:49, 158.05s/it] 13%|███████▏                                                | 5/39 [08:39<1:20:29, 142.06s/it] 18%|██████████                                              | 7/39 [10:07<1:00:05, 112.69s/it] 23%|█████████████▍                                            | 9/39 [13:08<52:58, 105.96s/it] 28%|████████████████                                         | 11/39 [16:00<46:41, 100.07s/it] 33%|███████████████████                                      | 13/39 [19:36<44:20, 102.34s/it] 38%|█████████████████████▉                                   | 15/39 [22:53<40:29, 101.21s/it] 44%|█████████████████████████▎                                | 17/39 [24:42<32:00, 87.29s/it] 49%|████████████████████████████▎                             | 19/39 [26:52<26:51, 80.56s/it] 54%|███████████████████████████████▏                          | 21/39 [28:26<21:10, 70.56s/it] 59%|██████████████████████████████████▏                       | 23/39 [30:35<18:19, 68.70s/it] 62%|███████████████████████████████████▋                      | 24/39 [30:38<12:12, 48.84s/it] 64%|█████████████████████████████████████▏                    | 25/39 [32:22<15:16, 65.48s/it] 69%|████████████████████████████████████████▏                 | 27/39 [35:03<14:00, 70.03s/it] 74%|███████████████████████████████████████████▏              | 29/39 [36:17<10:01, 60.11s/it] 79%|██████████████████████████████████████████████            | 31/39 [38:12<07:54, 59.33s/it] 85%|█████████████████████████████████████████████████         | 33/39 [41:08<06:47, 67.96s/it] 90%|████████████████████████████████████████████████████      | 35/39 [43:16<04:26, 66.71s/it] 95%|███████████████████████████████████████████████████████   | 37/39 [44:47<02:00, 60.32s/it]100%|██████████████████████████████████████████████████████████| 39/39 [46:35<00:00, 58.52s/it]100%|██████████████████████████████████████████████████████████| 39/39 [46:36<00:00, 71.71s/it]
+  0%|                                                                    | 0/6 [00:00<?, ?it/s] 17%|█████████▊                                                 | 1/6 [02:17<11:28, 137.77s/it] 50%|█████████████████████████████▌                             | 3/6 [03:37<05:24, 108.33s/it] 67%|████████████████████████████████████████                    | 4/6 [03:52<02:40, 80.49s/it] 83%|██████████████████████████████████████████████████          | 5/6 [05:08<01:19, 79.15s/it]100%|████████████████████████████████████████████████████████████| 6/6 [05:11<00:00, 56.32s/it]100%|████████████████████████████████████████████████████████████| 6/6 [05:12<00:00, 52.02s/it]
+Train 25310 clips
+Test 2927 clips
+Model:  Conv3dModel(
+  (cnn_layers): Sequential(
+    (0): Conv3d(3, 32, kernel_size=(5, 5, 5), stride=(2, 2, 2))
+    (1): BatchNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout3d(p=0.2, inplace=False)
+    (4): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2))
+    (5): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU(inplace=True)
+    (7): MaxPool3d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Dropout3d(p=0.2, inplace=False)
+  )
+  (linear_layers): Sequential(
+    (0): Linear(in_features=10816, out_features=256, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=256, out_features=128, bias=True)
+    (3): ReLU(inplace=True)
+    (4): Dropout3d(p=0.2, inplace=False)
+    (5): Linear(in_features=128, out_features=4, bias=True)
+  )
+)
+Train Epoch: 1 [2000/25310 (8%)]        Loss: 1.159696, Accuracy Score: 40.75
+Train Epoch: 1 [4000/25310 (16%)]       Loss: 1.207152, Accuracy Score: 41.95
+Train Epoch: 1 [6000/25310 (24%)]       Loss: 1.175434, Accuracy Score: 43.02
+Train Epoch: 1 [8000/25310 (31%)]       Loss: 1.149195, Accuracy Score: 43.64
+Train Epoch: 1 [10000/25310 (39%)]      Loss: 1.065911, Accuracy Score: 44.28
+Train Epoch: 1 [12000/25310 (47%)]      Loss: 1.154593, Accuracy Score: 44.62
+Train Epoch: 1 [14000/25310 (55%)]      Loss: 1.162472, Accuracy Score: 44.91
+Train Epoch: 1 [16000/25310 (63%)]      Loss: 1.152109, Accuracy Score: 45.21
+Train Epoch: 1 [18000/25310 (71%)]      Loss: 1.122872, Accuracy Score: 45.46
+Train Epoch: 1 [20000/25310 (79%)]      Loss: 1.145281, Accuracy Score: 45.72
+Train Epoch: 1 [22000/25310 (87%)]      Loss: 1.100878, Accuracy Score: 46.10
+Train Epoch: 1 [24000/25310 (94%)]      Loss: 1.065896, Accuracy Score: 46.37
+Next Batch ...  200  from  2927
+Next Batch ...  400  from  2927
+Next Batch ...  600  from  2927
+Next Batch ...  800  from  2927
+Next Batch ...  1000  from  2927
+Next Batch ...  1200  from  2927
+Next Batch ...  1400  from  2927
+Next Batch ...  1600  from  2927
+Next Batch ...  1800  from  2927
+Next Batch ...  2000  from  2927
+Next Batch ...  2200  from  2927
+Next Batch ...  2400  from  2927
+Next Batch ...  2600  from  2927
+Next Batch ...  2800  from  2927
+Next Batch ...  2927  from  2927
+
+Test set (2927 samples): Average loss: 0.0059, Accuracy: 52.39%
+
+Train losses:  [[1.39857197 1.33896017 1.32373202 1.29932284 1.3150239  1.24412572
+  1.23916769 1.23891795 1.25925004 1.15969586 1.14805555 1.21888077
+  1.21989989 1.15620434 1.15340412 1.20589542 1.18797052 1.14238226
+  1.18581426 1.20715165 1.18132997 1.1138283  1.10779035 1.12340391
+  1.19057322 1.21473682 1.20067644 1.16581821 1.1320684  1.17543447
+  1.21324742 1.08502877 1.19324422 1.09280014 1.30650103 1.13959908
+  1.22887158 1.17203796 1.1643697  1.14919484 1.12953174 1.14310706
+  1.19367576 1.11300421 1.1569885  1.1253159  1.06711626 1.12507808
+  1.16517031 1.06591058 1.17765403 1.13749814 1.19171917 1.10479033
+  1.23592794 1.23448658 1.11728418 1.15421927 1.11744726 1.15459263
+  1.15368521 1.16331494 1.11448574 1.2286917  1.11570537 1.18515134
+  1.17882359 1.13311434 1.15230739 1.16247213 1.09723008 1.15231371
+  1.21732914 1.19775546 1.17110562 1.21628094 1.08506739 1.13851035
+  1.09927821 1.15210938 1.13085079 1.20102572 1.12507451 1.0811404
+  1.07345498 1.16751409 1.18324316 1.14584851 1.15141177 1.12287211
+  1.22514105 1.10833991 1.13386714 1.10377669 1.20212841 1.14891982
+  1.05948567 1.12033427 1.15362334 1.14528131 1.18681872 1.20147622
+  1.13724148 1.16965663 1.17356086 1.10915518 1.1071887  1.06717634
+  1.04949009 1.10087776 1.18044102 1.15869236 1.17296481 1.1340034
+  1.13348675 1.0757376  1.1148684  1.08225977 1.14118612 1.0658958
+  1.10797167 1.08338404 1.09035099 1.06828856 1.15085578 1.12289226
+  1.12879264]]
+Train scores:  [[0.3        0.39       0.415      0.43       0.365      0.445
+  0.425      0.425      0.405      0.475      0.465      0.41
+  0.41       0.48       0.435      0.39       0.445      0.485
+  0.395      0.4        0.45       0.48       0.435      0.45
+  0.445      0.41       0.445      0.48       0.485      0.435
+  0.39       0.5        0.47       0.47       0.47       0.455
+  0.4        0.38       0.475      0.54       0.435      0.44
+  0.46       0.455      0.49       0.475      0.49       0.51
+  0.475      0.455      0.42       0.495      0.5        0.45
+  0.46       0.385      0.505      0.51       0.46       0.45
+  0.455      0.495      0.465      0.465      0.48       0.435
+  0.445      0.455      0.485      0.48       0.455      0.47
+  0.46       0.45       0.445      0.4        0.525      0.495
+  0.53       0.5        0.48       0.42       0.485      0.49
+  0.52       0.465      0.44       0.525      0.44       0.485
+  0.44       0.51       0.505      0.475      0.44       0.495
+  0.535      0.475      0.44       0.495      0.48       0.455
+  0.53       0.475      0.475      0.49       0.505      0.53
+  0.55       0.495      0.43       0.5        0.455      0.5
+  0.47       0.5        0.495      0.525      0.53       0.53
+  0.495      0.495      0.55       0.525      0.5        0.48
+  0.50909091]]
+Test losses:  [0.00586447]
+Test scores:  [0.52393701]
+Train Epoch: 2 [2000/25310 (8%)]        Loss: 1.099613, Accuracy Score: 50.15
+Train Epoch: 2 [4000/25310 (16%)]       Loss: 1.043918, Accuracy Score: 51.20
+Train Epoch: 2 [6000/25310 (24%)]       Loss: 1.054085, Accuracy Score: 50.38
+Train Epoch: 2 [8000/25310 (31%)]       Loss: 1.037059, Accuracy Score: 50.00
+Train Epoch: 2 [10000/25310 (39%)]      Loss: 1.098606, Accuracy Score: 50.01
+Train Epoch: 2 [12000/25310 (47%)]      Loss: 1.102438, Accuracy Score: 50.15
+Train Epoch: 2 [14000/25310 (55%)]      Loss: 1.046387, Accuracy Score: 50.08
+Train Epoch: 2 [16000/25310 (63%)]      Loss: 1.067508, Accuracy Score: 50.31
+Train Epoch: 2 [18000/25310 (71%)]      Loss: 1.147035, Accuracy Score: 50.26
+Train Epoch: 2 [20000/25310 (79%)]      Loss: 1.123558, Accuracy Score: 50.51
+Train Epoch: 2 [22000/25310 (87%)]      Loss: 1.077572, Accuracy Score: 50.74
+Train Epoch: 2 [24000/25310 (94%)]      Loss: 1.043602, Accuracy Score: 50.91
+Next Batch ...  200  from  2927
+Next Batch ...  400  from  2927
+Next Batch ...  600  from  2927
+Next Batch ...  800  from  2927
+Next Batch ...  1000  from  2927
+Next Batch ...  1200  from  2927
+Next Batch ...  1400  from  2927
+Next Batch ...  1600  from  2927
+Next Batch ...  1800  from  2927
+Next Batch ...  2000  from  2927
+Next Batch ...  2200  from  2927
+Next Batch ...  2400  from  2927
+Next Batch ...  2600  from  2927
+Next Batch ...  2800  from  2927
+Next Batch ...  2927  from  2927
+
+Test set (2927 samples): Average loss: 0.0059, Accuracy: 53.28%
+
+Train losses:  [[1.39857197 1.33896017 1.32373202 1.29932284 1.3150239  1.24412572
+  1.23916769 1.23891795 1.25925004 1.15969586 1.14805555 1.21888077
+  1.21989989 1.15620434 1.15340412 1.20589542 1.18797052 1.14238226
+  1.18581426 1.20715165 1.18132997 1.1138283  1.10779035 1.12340391
+  1.19057322 1.21473682 1.20067644 1.16581821 1.1320684  1.17543447
+  1.21324742 1.08502877 1.19324422 1.09280014 1.30650103 1.13959908
+  1.22887158 1.17203796 1.1643697  1.14919484 1.12953174 1.14310706
+  1.19367576 1.11300421 1.1569885  1.1253159  1.06711626 1.12507808
+  1.16517031 1.06591058 1.17765403 1.13749814 1.19171917 1.10479033
+  1.23592794 1.23448658 1.11728418 1.15421927 1.11744726 1.15459263
+  1.15368521 1.16331494 1.11448574 1.2286917  1.11570537 1.18515134
+  1.17882359 1.13311434 1.15230739 1.16247213 1.09723008 1.15231371
+  1.21732914 1.19775546 1.17110562 1.21628094 1.08506739 1.13851035
+  1.09927821 1.15210938 1.13085079 1.20102572 1.12507451 1.0811404
+  1.07345498 1.16751409 1.18324316 1.14584851 1.15141177 1.12287211
+  1.22514105 1.10833991 1.13386714 1.10377669 1.20212841 1.14891982
+  1.05948567 1.12033427 1.15362334 1.14528131 1.18681872 1.20147622
+  1.13724148 1.16965663 1.17356086 1.10915518 1.1071887  1.06717634
+  1.04949009 1.10087776 1.18044102 1.15869236 1.17296481 1.1340034
+  1.13348675 1.0757376  1.1148684  1.08225977 1.14118612 1.0658958
+  1.10797167 1.08338404 1.09035099 1.06828856 1.15085578 1.12289226
+  1.12879264]
+ [1.09457958 1.10987318 1.06681371 1.1242013  1.16035557 1.1688081
+  1.19541347 1.0996815  1.11993098 1.09961307 1.10051811 1.08612287
+  1.05299711 1.19188845 1.14096999 1.07257223 1.08603978 1.07666612
+  1.08495581 1.04391849 1.16585481 1.04826617 1.1162051  1.17150378
+  1.12649536 1.07890606 1.12151456 1.12727678 1.13523364 1.05408549
+  1.14606881 1.11652851 1.09233439 1.17199564 1.10156918 1.07697213
+  1.11970592 1.07359934 1.15035522 1.03705883 1.09901822 1.07511437
+  1.09281313 1.17376411 1.10746133 1.04903722 1.18822372 1.08327889
+  1.10607433 1.09860551 1.08174145 1.11536646 1.13787758 1.0972867
+  1.14737225 1.1205107  1.15024352 1.1419971  1.11701727 1.10243809
+  1.12766159 1.05331421 1.10023963 1.13214374 1.09128809 1.15092039
+  1.13189793 1.08092999 1.17830861 1.04638708 1.10230589 1.16816294
+  1.04599631 1.11553895 1.10123897 1.14336157 1.15444088 1.06100273
+  1.09868813 1.06750798 1.13733792 1.17265332 1.06013334 1.03054392
+  1.10522985 1.07300806 1.01380873 1.05549097 1.15922773 1.14703548
+  1.08756816 1.10025847 1.03811169 1.097664   1.12829983 1.05883074
+  1.00945902 1.11348951 1.06296623 1.12355757 1.02706599 1.12040353
+  1.06596744 1.08940136 1.11264002 1.14680278 1.10400987 1.12211704
+  1.10896337 1.07757163 1.11783528 1.05847526 1.05763173 1.08030725
+  1.12101841 1.05014467 1.02953136 1.11190522 1.09243381 1.04360163
+  1.0408411  1.14244986 1.10220408 1.09643579 1.09117091 1.08209217
+  1.04334128]]
+Train scores:  [[0.3        0.39       0.415      0.43       0.365      0.445
+  0.425      0.425      0.405      0.475      0.465      0.41
+  0.41       0.48       0.435      0.39       0.445      0.485
+  0.395      0.4        0.45       0.48       0.435      0.45
+  0.445      0.41       0.445      0.48       0.485      0.435
+  0.39       0.5        0.47       0.47       0.47       0.455
+  0.4        0.38       0.475      0.54       0.435      0.44
+  0.46       0.455      0.49       0.475      0.49       0.51
+  0.475      0.455      0.42       0.495      0.5        0.45
+  0.46       0.385      0.505      0.51       0.46       0.45
+  0.455      0.495      0.465      0.465      0.48       0.435
+  0.445      0.455      0.485      0.48       0.455      0.47
+  0.46       0.45       0.445      0.4        0.525      0.495
+  0.53       0.5        0.48       0.42       0.485      0.49
+  0.52       0.465      0.44       0.525      0.44       0.485
+  0.44       0.51       0.505      0.475      0.44       0.495
+  0.535      0.475      0.44       0.495      0.48       0.455
+  0.53       0.475      0.475      0.49       0.505      0.53
+  0.55       0.495      0.43       0.5        0.455      0.5
+  0.47       0.5        0.495      0.525      0.53       0.53
+  0.495      0.495      0.55       0.525      0.5        0.48
+  0.50909091]
+ [0.51       0.48       0.545      0.5        0.525      0.495
+  0.45       0.525      0.465      0.52       0.51       0.55
+  0.525      0.515      0.515      0.515      0.5        0.5
+  0.52       0.575      0.425      0.555      0.47       0.495
+  0.48       0.515      0.48       0.465      0.465      0.525
+  0.45       0.485      0.495      0.445      0.465      0.525
+  0.49       0.52       0.53       0.48       0.47       0.53
+  0.47       0.445      0.495      0.54       0.475      0.565
+  0.515      0.5        0.52       0.53       0.48       0.525
+  0.52       0.475      0.5        0.52       0.495      0.52
+  0.475      0.55       0.5        0.475      0.525      0.47
+  0.445      0.54       0.445      0.54       0.5        0.49
+  0.505      0.55       0.55       0.49       0.495      0.515
+  0.51       0.585      0.47       0.455      0.525      0.54
+  0.47       0.515      0.56       0.475      0.49       0.49
+  0.53       0.52       0.575      0.47       0.5        0.54
+  0.57       0.5        0.55       0.515      0.58       0.53
+  0.555      0.54       0.505      0.485      0.54       0.52
+  0.5        0.55       0.485      0.545      0.56       0.5
+  0.515      0.51       0.535      0.52       0.56       0.555
+  0.57       0.49       0.54       0.51       0.525      0.54
+  0.51818182]]
+Test losses:  [0.00586447 0.00594057]
+Test scores:  [0.52393701 0.53283727]
+Train Epoch: 3 [2000/25310 (8%)]        Loss: 1.112751, Accuracy Score: 53.05
+Train Epoch: 3 [4000/25310 (16%)]       Loss: 1.118616, Accuracy Score: 53.33
+Train Epoch: 3 [6000/25310 (24%)]       Loss: 1.093179, Accuracy Score: 53.52
+Train Epoch: 3 [8000/25310 (31%)]       Loss: 1.127910, Accuracy Score: 53.61
+Train Epoch: 3 [10000/25310 (39%)]      Loss: 0.964462, Accuracy Score: 53.74
