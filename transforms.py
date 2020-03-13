@@ -55,6 +55,10 @@ def normalize(vid, mean, std):
     return (vid - mean) / std
 
 
+def random_slice(vid, n):
+    slice_idx = torch.randperm(vid.shape[0])[:n]
+    return vid[slice_idx, :, :, :]
+
 # Class interface
 
 class RandomCrop(object):
@@ -97,6 +101,14 @@ class Resize(object):
 class ToFloatTensorInZeroOne(object):
     def __call__(self, vid):
         return to_normalized_float_tensor(vid)
+
+
+class RandomSlice(object):
+    def __init__(self, size):
+        self.size = size
+
+    def __call__(self, vid):
+        return random_slice(vid, self.size)
 
 
 class Normalize(object):
