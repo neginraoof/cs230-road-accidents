@@ -15,10 +15,10 @@ print("Args: ", args)
 np.save('dummy_test.npy', np.array([2]))
 
 # Dataloader parameters
-batch_size = 40
+batch_size = 200
 image_height, image_width = 112, 112  # resize video 2d frame size
 n_frames = 15  #number of frames in a video clip
-fps = 1
+fps = 10
 num_classes = 4
 categories = [0, 1, 2, 3]
 
@@ -73,11 +73,8 @@ if args.get_stats:
     m_, s_ = get_stats(train_loader)
     print("Calculated stats: mean ", m_ , "and std ", s_)
 else:
-    m_ = torch.tensor([0.4926, 0.4835, 0.4777])
-    s_ = torch.tensor([0.2355, 0.2401, 0.2485])
-
-train_set.set_stats(m_, s_)
-valid_set.set_stats(m_, s_)
+    m_ = torch.tensor([0.5078, 0.4929, 0.4816])
+    s_ = torch.tensor([0.2329, 0.2376, 0.2498])
 
 # create model
 if args.pretrained:
@@ -85,7 +82,6 @@ if args.pretrained:
 else:
     model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
 print("Model: ", model)
-
 
 # Parallelize model to multiple GPUs
 if torch.cuda.device_count() > 1:
@@ -103,6 +99,14 @@ epoch_train_losses = []
 epoch_train_scores = []
 epoch_test_losses = []
 epoch_test_scores = []
+
+
+if args.resume:
+    checkpoint = torch.load('last.pth')
+    model.load_state_dict(checkpoint['model_state_dict'])
+    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    epoch = checkpoint['epoch']
+    loss = checkpoint['loss']
 
 # start training
 for epoch in range(epochs):

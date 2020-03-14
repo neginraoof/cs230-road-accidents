@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser(description="Video Classification")
 parser.add_argument('--pretrained', default=False, action="store_true")
 parser.add_argument('--crop_videos', default=False, action="store_true")
 parser.add_argument('--get_stats', default=False, action="store_true")
-
+parser.add_argument('--resume', default=False, action="store_true")
 
 def read_data_labels(path_to_csv, categories):
     # Load Train Data
