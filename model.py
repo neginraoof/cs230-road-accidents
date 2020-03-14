@@ -66,7 +66,7 @@ class Conv3dModel(nn.Module):
 
 
 class Conv3dModelPretrained(nn.Module):
-    def __init__(self, num_classes=4, drop_p=0.2, fc_hidden1=400, fc_hidden2=100):
+    def __init__(self, num_classes=4, drop_p=0.2, fc_hidden1=256, fc_hidden2=128):
         super(Conv3dModelPretrained, self).__init__()
         
         self.fc_hidden1, self.fc_hidden2 = fc_hidden1, fc_hidden2
@@ -74,6 +74,8 @@ class Conv3dModelPretrained(nn.Module):
         self.num_classes = num_classes
  
         self.resnet_layers = torchvision.models.video.r3d_18(pretrained=True)
+        fc_in = self.resnet_layers.fc.in_features
+        self.resnet_layers.fc = nn.Linear(fc_in, self.fc_hidden1)
         for param in self.resnet_layers.parameters():
             param.requires_grad = False
 
