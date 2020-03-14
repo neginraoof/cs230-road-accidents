@@ -6,26 +6,30 @@ import transforms as T
 
 class MyVideoDataset(data.Dataset):
 
-    def __init__(self, root, data_dirs, labels, n_frames=30, fps=5, spatial_transform=None, temporal_transform=None):
+    def __init__(self, root, data_dirs, labels, n_frames=30, fps=5, spatial_transform=None, temporal_transform=None, random_slice_size=0):
         data_dirs = [os.path.join(root, d + ".mp4") for d in data_dirs]
         self.videos = data_dirs
         self.labels = labels
         self.video_clips = VideoClips(self.videos,
                                       clip_length_in_frames=n_frames,
                                       frames_between_clips=n_frames,
-                                      frame_rate=fps,
+                                      frame_rate=1,
                                       num_workers=2
                                       )
+
         self.spatial_transform = spatial_transform
         self.temporal_transform = temporal_transform
         self.data_mean = None
         self.data_std = None
+        self.random_slice_size = random_slice_size
 
     def set_stats(self, mean, std):
         self.data_mean, self.data_std = mean, std
 
     def __getitem__(self, idx):
         video, audio, info, video_idx = self.video_clips.get_clip(idx)
+        if self.random_slice_size:
+            video = T.RandomSlice(self.random_slice_size)(video)
         if self.temporal_transform is not None:
             video = self.temporal_transform(video)
         if self.spatial_transform is not None:

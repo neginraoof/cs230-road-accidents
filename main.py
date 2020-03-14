@@ -15,12 +15,14 @@ print("Args: ", args)
 np.save('dummy_test.npy', np.array([2]))
 
 # Dataloader parameters
-batch_size = 40
+batch_size = 200
 image_height, image_width = 112, 112  # resize video 2d frame size
-n_frames = 15  #number of frames in a video clip
+n_frames = 1  #number of frames in a video clip
 fps = 1
+random_slice_size = 15
 num_classes = 4
 categories = [0, 1, 2, 3]
+
 
 # Detect devices
 use_cuda = torch.cuda.is_available()  # check if GPU exists
@@ -59,8 +61,8 @@ spatial_transform_test = torchvision.transforms.Compose([
 print("============== Loading Data ==============")
 print("Train {} videos".format(len(train_list)))
 print("Test {} videos".format(len(test_list)))
-train_set = MyVideoDataset('./video_data_clip', train_list, train_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_train)
-valid_set = MyVideoDataset('./video_data_clip', test_list, test_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_test)
+train_set = MyVideoDataset('./video_data_clip', train_list, train_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_train, random_slice_size=random_slice_size)
+valid_set = MyVideoDataset('./video_data_clip', test_list, test_label, n_frames=n_frames, fps=fps, spatial_transform=spatial_transform_test, random_slice_size=random_slice_size)
 
 train_loader = data.DataLoader(train_set, **params)
 valid_loader = data.DataLoader(valid_set, **params)
