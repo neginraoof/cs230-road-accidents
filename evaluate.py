@@ -3,6 +3,8 @@ from sklearn.metrics import r2_score
 import torch.nn.functional as F
 import csv
 import numpy as np
+from train import dir_name
+
 
 def calculate_accuracy(outputs, targets):
     batch_size = targets.size(0)
@@ -61,7 +63,7 @@ def evaluate(model, device, optimizer, test_loader):
     probs = np.concatenate(probs)
     data = np.concatenate([clip_ids, video_ids, probs], axis=1)
 
-    with open('test.csv', 'w') as csv_file:
+    with open(dir_name + '/test.csv', 'w') as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=',')
         csv_writer.writerow(["clip_id", "video_id", "p1", "p2", "p3", "p4"])
         csv_writer.writerows(data)
@@ -69,7 +71,6 @@ def evaluate(model, device, optimizer, test_loader):
         csv_writer.writerow([test_loss])
         csv_writer.writerow(["Scores"])
         csv_writer.writerow(scores)
-
 
     # Compute test accuracy
     y_s = torch.stack(y_s, dim=0)
