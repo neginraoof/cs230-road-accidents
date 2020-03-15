@@ -5,7 +5,6 @@ import transforms as T
 
 
 class MyVideoDataset(data.Dataset):
-
     def __init__(self, root, data_dirs, labels, n_frames=30, fps=5, spatial_transform=None, temporal_transform=None, random_slice_size=0):
         data_dirs = [os.path.join(root, d + ".mp4") for d in data_dirs]
         self.videos = data_dirs
@@ -13,9 +12,10 @@ class MyVideoDataset(data.Dataset):
         self.video_clips = VideoClips(self.videos,
                                       clip_length_in_frames=n_frames,
                                       frames_between_clips=n_frames,
-                                      frame_rate=1,
+                                      frame_rate=fps,
                                       num_workers=2
                                       )
+
 
         self.spatial_transform = spatial_transform
         self.temporal_transform = temporal_transform
@@ -38,6 +38,7 @@ class MyVideoDataset(data.Dataset):
             video = T.Normalize(mean=self.data_mean, std=self.data_std)(video)
 
         label = self.labels[video_idx]
+        # print(video_idx, "---------------- ", self.video_clips.video_paths[video_idx], "------ label: ", label)
         return idx, video, label, video_idx
 
     def __len__(self):
