@@ -103,16 +103,16 @@ epoch_train_scores = []
 epoch_test_losses = []
 epoch_test_scores = []
 
-
+pre_epoch=0
 if args.resume:
     checkpoint = torch.load('last.pth')
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-    epoch = checkpoint['epoch']
+    pre_epoch = checkpoint['epoch']
     loss = checkpoint['loss']
 
 # start training
-for epoch in range(epochs):
+for epoch in range(pre_epoch, epochs):
     # train, test model
     train_losses, train_scores = train_one_epoch(model, device, train_loader, optimizer, epoch)
     epoch_test_loss, epoch_test_score = evaluate(model, device, optimizer, valid_loader)

@@ -13,7 +13,7 @@ class MyVideoDataset(data.Dataset):
         self.video_clips = VideoClips(self.videos,
                                       clip_length_in_frames=n_frames,
                                       frames_between_clips=n_frames,
-                                      frame_rate=1,
+                                      frame_rate=fps,
                                       num_workers=2
                                       )
 
@@ -38,6 +38,7 @@ class MyVideoDataset(data.Dataset):
             video = T.Normalize(mean=self.data_mean, std=self.data_std)(video)
 
         label = self.labels[video_idx]
+        print(video_idx, "---- ", self.video_clips.video_paths[video_idx], "--- ", label)
         return idx, video, label, video_idx
 
     def __len__(self):
