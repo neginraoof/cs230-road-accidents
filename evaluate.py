@@ -1,7 +1,7 @@
 import csv
 import numpy as np
 from train import dir_name
-from utils import TripleCrossEntropy
+from utils import TripleCrossEntropy, TripleBinaryCrossEntropy
 from model import *
 
 def calculate_accuracy(outputs, targets):
@@ -15,7 +15,7 @@ def calculate_accuracy(outputs, targets):
     return n_correct_elems / batch_size
 
 
-def evaluate(model, device, optimizer, test_loader):
+def evaluate(model, device, test_loader):
     model.eval() 
     losses = []
     
@@ -25,14 +25,14 @@ def evaluate(model, device, optimizer, test_loader):
 
     scores = []
     y_s = []
-    y_preds = []
+    labels = []
     criteration = torch.nn.CrossEntropyLoss()
-    
+
     N_count = 0
     # Iterate over test data batches
     with torch.no_grad():
         for batch_idx, (clip_id, X, y, video_id) in enumerate(test_loader):
-            X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.int64)
+            X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.float32)
             # Forward pass on test data batch
             y_pred = model(X)
 
@@ -40,7 +40,7 @@ def evaluate(model, device, optimizer, test_loader):
             video_ids.append(video_id.numpy())
 
             if isinstance(model, OrdinalModelPretrained):
-                loss = TripleCrossEntropy(y_pred, y)
+                loss = TripleBinaryCrossEntropy(y_pred, y)
             else:
                 loss = criteration(y_pred, y)
                 # Calculate accuracy score
@@ -48,8 +48,7 @@ def evaluate(model, device, optimizer, test_loader):
                 scores.append(acc1)
             losses.append(loss.item())
 
-            y_s.extend(y)
-            y_preds.extend(y_pred)
+            labels.append(y)
 
             if isinstance(model, OrdinalModelPretrained):
                 # y_pred shape: [N, 3]
@@ -68,11 +67,12 @@ def evaluate(model, device, optimizer, test_loader):
     clip_ids = np.concatenate(clip_ids).reshape(-1, 1)
     video_ids = np.concatenate(video_ids).reshape(-1, 1)
     probs = np.concatenate(probs)
-    data = np.concatenate([clip_ids, video_ids, probs], axis=1)
+    labels = np.concatenate(labels).reshape(clip_ids.shape[0], -1)
+    data = np.concatenate([clip_ids, video_ids, probs, labels], axis=1)
 
     with open(dir_name + '/test.csv', 'w') as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=',')
-        csv_writer.writerow(["clip_id", "video_id", "p1", "p2", "p3", "p4"])
+        csv_writer.writerow(["clip_id", "video_id", "p1", "p2", "p3", "p4", "labels"])
         csv_writer.writerows(data)
         csv_writer.writerow(["Test Losses"])
         csv_writer.writerow(losses)
@@ -80,13 +80,10 @@ def evaluate(model, device, optimizer, test_loader):
         csv_writer.writerow(scores)
 
     # Compute test accuracy
-    y_s = torch.stack(y_s, dim=0)
-    y_preds = torch.stack(y_preds, dim=0)
-    #test_score = calculate_accuracy(y_s.cpu().data.squeeze().numpy(), y_preds.cpu().data.squeeze().numpy())
     import numpy
     test_score = numpy.mean(scores)
 
-    print('\nTest set ({:d} samples): Average loss: {:.4f}, Accuracy: {:.2f}%\n'.format(len(y_s), np.mean(losses),
+    print('\nTest set ({:d} samples): Average loss: {:.4f}, Accuracy: {:.2f}%\n'.format(len(labels), np.mean(losses),
                                                                                         100 * test_score))
 
     return losses, test_score

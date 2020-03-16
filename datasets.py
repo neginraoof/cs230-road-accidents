@@ -16,7 +16,6 @@ class MyVideoDataset(data.Dataset):
                                       num_workers=2
                                       )
 
-
         self.spatial_transform = spatial_transform
         self.temporal_transform = temporal_transform
         self.data_mean = None
@@ -38,7 +37,7 @@ class MyVideoDataset(data.Dataset):
             video = T.Normalize(mean=self.data_mean, std=self.data_std)(video)
 
         label = self.labels[video_idx]
-        # print(video_idx, "---------------- ", self.video_clips.video_paths[video_idx], "------ label: ", label)
+        print(video_idx, "--- ", self.video_clips.video_paths[video_idx], "--- ", label)
         return idx, video, label, video_idx
 
     def __len__(self):

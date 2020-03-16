@@ -87,9 +87,16 @@ def get_stats(data_loader, device="cpu"):
     return mean, std
 
 
-#labels= [N, 3], targets = [N, 3]
+# labels= [N, 3], targets = [N, 3]
 def TripleCrossEntropy(labels, targets):
-    print("labels", labels.shape)
     sum = -1 * torch.sum(torch.mul(targets, torch.log(labels)))  # [1, 1]
     return sum / labels.shape[0]
 
+
+# labels= [N, 3], targets = [N, 3]
+def TripleBinaryCrossEntropy(labels, targets):
+    bce_0 = torch.nn.BCELoss()(labels[:, 0], targets[:, 0])
+    bce_1 = torch.nn.BCELoss()(labels[:, 1], targets[:, 1])
+    bce_2 = torch.nn.BCELoss()(labels[:, 2], targets[:, 2])
+    sum = torch.add(torch.add(bce_0, bce_1), bce_2)  # [1, 1]
+    return sum
