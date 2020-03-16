@@ -50,7 +50,6 @@ if args.ordinal:
     t = enc.fit(action_category)
     train_label = train_label.reshape(-1, 1)
     train_label = np.cumsum(enc.transform(train_label).toarray(), axis=1)[:, 0:3]
-
     test_label = test_label.reshape(-1, 1)
     test_label = np.cumsum(enc.transform(test_label).toarray(), axis=1)[:, 0:3]
 
