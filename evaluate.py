@@ -11,7 +11,6 @@ def calculate_accuracy(outputs, targets):
     pred = pred.t()
     correct = pred.eq(targets.view(1, -1))
     n_correct_elems = correct.float().sum().item()
-
     return n_correct_elems / batch_size
 
 
@@ -47,8 +46,7 @@ def evaluate(model, device, test_loader):
                 acc1 = calculate_accuracy(y_pred, y)
                 scores.append(acc1)
             losses.append(loss.item())
-
-            labels.append(y)
+            labels.append(y.detach().cpu())
 
             if isinstance(model, OrdinalModelPretrained):
                 # y_pred shape: [N, 3]
@@ -67,7 +65,7 @@ def evaluate(model, device, test_loader):
     clip_ids = np.concatenate(clip_ids).reshape(-1, 1)
     video_ids = np.concatenate(video_ids).reshape(-1, 1)
     probs = np.concatenate(probs)
-    labels = np.concatenate(labels).reshape(clip_ids.shape[0], -1)
+    labels = np.concatenate(labels).reshape(clip_ids.shape[0],-1)
     data = np.concatenate([clip_ids, video_ids, probs, labels], axis=1)
 
     with open(dir_name + '/test.csv', 'w') as csv_file:

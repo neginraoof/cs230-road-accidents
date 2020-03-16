@@ -58,7 +58,7 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
             acc1 = calculate_accuracy(y_pred, y)
         losses.append(loss.item())
         scores.append(acc1)
-        labels.append(y)
+        labels.append(y.detach().cpu())
         # Back-propagation
         loss.backward()
         optimizer.step()
