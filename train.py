@@ -1,22 +1,18 @@
-from sklearn.metrics import r2_score
-import torch
-import numpy as np
-import torch.nn.functional as F
-import torchvision.models as models
-import torch.utils.data as data
-import torchvision
 # import matplotlib.pyplot as plt
 import csv
 import os
+from utils import TripleCrossEntropy
+from model import *
+
 
 log_interval = 10
-dir_name = 'Conv3d_1fps'
+dir_name = 'ordinal'
 if not os.path.exists(dir_name):
      os.mkdir(dir_name)
 
+
 def calculate_accuracy(outputs, targets):
     batch_size = targets.size(0)
-
     _, pred = outputs.topk(1, 1, True)
     pred = pred.t()
     correct = pred.eq(targets.view(1, -1))
@@ -35,9 +31,10 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
     scores = []
     N_count = 0
     criteration = torch.nn.CrossEntropyLoss()
-
     for batch_idx, (clip_id, X, y, video_id) in enumerate(train_loader):
         X, y = X.to(device=device, dtype=torch.float32), y.to(device=device, dtype=torch.int64)
+
+
         N_count += X.size(0)
 
         # Initialize optimizer
@@ -45,22 +42,32 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
         # Forward pass
         y_pred = model(X)
         clip_ids.append(clip_id.numpy())
-        video_ids.append(video_id.numpy())        
-        probs.append(torch.nn.Softmax(dim=1)(y_pred).detach().cpu().numpy())
+        video_ids.append(video_id.numpy())
 
         # Calculate batch loss
-        loss = criteration(y_pred, y)
+        if isinstance(model, OrdinalModelPretrained):
+            loss = TripleCrossEntropy(y_pred, y)
+        else:
+            loss = criteration(y_pred, y)
+            # Calculate accuracy score
+            acc1 = calculate_accuracy(y_pred, y)
+            scores.append(acc1)
         losses.append(loss.item())
-
-        # Calculate accuracy score
-        # step_score = r2_score(y.cpu().detach().numpy(), y_pred.cpu().detach().numpy())
-        acc1 = calculate_accuracy(y_pred, y)
-        scores.append(acc1)
 
         # backprop
         loss.backward()
-        # optimize model params
         optimizer.step()
+
+        if isinstance(model, OrdinalModelPretrained):
+            # y_pred shape: [N, 3]
+            p1 = torch.mul(y_pred[:, 0], y_pred[:, 1])
+            p2 = torch.mul(y_pred[:, 1], (1 - y_pred[:, 0]))
+            p3 = torch.mul((1 - y_pred[:, 1]), y_pred[:, 2])
+            p4 = torch.mul((1 - y_pred[:, 1]), (1 - y_pred[:, 2]))
+            prob = torch.stack([p1, p2, p3, p4], dim=1).detach()
+            probs.append(prob)
+        else:
+            probs.append(torch.nn.Softmax(dim=1)(y_pred).detach().cpu().numpy())
 
         # show information
         if (batch_idx + 1) % log_interval == 0:

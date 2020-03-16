@@ -14,6 +14,8 @@ parser.add_argument('--pretrained', default=False, action="store_true")
 parser.add_argument('--crop_videos', default=False, action="store_true")
 parser.add_argument('--get_stats', default=False, action="store_true")
 parser.add_argument('--resume', default=False, action="store_true")
+parser.add_argument('--ordinal', default=False, action="store_true")
+
 
 def read_data_labels(path_to_csv, categories):
     # Load Train Data
@@ -37,29 +39,26 @@ def read_data_labels(path_to_csv, categories):
     return data_list, data_label
 
 
-def crop_video(data_dirs):
+def crop_video(data_dirs, data_labels):
     outputs = []
-    durations = []
-    for i in data_dirs:
-        # import to moviepy
-        if path.exists("./video_data/{}.avi".format(i)):
-            clip = moviepy.editor.VideoFileClip("./video_data/{}.avi".format(i))
-            print("{}: Duration  {} sec".format(i, clip.duration))
-            durations.append(clip.duration)
-    print("Min duration is", min(durations))
 
-    for i in data_dirs:
+    for i, l in zip(data_dirs, data_labels):
         # import to moviepy
         if path.exists("./video_data/{}.avi".format(i)):
             clip = moviepy.editor.VideoFileClip("./video_data/{}.avi".format(i))
             print("{}: Duration  {} sec".format(i, clip.duration))
             # select a random time point
-            length = min(durations)
+            if l == 0 or l ==1:
+                length = 30
+            elif l==2:
+                length = 75
+            elif l==3:
+                length = 150
             start = round(np.random.uniform(0, clip.duration - length), 2)
             # cut a subclip
             out_clip = clip.subclip(start, start + length)
-            if not path.exists("./video_data_clip/{}.mp4".format(i)):
-                out_clip.write_videofile("./video_data_clip/{}.mp4".format(i), audio_codec='aac')
+            if not path.exists("./new_video_data_clip/{}.mp4".format(i)):
+                out_clip.write_videofile("./new_video_data_clip/{}.mp4".format(i), audio_codec='aac')
             outputs.append(out_clip)
 
     return outputs
@@ -86,3 +85,11 @@ def get_stats(data_loader, device="cpu"):
     print("Mean ", mean)
     print("Std ", std)
     return mean, std
+
+
+#labels= [N, 3], targets = [N, 3]
+def TripleCrossEntropy(labels, targets):
+    print("labels", labels.shape)
+    sum = -1 * torch.sum(torch.mul(targets, torch.log(labels)))  # [1, 1]
+    return sum / labels.shape[0]
+

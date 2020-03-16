@@ -1,12 +1,12 @@
-import torchvision
 from model import *
 from datasets import *
 from train import *
 from evaluate import *
 import transforms as T
-import pandas as pd
 import numpy as np
 from utils import *
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+
 
 args = parser.parse_args()
 print("Args: ", args)
@@ -15,10 +15,10 @@ print("Args: ", args)
 np.save('dummy_test.npy', np.array([2]))
 
 # Dataloader parameters
-batch_size = 200
+batch_size = 40
 image_height, image_width = 112, 112  # resize video 2d frame size
 n_frames = 15  #number of frames in a video clip
-fps = 10
+fps = 1
 random_slice_size = 0
 
 num_classes = 4
@@ -39,10 +39,33 @@ else:
 
 train_list, train_label = read_data_labels('train1.csv', categories)
 test_list, test_label = read_data_labels('valid1.csv', categories)
+print("labeeeels list")
+print(train_label)
 
 if args.crop_videos:
-    crop_video(train_list)
-    crop_video(test_list)
+    crop_video(train_list, train_label)
+    crop_video(test_list, test_label)
+
+le = LabelEncoder()
+le.fit(categories)
+
+# show how many classes there are
+
+
+# convert category -> 1-hot
+categories = [0, 1, 2, 3]
+action_category = le.transform(categories).reshape(-1, 1)
+enc = OneHotEncoder()
+t = enc.fit(action_category)
+train_label = train_label.reshape(-1,1)
+train_label = np.cumsum(enc.transform(train_label).toarray(), axis=1)[:, 0:3]
+
+test_label = test_label.reshape(-1,1)
+test_label = np.cumsum(enc.transform(test_label).toarray(), axis=1)[:, 0:3]
+
+
+train_list, train_label = train_list[:10], train_label[:10]
+test_list, test_label = test_list[:2], test_label[:2]
 
 spatial_transform_train = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
@@ -81,7 +104,9 @@ else:
 
 # create model
 if args.pretrained:
-    model = Conv3dModelPretrained(num_classes=4).to(device)
+    model = Conv3dModelPretrained(num_classes=num_classes).to(device)
+elif args.ordinal:
+    model = OrdinalModelPretrained(num_classes=num_classes).to(device)
 else:
     model = Conv3dModel(image_t_frames=n_frames, image_height=image_height, image_width=image_width, num_classes=num_classes).to(device)
 print("Model: ", model)
