@@ -69,7 +69,7 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
             p2 = y_pred[:, 1] - y_pred[:, 0]
             p3 = y_pred[:, 2] - y_pred[:, 1]
             p4 = 1 - y_pred[:, 2]
-            prob = torch.stack([p1, p2, p3, p4], dim=1).detach()
+            prob = torch.stack([p1, p2, p3, p4], dim=1).detach().cpu().numpy()
             probs.append(prob)
         else:
             probs.append(torch.nn.Softmax(dim=1)(y_pred).detach().cpu().numpy())
