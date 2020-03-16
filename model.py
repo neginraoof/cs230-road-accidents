@@ -89,6 +89,7 @@ class Conv3dModelPretrained(nn.Module):
         )
 
     def forward(self, x_3d):
+
         x = self.resnet_layers(x_3d)
         x = x.view(x.size(0), -1)
         x = self.linear_layers(x)
@@ -124,10 +125,10 @@ class OrdinalModelPretrained(nn.Module):
 
         # x shape : [N, C=3]
         print("X.shape in train", x.shape)
-        # x_0 = x[:, 0]
-        # x_1 = torch.max(x[:, 1], x_0)
-        # x_2 = torch.max(x[:, 2], x_1)
-        # x = torch.stack([x_0, x_1, x_2], dim=1)
-        # print("X.shape in train after max", x_1.shape)
+        x_0 = x[:, 0]
+        x_1 = torch.max(x[:, 1], x_0)
+        x_2 = torch.max(x[:, 2], x_1)
+        x = torch.stack([x_0, x_1, x_2], dim=1)
+        print("X.shape in train after max", x.shape)
         x_sig = torch.nn.Sigmoid()(x)
         return x_sig

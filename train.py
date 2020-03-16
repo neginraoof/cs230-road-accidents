@@ -65,10 +65,10 @@ def train_one_epoch(model, device, train_loader, optimizer, epoch):
 
         if isinstance(model, OrdinalModelPretrained):
             # y_pred shape: [N, 3]
-            p1 = torch.mul(y_pred[:, 0], y_pred[:, 1])
-            p2 = torch.mul(y_pred[:, 1], (1 - y_pred[:, 0]))
-            p3 = torch.mul((1 - y_pred[:, 1]), y_pred[:, 2])
-            p4 = torch.mul((1 - y_pred[:, 1]), (1 - y_pred[:, 2]))
+            p1 = y_pred[:, 0]
+            p2 = y_pred[:, 1] - y_pred[:, 0]
+            p3 = y_pred[:, 2] - y_pred[:, 1]
+            p4 = 1 - y_pred[:, 2]
             prob = torch.stack([p1, p2, p3, p4], dim=1).detach()
             probs.append(prob)
         else:
