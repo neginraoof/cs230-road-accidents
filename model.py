@@ -96,6 +96,9 @@ class Conv3dModelPretrained(nn.Module):
         return x
 
 
+# Conv2dModelPretrained = Conv3dModelPretrained where t = 1
+
+
 class OrdinalModelPretrained(nn.Module):
     def __init__(self, num_classes=4, drop_p=0.2, fc_hidden1=256, fc_hidden2=128):
         super(OrdinalModelPretrained, self).__init__()
