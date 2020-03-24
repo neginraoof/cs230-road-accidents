@@ -58,14 +58,12 @@ spatial_transform_train = torchvision.transforms.Compose([
     T.Resize((image_height, image_width)),
     T.RandomHorizontalFlip(),
     # Normalization done after data is loaded
-    # T.RandomCrop((112, 112))
 ])
 
 spatial_transform_test = torchvision.transforms.Compose([
     T.ToFloatTensorInZeroOne(),
     T.Resize((image_height, image_width)),
     # Normalization done after data is loaded
-    # T.CenterCrop((112, 112))
 ])
 
 print("============== Loading Data ==============")
@@ -85,8 +83,12 @@ if args.get_stats:
     m_, s_ = get_stats(train_loader)
     print("Calculated stats: mean ", m_, "and std ", s_)
 else:
-    m_ = torch.tensor([0.5078, 0.4929, 0.4816])
-    s_ = torch.tensor([0.2329, 0.2376, 0.2498])
+    if fps == 10:
+        m_ = torch.tensor([0.5078, 0.4929, 0.4816])
+        s_ = torch.tensor([0.2329, 0.2376, 0.2498])
+    else:  # fps == 1
+        m_ = torch.tensor([0.4926, 0.4835, 0.4777])
+        s_ = torch.tensor([0.2355, 0.2401, 0.2485])
 
 # create model
 if args.pretrained:
